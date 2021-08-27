@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.68.3" />
+  
+    
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Sohn Dangen" />
+    <meta property="og:url" content="https://dangen-effy.github.io/post/%EB%B3%B4%EC%95%88-aws-%EB%A3%A8%ED%8A%B8-%EA%B3%84%EC%A0%95-%EB%B2%84%EB%A6%AC%EA%B8%B0-%EB%AA%A8%EB%B2%94-%EC%82%AC%EB%A1%80-%EB%94%B0%EB%9D%BC%ED%95%98%EA%B8%B0/" />
+    <link rel="canonical" href="https://dangen-effy.github.io/post/%EB%B3%B4%EC%95%88-aws-%EB%A3%A8%ED%8A%B8-%EA%B3%84%EC%A0%95-%EB%B2%84%EB%A6%AC%EA%B8%B0-%EB%AA%A8%EB%B2%94-%EC%82%AC%EB%A1%80-%EB%94%B0%EB%9D%BC%ED%95%98%EA%B8%B0/" /><link rel="shortcut icon" href="/favicon.ico" type="image/x-png" /><script type="application/ld+json">
+  {
+      "@context" : "http://schema.org",
+      "@type" : "BlogPosting",
+      "mainEntityOfPage": {
+           "@type": "WebPage",
+           "@id": "https:\/\/dangen-effy.github.io\/"
+      },
+      "articleSection" : "post",
+      "name" : "(보안) AWS 루트 계정 버리기 — 모범 사례 따라하기",
+      "headline" : "(보안) AWS 루트 계정 버리기 — 모범 사례 따라하기",
+      "description" : "대부분 스타트업의 자료는 클라우드에 저장됩니다. 루트 계정을 사용하면서요. 🔑",
+      "inLanguage" : "en-US",
+      "author" : "Sohn Dangen",
+      "creator" : "Sohn Dangen",
+      "publisher": "Sohn Dangen",
+      "accountablePerson" : "Sohn Dangen",
+      "copyrightHolder" : "Sohn Dangen",
+      "copyrightYear" : "2020",
+      "datePublished": "2020-02-23 15:25:42 \x2b0900 KST",
+      "dateModified" : "2020-02-23 15:25:42 \x2b0900 KST",
+      "url" : "https:\/\/dangen-effy.github.io\/post\/%EB%B3%B4%EC%95%88-aws-%EB%A3%A8%ED%8A%B8-%EA%B3%84%EC%A0%95-%EB%B2%84%EB%A6%AC%EA%B8%B0-%EB%AA%A8%EB%B2%94-%EC%82%AC%EB%A1%80-%EB%94%B0%EB%9D%BC%ED%95%98%EA%B8%B0\/",
+      "keywords" : [ "AWS","Security","MFA", ]
+  }
+</script>
+<title>(보안) AWS 루트 계정 버리기 — 모범 사례 따라하기 - 손당근 개발 블로그</title>
+    <meta property="og:title" content="(보안) AWS 루트 계정 버리기 — 모범 사례 따라하기 - 손당근 개발 블로그" />
+    <meta property="og:type" content="article" />
+    <meta name="description" content="대부분 스타트업의 자료는 클라우드에 저장됩니다. 루트 계정을 사용하면서요. 🔑" />
+  
+    <link rel="stylesheet" href="/css/flexboxgrid-6.3.1.min.css" />
+    <link rel="stylesheet"
+      href="/css/github-markdown.min.css" />
+    <link rel="stylesheet" href="/css/highlight/tomorrow.min.css" />
+    <link rel="stylesheet" href="/css/index.css">
+    <link href="/index.xml" rel="alternate" type="application/rss+xml" title="손당근 개발 블로그">
+    
+    <link href="https://fonts.googleapis.com/css?family=Arvo|Permanent+Marker" rel="stylesheet">
+    
+    
+  
+    <script data-ad-client="ca-pub-8860756584846944" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-158927245-1"></script>
+    
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-158927245-1');
+    </script>
+  </head>
+  
+
+<body>
+  <article class="post " id="article">
+    <div class="row">
+      <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2 col-lg-6 col-lg-offset-3">
+        <div class="site-header">
+          
+<header>
+  <div class="signatures site-title">
+    <a href="/">🥕성공한 젊은이</a>
+  </div>
+</header>
+<div class="row end-xs">
+  
+  
+</div>
+<div class="header-line"></div>
+
+        </div>
+        <header class="post-header">
+          <h1 class="post-title">(보안) AWS 루트 계정 버리기 — 모범 사례 따라하기</h1>
+          
+          <div class="row post-desc">
+            <div class="col-xs-6">
+              
+              <time class="post-date" datetime="2020-02-23 15:25:42 KST">
+                23 Feb 2020
+              </time>
+              
+            </div>
+            <div class="col-xs-6">
+              
+              <div class="post-author">
+                <a target="_blank" href="https://dangen-effy.github.io/">@Sohn Dangen</a>
+              </div>
+              
+            </div>
+          </div>
+          
+        </header>
+
+        <div class="post-content markdown-body">
+          <p>대부분 스타트업의 자료는 클라우드에 저장됩니다. 루트 계정을 사용하면서요. 🔑</p>
+<p>AWS로 예를 들겠습니다. 어떤 스타트업이 탄생하고 AWS 계정을 생성합니다. 신용 카드를 등록하고 자원을 생성합니다. 시간이 지나서 구성원이 증가하고 모두가 여전히 루트 계정으로 AWS에 접근합니다. 누군가 현 상태의 문제점을 지적하지만 귀찮다는 이유 + 현재는 서비스가 작으니 보안보다 개발에 집중해야 한다는 핑계로 여전히 루트 계정을 사용합니다.</p>
+<p>기업에서 가장 막대한 피해를 보는 해킹 사례가 뭘 까요? 바로 클라우드 계정 탈취입니다. 지금부터 제가 AWS IAM 운영 모범 사례 기반으로 리모트몬스터를 루트 계정으로부터 자유롭게 만든 경험에 대해 얘기하겠습니다.</p>
+<h2 id="aws-iam-모범-사례-살펴보기">AWS IAM 모범 사례 살펴보기</h2>
+<p>AWS에서 권고하는 <a href="https://docs.aws.amazon.com/ko_kr/IAM/latest/UserGuide/best-practices.html">모범 사례</a>들이 있습니다. 모든 규칙을 따르면 좋겠지만 현실적으로 모든 규칙을 지키기 보다 가장 기본적이고 중요한 규칙만 살펴보려고 합니다.</p>
+<p>👉 AWS 계정 루트 사용자 액세스 키 잠금</p>
+<p>루트 사용자를 봉인합니다. 루트 사용자는 빌링 정보를 비롯해 모든 자원에 접근 가능합니다. 만약 빌링 정보 조회가 필요하다면 이에 상응하는 사용자를 생성하고 권한을 부여하세요.</p>
+<p>👉 개별 IAM 사용자 만들기</p>
+<p>구성원별로 IAM 사용자를 생성하세요. 이는 구성원의 역할에 따라서 서로 다른 보안 자격 증명 조합을 부여할 수 있습니다.</p>
+<p>👉 그룹을 사용하여 IAM 사용자에게 권한을 할당</p>
+<p>보통 사업팀, 개발팀 그리고 어드민팀 등 업무 범위에 따라 그룹을 생성하고 이에 관련된 서비스에 접근 가능하도록 그룹에 정책을 붙여주세요. 만약 사업팀에게 새로운 권한이 필요하면 그룹에 새로운 정책만 붙여주면 모든 작업이 끝납니다. 또한 구성원의 부서 이동시 그룹을 편집하면 그만입니다.</p>
+<p>👉 최소 권한 부여</p>
+<p>일단 모든 권한을 없애고, 필요한 권한을 하나씩 부여해주세요.</p>
+<p>👉 MFA 활성화</p>
+<p>모든 사용자에게 MFA를 요구하는게 좋습니다. 이는 사용자의 인증 정보가 탈취되더라도 리소스를 보호합니다.</p>
+<p>👉 AWS 계정의 활동 모니터링</p>
+<p>AWS의 로깅 기능(CloudTrail 등)을 통해서 사용자가 하는 모든 행동을 감시할 수 있습니다.</p>
+<h2 id="리모트-몬스터의-그룹-분류하기">리모트 몬스터의 그룹 분류하기</h2>
+<p>저는 리모트몬스터를 세 가지 그룹으로 나눠봤습니다.</p>
+<p><img src="https://cdn-images-1.medium.com/max/2000/1*jGoDN103eWrFOHUAEl9fVQ.png" alt="리모트몬스터의 그룹"><em>리모트몬스터의 그룹</em></p>
+<p>이를 토대로 IAM Group 을 만들어줍니다.</p>
+<ul>
+<li>
+<p>RemonSysAdmin</p>
+</li>
+<li>
+<p>RemonDeveloper</p>
+</li>
+<li>
+<p>RemonBiz</p>
+</li>
+</ul>
+<h2 id="그룹에-정책-붙여주기">그룹에 정책 붙여주기</h2>
+<p>이제 그룹을 정의했으니 해당 그룹에 속한 구성원들이 자원에 접근 가능하도록 정책(Policy)를 붙여줍시다.</p>
+<p>예를 들어 어드민 그룹에는 IAM 접근 권한을 포함한 모든 AWS 리소스에 접근 가능해야합니다. 반면에 개발팀은 우리가 사용하는 특정 서비스(S3 등)에 대한 권한만 열어주면 되겠죠? 마지막으로 비즈팀은 필요에 따라서 ReadOnly 권한을 열어줍니다.</p>
+<p><img src="https://cdn-images-1.medium.com/max/2116/1*NNLTdnb33ns5-jEnwN9BkQ.png" alt="정책을 부여 받은 그룹들"><em>정책을 부여 받은 그룹들</em></p>
+<h2 id="사용자-만들기">사용자 만들기</h2>
+<p>사용자 생성합시다. 예를 들어보죠.</p>
+<ul>
+<li>
+<p>리모트몬스터의 인프라를 담당하고 있는 ‘<strong>당근</strong>’</p>
+</li>
+<li>
+<p>리모트몬스터의 SDK를 담당하고 있는 ‘<strong>감자</strong>’</p>
+</li>
+<li>
+<p>리모트몬스터의 사업 개발을 책임지고 있는 ‘<strong>양파</strong>’</p>
+</li>
+</ul>
+<p>가 있다고 가정해봅시다. 먼저 사용자를 각각 생성하고 이를 알맞은 그룹에 넣어주면 되겠죠. 여기서 중요한점은 MFA 활성화를 요구하는 겁니다. AWS IAM 모범 사례에 따르면 모든 구성원들이 MFA 활성화하는 것을 권고하고 있습니다.</p>
+<p>가상 MFA 디바이스 알아보러 가기 — <a href="https://authy.com/">https://authy.com/</a></p>
+<h2 id="그룹에-사용자-넣어주기">그룹에 사용자 넣어주기</h2>
+<p>마지막으로 위에서 생성한 사용자들을 알맞은 그룹에 넣어줍니다.</p>
+<p><img src="https://cdn-images-1.medium.com/max/2504/1*6eEoEzNyvUSkPIX51ixKBA.png" alt="사용자를 역할에 따라 그룹에 포함시킨 모습"><em>사용자를 역할에 따라 그룹에 포함시킨 모습</em></p>
+<h2 id="앞으로-할-일">앞으로 할 일</h2>
+<p>보안 강화는 끝이 없습니다. 비밀번호 정책 강화, CloudTrail 활성화 등 이번 포스팅에서 소개한 규칙 외에 AWS IAM 모범 사례에서 권고하는 규칙들이 많이 남아있습니다. 자세한 내용은 <a href="https://docs.aws.amazon.com/ko_kr/IAM/latest/UserGuide/best-practices.html">여기</a>를 참조해주세요.</p>
+
+        </div>
+
+        <div class="row middle-xs">
+          <div class="col-xs-12">
+            
+            <div class="post-category">
+              <a href="/categories/aws%20iam/">
+                AWS IAM
+              </a>
+            </div>
+            
+            <div class="post-category">
+              <a href="/categories/security/">
+                Security
+              </a>
+            </div>
+            
+            <div class="post-category">
+              <a href="/categories/best%20practices/">
+                Best Practices
+              </a>
+            </div>
+            
+            <div class="post-category">
+              <a href="/categories/mfa/">
+                MFA
+              </a>
+            </div>
+            
+            <div class="post-category">
+              <a href="/categories/otp/">
+                OTP
+              </a>
+            </div>
+            
+          </div>
+        </div>
+
+        
+        
+
+        
+        
+        <div style="height: 50px;"></div>
+        
+        <div class="post-comments">
+          <div id="disqus_thread"></div>
+<script>
+  window.addEventListener("load", () => {
+    (function() {
+      
+      var d = document,
+        s = d.createElement("script");
+      s.src = "https://sohn-dangen-blog.disqus.com/embed.js";
+      s.setAttribute("data-timestamp", +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  });
+</script>
+<noscript
+  >Please enable JavaScript to view the
+  <a href="https://disqus.com/?ref_noscript"
+    >comments powered by Disqus.</a
+  ></noscript
+>
+
+        </div>
+        
+        
+
+        <div class="site-footer">
+  
+  <div class="site-footer-item">
+    <a href="https://dangen-effy.github.io/about" target="_blank">Me</a>
+  </div>
+  
+  <div class="site-footer-item">
+    <a href="/index.xml" target="_blank">RSS</a>
+  </div>
+  
+  
+</div>
+
+      </div>
+    </div>
+  </article>
+
+  <script src="/js/highlight.pack.js"></script>
+
+
+<script>
+  hljs.initHighlightingOnLoad();
+  
+  
+  
+    
+    
+  
+</script>
+
+  
+
+</body>
+
+</html>

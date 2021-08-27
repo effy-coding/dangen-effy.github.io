@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Best Practices on 손당근 개발 블로그</title>
+    <link>https://dangen-effy.github.io/categories/best-practices/</link>
+    <description>Recent content in Best Practices on 손당근 개발 블로그</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-kr</language>
+    <lastBuildDate>Sun, 23 Feb 2020 15:25:42 +0900</lastBuildDate>
+    
+	<atom:link href="https://dangen-effy.github.io/categories/best-practices/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>(보안) AWS 루트 계정 버리기 — 모범 사례 따라하기</title>
+      <link>https://dangen-effy.github.io/post/%EB%B3%B4%EC%95%88-aws-%EB%A3%A8%ED%8A%B8-%EA%B3%84%EC%A0%95-%EB%B2%84%EB%A6%AC%EA%B8%B0-%EB%AA%A8%EB%B2%94-%EC%82%AC%EB%A1%80-%EB%94%B0%EB%9D%BC%ED%95%98%EA%B8%B0/</link>
+      <pubDate>Sun, 23 Feb 2020 15:25:42 +0900</pubDate>
+      
+      <guid>https://dangen-effy.github.io/post/%EB%B3%B4%EC%95%88-aws-%EB%A3%A8%ED%8A%B8-%EA%B3%84%EC%A0%95-%EB%B2%84%EB%A6%AC%EA%B8%B0-%EB%AA%A8%EB%B2%94-%EC%82%AC%EB%A1%80-%EB%94%B0%EB%9D%BC%ED%95%98%EA%B8%B0/</guid>
+      <description>대부분 스타트업의 자료는 클라우드에 저장됩니다. 루트 계정을 사용하면서요. 🔑
+AWS로 예를 들겠습니다. 어떤 스타트업이 탄생하고 AWS 계정을 생성합니다. 신용 카드를 등록하고 자원을 생성합니다. 시간이 지나서 구성원이 증가하고 모두가 여전히 루트 계정으로 AWS에 접근합니다. 누군가 현 상태의 문제점을 지적하지만 귀찮다는 이유 + 현재는 서비스가 작으니 보안보다 개발에 집중해야 한다는 핑계로 여전히 루트 계정을 사용합니다.
+기업에서 가장 막대한 피해를 보는 해킹 사례가 뭘 까요? 바로 클라우드 계정 탈취입니다. 지금부터 제가 AWS IAM 운영 모범 사례 기반으로 리모트몬스터를 루트 계정으로부터 자유롭게 만든 경험에 대해 얘기하겠습니다.</description>
+    </item>
+    
+  </channel>
+</rss>

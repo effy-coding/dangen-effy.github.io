@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.68.3" />
+  
+    
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Sohn Dangen" />
+    <meta property="og:url" content="https://dangen-effy.github.io/post/janus-%EC%86%8C%EA%B0%9C%EC%99%80-docker-%EA%B8%B0%EB%B0%98%EC%9C%BC%EB%A1%9C-%EC%89%BD%EA%B2%8C-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0/" />
+    <link rel="canonical" href="https://dangen-effy.github.io/post/janus-%EC%86%8C%EA%B0%9C%EC%99%80-docker-%EA%B8%B0%EB%B0%98%EC%9C%BC%EB%A1%9C-%EC%89%BD%EA%B2%8C-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0/" /><link rel="shortcut icon" href="/favicon.ico" type="image/x-png" /><script type="application/ld+json">
+  {
+      "@context" : "http://schema.org",
+      "@type" : "BlogPosting",
+      "mainEntityOfPage": {
+           "@type": "WebPage",
+           "@id": "https:\/\/dangen-effy.github.io\/"
+      },
+      "articleSection" : "post",
+      "name" : "Janus 소개와 Docker 기반으로 쉽게 사용하기",
+      "headline" : "Janus 소개와 Docker 기반으로 쉽게 사용하기",
+      "description" : "도커를 이용한 Janus 실행해보기",
+      "inLanguage" : "en-US",
+      "author" : "Sohn Dangen",
+      "creator" : "Sohn Dangen",
+      "publisher": "Sohn Dangen",
+      "accountablePerson" : "Sohn Dangen",
+      "copyrightHolder" : "Sohn Dangen",
+      "copyrightYear" : "2020",
+      "datePublished": "2020-02-23 15:22:11 \x2b0900 KST",
+      "dateModified" : "2020-02-23 15:22:11 \x2b0900 KST",
+      "url" : "https:\/\/dangen-effy.github.io\/post\/janus-%EC%86%8C%EA%B0%9C%EC%99%80-docker-%EA%B8%B0%EB%B0%98%EC%9C%BC%EB%A1%9C-%EC%89%BD%EA%B2%8C-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0\/",
+      "keywords" : [ "Docker","WebRTC", ]
+  }
+</script>
+<title>Janus 소개와 Docker 기반으로 쉽게 사용하기 - 손당근 개발 블로그</title>
+    <meta property="og:title" content="Janus 소개와 Docker 기반으로 쉽게 사용하기 - 손당근 개발 블로그" />
+    <meta property="og:type" content="article" />
+    <meta name="description" content="도커를 이용한 Janus 실행해보기" />
+  
+    <link rel="stylesheet" href="/css/flexboxgrid-6.3.1.min.css" />
+    <link rel="stylesheet"
+      href="/css/github-markdown.min.css" />
+    <link rel="stylesheet" href="/css/highlight/tomorrow.min.css" />
+    <link rel="stylesheet" href="/css/index.css">
+    <link href="/index.xml" rel="alternate" type="application/rss+xml" title="손당근 개발 블로그">
+    
+    <link href="https://fonts.googleapis.com/css?family=Arvo|Permanent+Marker" rel="stylesheet">
+    
+    
+  
+    <script data-ad-client="ca-pub-8860756584846944" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-158927245-1"></script>
+    
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-158927245-1');
+    </script>
+  </head>
+  
+
+<body>
+  <article class="post " id="article">
+    <div class="row">
+      <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2 col-lg-6 col-lg-offset-3">
+        <div class="site-header">
+          
+<header>
+  <div class="signatures site-title">
+    <a href="/">🥕성공한 젊은이</a>
+  </div>
+</header>
+<div class="row end-xs">
+  
+  
+</div>
+<div class="header-line"></div>
+
+        </div>
+        <header class="post-header">
+          <h1 class="post-title">Janus 소개와 Docker 기반으로 쉽게 사용하기</h1>
+          
+          <div class="row post-desc">
+            <div class="col-xs-6">
+              
+              <time class="post-date" datetime="2020-02-23 15:22:11 KST">
+                23 Feb 2020
+              </time>
+              
+            </div>
+            <div class="col-xs-6">
+              
+              <div class="post-author">
+                <a target="_blank" href="https://dangen-effy.github.io/">@Sohn Dangen</a>
+              </div>
+              
+            </div>
+          </div>
+          
+        </header>
+
+        <div class="post-content markdown-body">
+          <p><a href="https://www.remotemonster.com/">리모트몬스터</a>의 백엔드 로직 중 일부는 Janus의 힘을 빌리고 있습니다. 이번 시간에는 Janus가 무엇인지 알아보고 설치와 데모 실행까지 다뤄보겠습니다.</p>
+<h2 id="janus가-뭘까">Janus가 뭘까?</h2>
+<p><a href="https://janus.conf.meetecho.com/">Janus</a>는 RTC 서비스 기술지원 및 컨설팅 전문회사 <a href="https://www.meetecho.com/en/">Meetcho</a>에서 만든 범용 WebRTC 서버입니다. 범용 서버인 만큼, 브라우저와 WebRTC 미디어 통신을 설정하고, 브라우저와 JSON 메시지를 교환하며, 브라우저와 연결된 서버측 애플리케이션 로직 간에 RTP/RTCP와 메시지를 전달하는 방법 외에는 어떠한 기능도 제공하지 않습니다.</p>
+<p>이 말인즉슨, 서버 사이드에서 특정 기능 및 애플리케이션을 구현해야합니다. 이를 Plugin이라고 부르며 예로는 Echo Test, Video Call 그리고 Audio Bridge 등의 애플리케이션을 구현 할 수 있습니다.</p>
+<h2 id="직접-구현해야하면-왜-사용하는거죠">직접 구현해야하면 왜 사용하는거죠?</h2>
+<p>Janus는 기본적으로 다수의 강력한 기본 플러그인을 제공하고 있습니다.</p>
+<ul>
+<li>
+<p>Echo Test</p>
+</li>
+<li>
+<p>Streaming</p>
+</li>
+<li>
+<p>Video Call</p>
+</li>
+<li>
+<p>SIP Gateway</p>
+</li>
+<li>
+<p>Video Room</p>
+</li>
+<li>
+<p>Audio Room 외 4개</p>
+</li>
+</ul>
+<p>직접 구현해야 한다는 말은, 만약 기본 플러그인 외에 특수한 기능이 필요하다면 직접 구현해 사용 가능하다는 맥락입니다. 이 자체를 장점으로 볼 수 있겠죠?</p>
+<h2 id="단점">단점</h2>
+<ol>
+<li>의존성</li>
+</ol>
+<p>Janus의 모든 기능을 포함해 빌드하기 위해서 20+ 가지의 <a href="https://github.com/meetecho/janus-gateway/#dependencies">라이브러리</a>를 설치해야합니다. 이 때문에 서비스를 시작하기까지 드는 비용이 큽니다. 초기 빌드 시간이 오래 걸리며, Containerize시 이미지의 사이즈가 상대적으로 무거운점 등 몇 가지 제약이 생깁니다.</p>
+<p>하지만 이를 극복할 방법은 있습니다. 여러분이 Janus에서 사용할 기능에 따라서 빌드 전에 필수로 설치해야하는 라이브러리가 달라집니다. 예를 들어 WebSocket이 필요 없다면 libwebsockets 은 설치할 필요가 없습니다.</p>
+<ol start="2">
+<li>문서 (국내)</li>
+</ol>
+<p>한글로 작성된 정보들이 부족합니다.</p>
+<p><img src="https://cdn-images-1.medium.com/max/2000/0*5dBZYk0_XxUj69cz.png" alt=""></p>
+<p>지금부터 Janus의 도커 이미지를 만들고 빌드 및 실행, 마지막으로 Video Room 데모 시연까지 진행하겠습니다. 자세한 빌드 스텝이 궁금하신 분은 <a href="https://github.com/meetecho/janus-gateway">janus-gateway</a> 깃헙 문서를 참조해주세요.</p>
+<h2 id="전제-조건">전제 조건</h2>
+<ul>
+<li>
+<p>Docker</p>
+</li>
+<li>
+<p>Chrome browser</p>
+</li>
+</ul>
+<p>먼저 소스코드를 받아주세요.</p>
+<pre><code>$ git clone [https://github.com/dangen-effy/docker-janus-webrtc-gateway](https://github.com/dangen-effy/docker-janus-webrtc-gateway)
+</code></pre>
+<p><a href="https://github.com/dangen-effy/docker-janus-webrtc-gateway">docker-janus-webrtc-gateway</a> 저장소는 번거로운 Janus 빌드를 손쉽게 Docker 기반으로 진행 할 수 있는 프로젝트입니다.</p>
+<p>Janus가 요구하는 라이브러리들을 설치할때 OS 종속적인 명령어들 때문에 골치 아픈 경우가 있습니다. (레드햇 계열의 yum, 데비안 계열의 apt-get) 심지어 OS에 따라 패키지명만 조금씩 다른 케이스도 있습니다.(libconfig-dlevel, libconfig-dev, libconfig)</p>
+<p>하지만 해당 프로젝트의 Dockerfile 은 Ubuntu 16 위에서 Janus가 잘 작동하도록 모든 빌드 스텝을 정의해두었기 때문에 걱정하지 마시고 사용하시면 됩니다. 😀</p>
+<p>이제 도커 이미지 빌드를 해주세요.</p>
+<pre><code>$ docker build -t janus .
+
+Step 1/15 : FROM ubuntu:16.04
+16.04: Pulling from library/ubuntu
+f7277927d38a: Pull complete 
+8d3eac894db4: Pull complete 
+Digest: sha256:97b54e5692c27072234ff958a7442dde4266af21e7b688e7fca5dc5acc8ed7d9
+Status: Downloaded newer image for ubuntu:16.04
+ ---&gt; 5e13f8dd4c1a
+...
+</code></pre>
+<p>컨테이너를 실행해주세요.</p>
+<pre><code>$ docker run -d -p 80:80 -p 8088:8088 -p 8188:8188 janus
+</code></pre>
+<p>다음은 포트가 담당하는 서비스입니다.</p>
+<ul>
+<li>
+<p>80: Web server</p>
+</li>
+<li>
+<p>8088: RESTful API</p>
+</li>
+<li>
+<p>8188: Websocket API</p>
+</li>
+</ul>
+<p>Janus 서버가 잘 실행됐는지 확인합니다.</p>
+<p><a href="http://127.0.0.1">http://127.0.0.1</a> 에 접속해주세요.</p>
+<p><img src="https://cdn-images-1.medium.com/max/4224/1*rlRzDTFHSGMwZIXxNA0rJg.png" alt=""></p>
+<p>👏 축하합니다. 성공적으로 Janus를 가동시켰습니다.</p>
+<p>이제 [Demos] — [Video Room] 메뉴로 이동합니다. 브라우저 탭을 여러개 열어 화상 채팅에 참여해보세요.</p>
+<p><img src="https://cdn-images-1.medium.com/max/4140/1*uPz0kTJn1l1zhNqVtB8zlw.png" alt="haha1, haha2, haha3 유저 세명이서 화상 채팅을 하는 모습입니다."><em>haha1, haha2, haha3 유저 세명이서 화상 채팅을 하는 모습입니다.</em></p>
+<h2 id="정리">정리</h2>
+<p>Janus를 이용하면 이처럼 개발 비용을 대폭 줄이고 WebRTC 기능을 빌려 컨퍼런스 콜 및 여러 플러그인들을 사용할수 있습니다. 이를 기반으로 사내 화상 회의 앱 부터 다양한 서비스를 만들수 있겠죠?</p>
+<p>다음 포스팅은 Janus의 아키텍처와 작동 방식에 대해서 작성할 예정입니다. 감사합니다.</p>
+
+        </div>
+
+        <div class="row middle-xs">
+          <div class="col-xs-12">
+            
+            <div class="post-category">
+              <a href="/categories/docker/">
+                Docker
+              </a>
+            </div>
+            
+            <div class="post-category">
+              <a href="/categories/webrtc/">
+                WebRTC
+              </a>
+            </div>
+            
+          </div>
+        </div>
+
+        
+        
+
+        
+        
+        <div style="height: 50px;"></div>
+        
+        <div class="post-comments">
+          <div id="disqus_thread"></div>
+<script>
+  window.addEventListener("load", () => {
+    (function() {
+      
+      var d = document,
+        s = d.createElement("script");
+      s.src = "https://sohn-dangen-blog.disqus.com/embed.js";
+      s.setAttribute("data-timestamp", +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  });
+</script>
+<noscript
+  >Please enable JavaScript to view the
+  <a href="https://disqus.com/?ref_noscript"
+    >comments powered by Disqus.</a
+  ></noscript
+>
+
+        </div>
+        
+        
+
+        <div class="site-footer">
+  
+  <div class="site-footer-item">
+    <a href="https://dangen-effy.github.io/about" target="_blank">Me</a>
+  </div>
+  
+  <div class="site-footer-item">
+    <a href="/index.xml" target="_blank">RSS</a>
+  </div>
+  
+  
+</div>
+
+      </div>
+    </div>
+  </article>
+
+  <script src="/js/highlight.pack.js"></script>
+
+
+<script>
+  hljs.initHighlightingOnLoad();
+  
+  
+  
+    
+    
+  
+</script>
+
+  
+
+</body>
+
+</html>

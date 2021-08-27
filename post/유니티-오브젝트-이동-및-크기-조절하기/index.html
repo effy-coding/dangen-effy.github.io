@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.87.0" />
+  
+    
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="dangen-effy" />
+    <meta property="og:url" content="https://dangen-effy.github.io/post/%EC%9C%A0%EB%8B%88%ED%8B%B0-%EC%98%A4%EB%B8%8C%EC%A0%9D%ED%8A%B8-%EC%9D%B4%EB%8F%99-%EB%B0%8F-%ED%81%AC%EA%B8%B0-%EC%A1%B0%EC%A0%88%ED%95%98%EA%B8%B0/" />
+    <link rel="canonical" href="https://dangen-effy.github.io/post/%EC%9C%A0%EB%8B%88%ED%8B%B0-%EC%98%A4%EB%B8%8C%EC%A0%9D%ED%8A%B8-%EC%9D%B4%EB%8F%99-%EB%B0%8F-%ED%81%AC%EA%B8%B0-%EC%A1%B0%EC%A0%88%ED%95%98%EA%B8%B0/" /><link rel="shortcut icon" href="/favicon.ico" type="image/x-png" /><script type="application/ld+json">
+  {
+      "@context" : "http://schema.org",
+      "@type" : "BlogPosting",
+      "mainEntityOfPage": {
+           "@type": "WebPage",
+           "@id": "https:\/\/dangen-effy.github.io\/"
+      },
+      "articleSection" : "post",
+      "name" : "유니티 오브젝트 이동, 회전 및 크기 조절하기",
+      "headline" : "유니티 오브젝트 이동, 회전 및 크기 조절하기",
+      "description" : "Transform 컴포넌트 이해하기",
+      "inLanguage" : "en-US",
+      "author" : "dangen-effy",
+      "creator" : "dangen-effy",
+      "publisher": "dangen-effy",
+      "accountablePerson" : "dangen-effy",
+      "copyrightHolder" : "dangen-effy",
+      "copyrightYear" : "2020",
+      "datePublished": "2020-11-21 02:26:26 \u002b0900 KST",
+      "dateModified" : "2020-11-21 02:26:26 \u002b0900 KST",
+      "url" : "https:\/\/dangen-effy.github.io\/post\/%EC%9C%A0%EB%8B%88%ED%8B%B0-%EC%98%A4%EB%B8%8C%EC%A0%9D%ED%8A%B8-%EC%9D%B4%EB%8F%99-%EB%B0%8F-%ED%81%AC%EA%B8%B0-%EC%A1%B0%EC%A0%88%ED%95%98%EA%B8%B0\/",
+      "keywords" : [ "Unity", ]
+  }
+</script>
+<title>유니티 오브젝트 이동, 회전 및 크기 조절하기 - 손당근 블로그</title>
+    <meta property="og:title" content="유니티 오브젝트 이동, 회전 및 크기 조절하기 - 손당근 블로그" />
+    <meta property="og:type" content="article" />
+    <meta name="description" content="Transform 컴포넌트 이해하기" />
+  
+    <link rel="stylesheet" href="/css/flexboxgrid-6.3.1.min.css" />
+    <link rel="stylesheet"
+      href="/css/github-markdown.min.css" />
+    <link rel="stylesheet" href="/css/highlight/tomorrow.min.css" />
+    <link rel="stylesheet" href="/css/index.css">
+    <link href="/index.xml" rel="alternate" type="application/rss+xml" title="손당근 블로그">
+    
+    <link href="https://fonts.googleapis.com/css?family=Arvo|Permanent+Marker" rel="stylesheet">
+    
+    
+  
+    <script data-ad-client="ca-pub-8860756584846944" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-158927245-1"></script>
+    
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-158927245-1');
+    </script>
+  </head>
+  
+
+<body>
+  <article class="post " id="article">
+    <div class="row">
+      <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2 col-lg-6 col-lg-offset-3">
+        <div class="site-header">
+          
+<header>
+  <div class="signatures site-title">
+    <a href="/">🥕 성공한 젊은이</a>
+  </div>
+</header>
+<div class="row end-xs">
+  
+  
+</div>
+<div class="header-line"></div>
+
+        </div>
+        <header class="post-header">
+          <h1 class="post-title">유니티 오브젝트 이동, 회전 및 크기 조절하기</h1>
+          
+          <div class="row post-desc">
+            <div class="col-xs-6">
+              
+              <time class="post-date" datetime="2020-11-21 02:26:26 KST">
+                21 Nov 2020
+              </time>
+              
+            </div>
+            <div class="col-xs-6">
+              
+              <div class="post-author">
+                <a target="_blank" href="https://dangen-effy.github.io/">@dangen-effy</a>
+              </div>
+              
+            </div>
+          </div>
+          
+        </header>
+
+        <div class="post-content markdown-body">
+          <h1 id="transform-컴포넌트를-다뤄보자-">Transform 컴포넌트를 다뤄보자 😜</h1>
+<img src="/images/unite2020.jpg" alt="Unity" width="350">
+<br/>
+<h2 id="이-글을-읽고-얻는-지식">이 글을 읽고 얻는 지식</h2>
+<ul>
+<li>유니티 오브젝트 크기, 회전 그리고 크기 조절하기</li>
+</ul>
+<p>유니티의 <strong>모든</strong> 게임 오브젝트는 위치, 회전율 그리고 크기를 가집니다. 이들은 모두 <code>Transform</code> 컴포넌트의 멤버 변수로 존재합니다. 그럼 간단한 실습을 진행해볼까요?</p>
+<h2 id="프로젝트-생성하기">프로젝트 생성하기</h2>
+<p>먼저 유니티 프로젝트를 생성해 주세요. 이름과 경로는 적절히 설정합시다.</p>
+<img src="/images/unity_transform_1.png" alt="Unity" width="650">
+<h2 id="게임-오브젝트-생성하기">게임 오브젝트 생성하기</h2>
+<p><code>Hierarchy</code> 뷰에서 우클릭 - [3D Object] - [Cube] 버튼을 클릭해 오브젝트를 월드에 생성해봅시다.</p>
+<img src="/images/unity_transform_2.png" alt="Unity" width="450">
+<h2 id="transform-컴포넌트">Transform 컴포넌트</h2>
+<p>앞서 위치, 회전율 그리고 크기는 모두 <code>Transform</code> 컴포넌트의 <strong>멤버 변수</strong> 라고 말씀드렸었죠? 방금 만든 Cube 를 클릭하고 <code>Inspector</code> 뷰를 잘 보면 <code>Transform</code> 컴포넌트가 존재하는 걸 확인할 수 있습니다.</p>
+<img src="/images/unity_transform_3.png" alt="Unity" width="350">
+<p>자세히 보면 값을 입력받는 필드들이 있죠?</p>
+<ul>
+<li>
+<p>Position: 위치</p>
+</li>
+<li>
+<p>Rotation: 회전율</p>
+</li>
+<li>
+<p>Scale: 크기</p>
+</li>
+</ul>
+<p>우리는 이제 이 세 필드에 값을 입력해서 오브젝트를 움직이고, 회전시킬 겁니다!</p>
+<h2 id="값-조절해보기">값 조절해보기</h2>
+<p>각 필드에 이런저런 값을 넣어보며 오브젝트가 어떻게 변하는지 여러분 눈으로 직접 확인해보세요.</p>
+<img src="/images/unity_transform_4.png" alt="Unity" width="350">
+<blockquote>
+<p>변화 전 큐브의 모습</p>
+</blockquote>
+<br/>
+<p>저는 위치를 오른쪽으로 이동하고 X 축으로 25도, Y 축으로 45도 그리고 Z 축으로 25도 회전시킨 뒤 크기를 키워봤습니다.</p>
+<img src="/images/unity_transform_5.png" alt="Unity" width="350">
+<blockquote>
+<p>변화 후 큐브의 모습</p>
+</blockquote>
+<h2 id="x-y-z-그게-뭔가요">X, Y, Z 그게 뭔가요</h2>
+<p>여러분도 눈치채셨겠지만 유니티는 <em>3차원</em>입니다. (놀랍게도 유니티에서 2D도 사실은 두 가지 축만 사용하는 3D입니다!) 따라서 세 가지 방향을 나타내는 X 축 Y 축 그리고 Z 축이 존재하는데요.</p>
+<img src="/images/xyz.png" alt="Unity" width="200">
+<ul>
+<li>
+<p>X: 좌, 우</p>
+</li>
+<li>
+<p>Y: 상, 하</p>
+</li>
+<li>
+<p>Z: 깊이</p>
+</li>
+</ul>
+<p>한 번 Cube 의 Position X 값을 조절해보세요. 카메라가 어느 각도를 보고 있냐에 따라 다르지만 보통은 좌, 우로 움직일 겁니다. 지금 바로 테스트해보세요! 확인이 끝나셨다면 나머지 Y 값과 Z 값을 조절해보세요. 어떠신가요?</p>
+
+        </div>
+
+        <div class="row middle-xs">
+          <div class="col-xs-12">
+            
+            <div class="post-category">
+              <a href="/categories/unity/">
+                Unity
+              </a>
+            </div>
+            
+          </div>
+        </div>
+
+        
+        
+
+<div class="releated-content">
+  <h3>Related Posts</h3>
+  <ul>
+    
+    <li><a href="/post/%EC%9C%A0%EB%8B%88%ED%8B%B0-for%EB%AC%B8-%EC%97%86%EC%9D%B4-%EA%B0%80%EC%9E%A5-%EA%B0%80%EA%B9%8C%EC%9A%B4-%EC%98%A4%EB%B8%8C%EC%A0%9D%ED%8A%B8-%EA%B5%AC%ED%95%98%EA%B8%B0/">유니티 for문 없이 가장 가까운 오브젝트 구하기</a></li>
+    
+  </ul>
+</div>
+
+        
+        
+        <div style="height: 50px;"></div>
+        
+        <div class="post-comments">
+          <div id="disqus_thread"></div>
+<script>
+  window.addEventListener("load", () => {
+    (function() {
+      
+      var d = document,
+        s = d.createElement("script");
+      s.src = "https://sohn-dangen-blog.disqus.com/embed.js";
+      s.setAttribute("data-timestamp", +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  });
+</script>
+<noscript
+  >Please enable JavaScript to view the
+  <a href="https://disqus.com/?ref_noscript"
+    >comments powered by Disqus.</a
+  ></noscript
+>
+
+        </div>
+        
+        
+
+        <div class="site-footer">
+  
+  <div class="site-footer-item">
+    <a href="https://dangen-effy.github.io/about" target="_blank">Me</a>
+  </div>
+  
+  <div class="site-footer-item">
+    <a href="/index.xml" target="_blank">RSS</a>
+  </div>
+  
+  
+</div>
+
+      </div>
+    </div>
+  </article>
+
+  <script src="/js/highlight.pack.js"></script>
+
+
+<script>
+  hljs.initHighlightingOnLoad();
+  
+  
+  
+    
+    
+  
+</script>
+
+  
+
+</body>
+
+</html>

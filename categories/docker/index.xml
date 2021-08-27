@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Docker on 손당근 블로그</title>
+    <link>https://dangen-effy.github.io/categories/docker/</link>
+    <description>Recent content in Docker on 손당근 블로그</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-kr</language>
+    <lastBuildDate>Thu, 19 Nov 2020 21:00:00 +0900</lastBuildDate><atom:link href="https://dangen-effy.github.io/categories/docker/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>가장 간단한 Dockerfile 작성 방법 🐋</title>
+      <link>https://dangen-effy.github.io/post/%EA%B0%80%EC%9E%A5-%EA%B0%84%EB%8B%A8%ED%95%9C-dockerfile-%EC%9E%91%EC%84%B1-%EB%B0%A9%EB%B2%95/</link>
+      <pubDate>Thu, 19 Nov 2020 21:00:00 +0900</pubDate>
+      
+      <guid>https://dangen-effy.github.io/post/%EA%B0%80%EC%9E%A5-%EA%B0%84%EB%8B%A8%ED%95%9C-dockerfile-%EC%9E%91%EC%84%B1-%EB%B0%A9%EB%B2%95/</guid>
+      <description>이 포스팅에서 다루는 내용   Dockerfile 작성 방법
+  FROM 명령어
+  RUN 명령어
+  도커 이미지 빌드
+  도커 컨테이너 실행
+   도커를 이용하면 애플리케이션을 언제나 동일한 환경에서 구동할 수 있습니다. 컨테이너가 어떤 환경 위에서 실행될지 선언해 주고 (예: CentOS, Ubuntu, &amp;hellip;) 그 위에 우리가 작성한 소스코드, 즉 애플리케이션을 구동하면 되니까요.
+Dockerfile 어떻게 작성할까? 도커파일은 명령어(Instruction)들의 조합으로 이루어집니다. 가장 흔하게 사용하는 명령어들부터 알아볼까요?</description>
+    </item>
+    
+    <item>
+      <title>Janus 소개와 Docker 기반으로 쉽게 사용하기 🐳</title>
+      <link>https://dangen-effy.github.io/post/janus-%EC%86%8C%EA%B0%9C%EC%99%80-docker-%EA%B8%B0%EB%B0%98%EC%9C%BC%EB%A1%9C-%EC%89%BD%EA%B2%8C-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0/</link>
+      <pubDate>Sun, 23 Feb 2020 15:22:11 +0900</pubDate>
+      
+      <guid>https://dangen-effy.github.io/post/janus-%EC%86%8C%EA%B0%9C%EC%99%80-docker-%EA%B8%B0%EB%B0%98%EC%9C%BC%EB%A1%9C-%EC%89%BD%EA%B2%8C-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0/</guid>
+      <description>리모트몬스터의 백엔드 로직 중 일부는 Janus의 힘을 빌리고 있습니다. 이번 시간에는 Janus가 무엇인지 알아보고 설치와 데모 실행까지 다뤄보겠습니다.
+Janus가 뭘까? Janus는 RTC 서비스 기술지원 및 컨설팅 전문회사 Meetcho에서 만든 범용 WebRTC 서버입니다. 범용 서버인 만큼, 브라우저와 WebRTC 미디어 통신을 설정하고, 브라우저와 JSON 메시지를 교환하며, 브라우저와 연결된 서버측 애플리케이션 로직 간에 RTP/RTCP와 메시지를 전달하는 방법 외에는 어떠한 기능도 제공하지 않습니다.
+이 말인즉슨, 서버 사이드에서 특정 기능 및 애플리케이션을 구현해야합니다. 이를 Plugin이라고 부르며 예로는 Echo Test, Video Call 그리고 Audio Bridge 등의 애플리케이션을 구현 할 수 있습니다.</description>
+    </item>
+    
+  </channel>
+</rss>

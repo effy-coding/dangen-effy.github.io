@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.68.3" />
+  
+    
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Sohn Dangen" />
+    <meta property="og:url" content="https://dangen-effy.github.io/post/statless-%EC%86%8C%EC%BC%93-%EC%84%9C%EB%B2%84-%EA%B5%AC%ED%98%84%ED%95%98%EA%B8%B0/" />
+    <link rel="canonical" href="https://dangen-effy.github.io/post/statless-%EC%86%8C%EC%BC%93-%EC%84%9C%EB%B2%84-%EA%B5%AC%ED%98%84%ED%95%98%EA%B8%B0/" /><link rel="shortcut icon" href="/favicon.ico" type="image/x-png" /><script type="application/ld+json">
+  {
+      "@context" : "http://schema.org",
+      "@type" : "BlogPosting",
+      "mainEntityOfPage": {
+           "@type": "WebPage",
+           "@id": "https:\/\/dangen-effy.github.io\/"
+      },
+      "articleSection" : "post",
+      "name" : "Statless 소켓 서버 구현하기",
+      "headline" : "Statless 소켓 서버 구현하기",
+      "description" : "무상태 소켓 서버 만들기",
+      "inLanguage" : "en-US",
+      "author" : "Sohn Dangen",
+      "creator" : "Sohn Dangen",
+      "publisher": "Sohn Dangen",
+      "accountablePerson" : "Sohn Dangen",
+      "copyrightHolder" : "Sohn Dangen",
+      "copyrightYear" : "2020",
+      "datePublished": "2020-02-23 15:25:14 \x2b0900 KST",
+      "dateModified" : "2020-02-23 15:25:14 \x2b0900 KST",
+      "url" : "https:\/\/dangen-effy.github.io\/post\/statless-%EC%86%8C%EC%BC%93-%EC%84%9C%EB%B2%84-%EA%B5%AC%ED%98%84%ED%95%98%EA%B8%B0\/",
+      "keywords" : [ "WebSocket","Stateless", ]
+  }
+</script>
+<title>Statless 소켓 서버 구현하기 - 손당근 개발 블로그</title>
+    <meta property="og:title" content="Statless 소켓 서버 구현하기 - 손당근 개발 블로그" />
+    <meta property="og:type" content="article" />
+    <meta name="description" content="무상태 소켓 서버 만들기" />
+  
+    <link rel="stylesheet" href="/css/flexboxgrid-6.3.1.min.css" />
+    <link rel="stylesheet"
+      href="/css/github-markdown.min.css" />
+    <link rel="stylesheet" href="/css/highlight/tomorrow.min.css" />
+    <link rel="stylesheet" href="/css/index.css">
+    <link href="/index.xml" rel="alternate" type="application/rss+xml" title="손당근 개발 블로그">
+    
+    <link href="https://fonts.googleapis.com/css?family=Arvo|Permanent+Marker" rel="stylesheet">
+    
+    
+  
+    <script data-ad-client="ca-pub-8860756584846944" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-158927245-1"></script>
+    
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-158927245-1');
+    </script>
+  </head>
+  
+
+<body>
+  <article class="post " id="article">
+    <div class="row">
+      <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2 col-lg-6 col-lg-offset-3">
+        <div class="site-header">
+          
+<header>
+  <div class="signatures site-title">
+    <a href="/">🥕성공한 젊은이</a>
+  </div>
+</header>
+<div class="row end-xs">
+  
+  
+</div>
+<div class="header-line"></div>
+
+        </div>
+        <header class="post-header">
+          <h1 class="post-title">Statless 소켓 서버 구현하기</h1>
+          
+          <div class="row post-desc">
+            <div class="col-xs-6">
+              
+              <time class="post-date" datetime="2020-02-23 15:25:14 KST">
+                23 Feb 2020
+              </time>
+              
+            </div>
+            <div class="col-xs-6">
+              
+              <div class="post-author">
+                <a target="_blank" href="https://dangen-effy.github.io/">@Sohn Dangen</a>
+              </div>
+              
+            </div>
+          </div>
+          
+        </header>
+
+        <div class="post-content markdown-body">
+          <p>애플리케이션을 무 상태로 구현하는 것은 매우 중요합니다. 그래야 언제든 확장 및 축소가 가능하기 때문이죠. 그러나 구조적으로 유 상태 애플리케이션이 되는 것들이 있습니다. 대표적인 사례가 보통 소켓 통신을 사용하는 WebRTC의 시그널링 서버입니다. 따라서 이를 무 상태 구조로 만들어 주는게 가장 큰 과제죠.</p>
+<p>소켓 서버가 유 상태인 이유는 보통 소켓은 사용자끼리 데이터를 주소 받을때 사용합니다. 즉 사용자A와 사용자B가 채팅 방에 접속해 대화를 나누는 시나리오가 이미 유 상태라는거죠. 이유는 간단합니다. 소켓 서버에 접속한 클라이언트 정보가 서버 프로세스의 메모리 영역에서 관리되고 있기 때문입니다.</p>
+<p>만약 사용자B가 실수로 채팅을 나가서 재 접속을 한다고 칩시다. 이때 로드밸런서가 최초 사용자A와 연결을 맺어준 서버로 밸런싱을 해준다는 보장이 없습니다. 따라서 재 접속시 언제나 사용자A와 통신 가능하도록 만들어줘야하죠.</p>
+<p>방법은 두가지입니다.</p>
+<ul>
+<li>
+<p>스티키 세션 (L4 네트워크 영역)</p>
+</li>
+<li>
+<p>백엔드 서비스에 저장 (L7 애플리케이션 영역)</p>
+</li>
+</ul>
+<p><strong>스티키 세션</strong>은 로드밸런서가 기존에 요청했던 정보를 기억해 다음 요청시 같은 서버로 밸런싱 해주는 기능입니다. 스티키 세션을 이용하면 애플리케이션의 코드 수정 없이 무 상태 애플리케이션을 구현 할 수 있는 장점이 있습니다.</p>
+<p>하지만 스티키 세션이 맺어진 서버가 닫히면 클라이언트의 요청은 실패합니다. 또한 요청을 균등하게 분배해야 하는 로드밸런서의 기능도 퇴화됩니다. 따라서 이는 가용성을 감소시키는 원인이 될 수 있습니다.</p>
+<p>자세한 내용은 <a href="https://stackoverflow.com/questions/1553645/pros-and-cons-of-sticky-session-session-affinity-load-blancing-strategy">Pros and Cons of Sticky Session / Session Affinity load blancing strategy?</a>를 참조해주세요.</p>
+<p><strong>백엔드 서비스</strong>에 저장하는 일은 Redis 같은 곳에 소켓의 상태를 저장합니다. 덕분에 각 서버 프로세스 메모리에 의존하는 일이 없어져 손 쉽게 무 상태로 소켓 서버를 만들어 줄 수 있습니다.</p>
+<p>그러나 애플리케이션이 의존하는 백엔드 서비스가 생기다 보니 Redis 같은 데이터 저장소의 가용성을 확보해야 하는 책임이 생깁니다.</p>
+<h3 id="관련-글">관련 글</h3>
+<ul>
+<li><a href="https://stackoverflow.com/questions/1553645/pros-and-cons-of-sticky-session-session-affinity-load-blancing-strategy">Pros and Cons of Sticky Session / Session Affinity load blancing strategy?</a></li>
+</ul>
+
+        </div>
+
+        <div class="row middle-xs">
+          <div class="col-xs-12">
+            
+            <div class="post-category">
+              <a href="/categories/websocket/">
+                WebSocket
+              </a>
+            </div>
+            
+            <div class="post-category">
+              <a href="/categories/socket.io/">
+                Socket.io
+              </a>
+            </div>
+            
+            <div class="post-category">
+              <a href="/categories/stateless/">
+                Stateless
+              </a>
+            </div>
+            
+            <div class="post-category">
+              <a href="/categories/redis/">
+                Redis
+              </a>
+            </div>
+            
+          </div>
+        </div>
+
+        
+        
+
+        
+        
+        <div style="height: 50px;"></div>
+        
+        <div class="post-comments">
+          <div id="disqus_thread"></div>
+<script>
+  window.addEventListener("load", () => {
+    (function() {
+      
+      var d = document,
+        s = d.createElement("script");
+      s.src = "https://sohn-dangen-blog.disqus.com/embed.js";
+      s.setAttribute("data-timestamp", +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  });
+</script>
+<noscript
+  >Please enable JavaScript to view the
+  <a href="https://disqus.com/?ref_noscript"
+    >comments powered by Disqus.</a
+  ></noscript
+>
+
+        </div>
+        
+        
+
+        <div class="site-footer">
+  
+  <div class="site-footer-item">
+    <a href="https://dangen-effy.github.io/about" target="_blank">Me</a>
+  </div>
+  
+  <div class="site-footer-item">
+    <a href="/index.xml" target="_blank">RSS</a>
+  </div>
+  
+  
+</div>
+
+      </div>
+    </div>
+  </article>
+
+  <script src="/js/highlight.pack.js"></script>
+
+
+<script>
+  hljs.initHighlightingOnLoad();
+  
+  
+  
+    
+    
+  
+</script>
+
+  
+
+</body>
+
+</html>

@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.68.3" />
+  
+    
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Sohn Dangen" />
+    <meta property="og:url" content="https://dangen-effy.github.io/post/modern-web-app-the-hard-way/" />
+    <link rel="canonical" href="https://dangen-effy.github.io/post/modern-web-app-the-hard-way/" /><link rel="shortcut icon" href="/favicon.ico" type="image/x-png" /><script type="application/ld+json">
+  {
+      "@context" : "http://schema.org",
+      "@type" : "BlogPosting",
+      "mainEntityOfPage": {
+           "@type": "WebPage",
+           "@id": "https:\/\/dangen-effy.github.io\/"
+      },
+      "articleSection" : "post",
+      "name" : "Modern Web-App The Hard Way",
+      "headline" : "Modern Web-App The Hard Way",
+      "description" : "모던한 웹 애플리케이션을 만드는 방법",
+      "inLanguage" : "en-US",
+      "author" : "Sohn Dangen",
+      "creator" : "Sohn Dangen",
+      "publisher": "Sohn Dangen",
+      "accountablePerson" : "Sohn Dangen",
+      "copyrightHolder" : "Sohn Dangen",
+      "copyrightYear" : "2020",
+      "datePublished": "2020-02-23 15:23:57 \x2b0900 KST",
+      "dateModified" : "2020-02-23 15:23:57 \x2b0900 KST",
+      "url" : "https:\/\/dangen-effy.github.io\/post\/modern-web-app-the-hard-way\/",
+      "keywords" : [ "CI\/CD","The Twelve-Factor Application", ]
+  }
+</script>
+<title>Modern Web-App The Hard Way - 손당근 개발 블로그</title>
+    <meta property="og:title" content="Modern Web-App The Hard Way - 손당근 개발 블로그" />
+    <meta property="og:type" content="article" />
+    <meta name="description" content="모던한 웹 애플리케이션을 만드는 방법" />
+  
+    <link rel="stylesheet" href="/css/flexboxgrid-6.3.1.min.css" />
+    <link rel="stylesheet"
+      href="/css/github-markdown.min.css" />
+    <link rel="stylesheet" href="/css/highlight/tomorrow.min.css" />
+    <link rel="stylesheet" href="/css/index.css">
+    <link href="/index.xml" rel="alternate" type="application/rss+xml" title="손당근 개발 블로그">
+    
+    <link href="https://fonts.googleapis.com/css?family=Arvo|Permanent+Marker" rel="stylesheet">
+    
+    
+  
+    <script data-ad-client="ca-pub-8860756584846944" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-158927245-1"></script>
+    
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-158927245-1');
+    </script>
+  </head>
+  
+
+<body>
+  <article class="post " id="article">
+    <div class="row">
+      <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2 col-lg-6 col-lg-offset-3">
+        <div class="site-header">
+          
+<header>
+  <div class="signatures site-title">
+    <a href="/">🥕성공한 젊은이</a>
+  </div>
+</header>
+<div class="row end-xs">
+  
+  
+</div>
+<div class="header-line"></div>
+
+        </div>
+        <header class="post-header">
+          <h1 class="post-title">Modern Web-App The Hard Way</h1>
+          
+          <div class="row post-desc">
+            <div class="col-xs-6">
+              
+              <time class="post-date" datetime="2020-02-23 15:23:57 KST">
+                23 Feb 2020
+              </time>
+              
+            </div>
+            <div class="col-xs-6">
+              
+              <div class="post-author">
+                <a target="_blank" href="https://dangen-effy.github.io/">@Sohn Dangen</a>
+              </div>
+              
+            </div>
+          </div>
+          
+        </header>
+
+        <div class="post-content markdown-body">
+          <p><a href="https://github.com/dangen-effy/modern-web-app-the-hard-way">깃헙에서 보기</a></p>
+<p>이 문서는 당신이 어떤 그룹에 속해 있던지 IT 업계에서 실용적으로 활용 가능한 사례를 소개할것이다. 취업을 앞둔 학생은 학교에서 배우던 지식 외에 실무에서 요구하는 지식을 엿볼수 있을것이며 주니어 개발자라면 점점 성장하는 기업에 속해 있지 않은 이상 몸소 경험하기 어려운 주제들을 배울수있을것이다. 만약 당신이 스타트업의 대표 혹은 이를 준비하고 있다면 이 문서를 한 번 쯤 읽어보는 것을 추천한다.</p>
+<h3 id="들어가며">들어가며</h3>
+<p>이 문서는 비즈니스 요구 사항에 따른 자연스러운 개발 설계의 변화를 소개한다. 다만 나는 이 설계가 최대한 많은 독자들에게 유용한 정보이길 바라기 때문에 특정 비즈니스 로직에 한정지어 진행해 나갈 수 없다. 예를 들어 택시 예약 시스템, 의류 쇼핑몰 혹은 게임 스트리밍 서비스 같은 국지적인 기능들을 담아 소개 할 수 없다는 뜻이다.</p>
+<p>우리는 앞으로 날씨를 알려주는 서비스를 만들것이다. 어플리케이션의 기능(로직)은 당신의 기대에 못미칠 정도로 간단해 보일 수 있다. 내가 당부하고 싶은 점은 간단한 Node.js 앱에서 어떤 문제점을 마주하며 초기에 구상한 설계가 비즈니스가 확장해가며 어떤 문제가 되어 돌아오는지, 이를 극복해가며 서비스가 어떻게 성장해 가는지 초점을 두고 읽었으면 한다. (서비스의 로직이 어떻든 중요하지 않다!)</p>
+<p>또한 시나리오를 진행하며 우리가 자주 범하는 실수와 초래한 결과를 보여주기 위해 의도적으로 <strong>멍청한 설계와 접근</strong>을 사용한다. 글을 읽으며 이 부분을 미리 발견하고 불행한 결과를 예측하는 것도 소소한 재미다.</p>
+<p>글쓴이: Sohn Dangen</p>
+<h3 id="본문">본문</h3>
+<p>당신은 날씨 정보를 알려주는 서비스를 개발할 계획이다. 가장 먼저 해야 할 일은 일단 만들어 보는것이다.</p>
+<ol>
+<li>프로토타입 만들기</li>
+</ol>
+<p>먼저 로컬 환경에서 <a href="http://localhost">http://localhost</a> 로 요청시 Hello World 를 응답 하도록 만들어 몸을 좀 풀자.</p>
+<p><img src="https://cdn-images-1.medium.com/max/2000/1*S_qOp26RlETl-6djt3uq9Q.png" alt=""></p>
+<p>좋다. 이제 날씨 API 를 활용해 실제 데이터를 보여주려고 한다. 구글에 *weather api *라고 검색후 가장 상단에 노출된 곳을 사용한다. <a href="https://openweathermap.org/">https://openweathermap.org</a> 라는 곳인데 이미 다른곳에서 많이 사용하는것으로 보아 안정성은 입증된것으로 보인다. 일단 무료 API 를 이용해 연동 해보자. <a href="http://localhost/weather">http://localhost/weather</a> 로 요청시 날씨 API 를 이용해 결과를 받아오고 이를 다시 사용자에게 보내주자.</p>
+<p><img src="https://cdn-images-1.medium.com/max/2000/1*l5PpP3m4c77OuaJ0jIJXBQ.png" alt=""></p>
+<p>날씨 정보를 사용자에게 보여주는 기능까지 모두 만들었다.</p>
+<ol start="2">
+<li>테스트 코드 작성하기</li>
+</ol>
+<p>다음날 오후 날씨 정보를 못 받아 온다는 버그 레포트를 받았다. 무슨일이지? 커밋 로그를 보니 옆에 있는 개발자가 날씨 API 를 요청하는 URL 을https://openweathermap123.org 로 잘못 수정했다. 개발팀은 회의 끝에 기능상 문제가 없는지 테스트 코드를 작성하고 모든 테스트가 통과하면 코드 저장소에 푸쉬하기로 약속했다. 나는 테스트 케이스가 <a href="http://localhost/weather">http://localhost/weather</a> 로 요청을 날리고 이 결과를 체크하도록 만들었다. 별거 아닌 간단한 테스트 케이스지만, 앞서 발생한 이슈는 확실히 사전에 방지해준다.</p>
+<p>다음날 재무팀에서 API 사용료가 10 배 이상 증가했다고 한다. 심지어 아직 제품을 출시 하기 전인데도 말이다! 이유는 간단했다. 우리 팀의 모든 개발자가 매일 같이 테스트 코드를 돌리면서 날씨 API 를 사용했기 때문이다.</p>
+<p><strong>우리가 무엇을, 어디까지 테스트 해야하는지 범위를 명확히 해야한다. 테스트 케이스의 성공 유무는 항상 일관되어야 한다. 쉽게 말해 점심 시간 전에 통과하던 테스트 케이스는 오후에도 통과해야한다.</strong></p>
+<p>우리의 테스트 케이스가 <a href="https://openweathermap123.org">https://openweathermap.org</a> 로 요청하고 날씨 정보가 잘 오는지 체크하는것은 다음과 같은 이유로 큰 의미가 없다.</p>
+<p><a href="https://openweathermap123.org">openweathermap</a> 은 우리의 통제권 밖이다. 날씨 API 서버가 마비되면 테스트는 실패한다. 이는 우리가 작성한 코드에 이상이 있는게 아니며, 만약에 날씨 API 서버가 죽었다는 사실을 안다고 해도 <strong>어플리케이션의 테스트 코드</strong>를 이용해 이 사실을 감지하는 것은 아무런 의미가 없으며 이를 확인 해야 할 어떠한 의무도 없다. 외부 서비스의 상태를 확인하는것은 어플리케이션의 테스트 코드가 아닌 모니터링 서버가 해야 하는 일이다.</p>
+<p>그러면 테스트 코드를 어떻게 수정해야 할까? 방법은 간단하다. 테스트 코드를 실행 시킬때 속임수 날씨 API 정보를 <a href="https://openweathermap123.org">openweathermap</a> 로 요청한 결과와 동일하게 반환하는 서버를 띄우면 된다. 이를 Mock Server 혹은 Fake Server 라고 부른다.</p>
+<p><img src="https://cdn-images-1.medium.com/max/2000/1*LXzUN9-m9D7t4W463bxiow.png" alt=""></p>
+<p>테스트 코드를 수정한 덕분에 날씨 API 의 사용량은 원래대로 돌아왔다.</p>
+<ol start="3">
+<li>API 버전 관리</li>
+</ol>
+<p>다음날 QA 팀이 iOS v1.3 에서 날씨 정보가 안나온다고 했다. 실패한 테스트 케이스도 없는데 무슨일이지? 이유는 오늘 오전에 날씨 정보를 사용자에게 반환하는 JSON 에 필드가 하나 추가되었는데 이를 서버에 적용시켜 배포했더니 iOS v1.3 이하 버전에서는 예상치 못한 필드가 들어오니 에러를 발생시킨다고 한다. 모바일 클라이언트의 코드는 이미 앱스토어에 배포했으며 수정 불가능하므로 서버 코드를 바꿔주는 수밖에 없다.</p>
+<p>이처럼 하위 호환성을 고려하기 위해서 RESTful API URL 은 /api/v1/weather 처럼 버전으로 시작해야한다. 우리 개발팀은 회의 끝에 오늘 오전에 수정한 코드는 롤백해 iOS v1.3 이하의 모바일 클라이언트를 기존처럼 대응해 날씨를 못 받아오는 문제를 해결하고, iOS v1.3 상위 버전은 <a href="http://localhost/api/v1/weather">http://localhost/api/v1/weather</a> 로 처럼 버전 정보를 붙인 URL 에 날씨 정보를 요청하도록 만들기로 결정했다.</p>
+<p><img src="https://cdn-images-1.medium.com/max/2000/1*glRD8nHWP5gBOXO8GykIRA.png" alt=""></p>
+<ol start="4">
+<li>Dev, Prod 환경 마련하기</li>
+</ol>
+<p>QA 팀에서 내가 맥북에 켜둔 Node.js 서버로 접근해 테스트 하는 일은 매우 끔찍하다. 이를 해결하려면 클라우드 서버에 dev 환경을 구성해야한다. 먼저 weather.com 도메인을 구입하고 QA 팀이 활용하므로 요청이 적을것으로 예상하고 클라우드 환경에 2 vCPU, 2 GiB 를 가진 값싼 인스턴스를 하나 생성해 그 안에 Node.js 앱을 켜두었다. dev 환경에서까지 날씨 API 를 사용할 필요는 없으므로 앞서 배운 Mock Server 기법을 활용하기로 했다.</p>
+<p>앞으로 dev 환경은<a href="http://dev.weather.com/api/v1/weather">http://dev.weather.com/api/v1/weather</a> 로 접근 가능하다.</p>
+<p><img src="https://cdn-images-1.medium.com/max/3508/1*xZE_6nr6lSx0t7QIB-peKQ.png" alt=""></p>
+<p>이제 우리의 서비스는 사용자들이 사용하기에 무리가 없어보인다. dev 환경도 구성했으며 테스트 코드로 버그 발생을 예방하고 API 버전 관리로 하위 호환성도 마련했다. 우리는 회의 끝에 prod 환경을 구성하고 제품을 출시하기로 했다. 사업 초기에는 사용자가 적을 것으로 예상해 2 vCPU 와 2 GiB 의 메모리를 가진 인스턴스를 생성하고 ssh 를 통해 Node.js 앱을 배포했다.</p>
+<p>이제 사용자들은 <a href="http://weather.com/api/v1/weather">http://weather.com/api/v1/weather</a> 로 접근해 우리의 서비스를 이용 할 수있다.</p>
+<p><img src="https://cdn-images-1.medium.com/max/3648/1*pLufVi-Q1Hu3jtgceyg7GQ.png" alt=""></p>
+<ol start="5">
+<li>로깅</li>
+</ol>
+<p>우리가 성공적으로 제품을 출시한 덕분에 서비스 이용률이 점차 늘고 있었다. 판단 근거는 사용자가 날씨 정보를 요청하면 console.log(&lsquo;New request!') 라는 로그를 찍도록 만들어 두었는데 터미널에서 이 로그가 올라오는 속도가 점점 빨라졌기 때문이다.</p>
+<p><img src="https://cdn-images-1.medium.com/max/2296/1*3Nry530FQuJBUyZav_IB8g.png" alt=""></p>
+<p>이 방식도 의미가 있지만 정확한 서비스 이용률을 측정하기에 한계가 있다. 로그가 터미널에 출력 후에 디스크에 저장되지 않기 때문에 특정 시점에 무슨 일이 있었는지 파악 하기 어렵고, 전 월 대비 얼마나 이용률이 증가 했는지, 오늘 접속자는 몇 명인지 혹은 에러가 발생률이 얼마나 증감 했는지 등 지표로서 활용 불가능하다. 우리 개발팀은 회의 끝에 로깅 방식을 개선하기로 했다.</p>
+<p>우리는 서비스의 과거 상태를 기록하고 열람 가능하도록 로그를 출력하는것과 동시에 디스크에 저장하기로 했다. 또한 Elasticsearch 를 도입해 효율적으로 로그 데이터를 가져오기로 했다.</p>
+<p><img src="https://cdn-images-1.medium.com/max/2528/1*gDd1AeYHI4HVOMqg2CpCkw.png" alt=""></p>
+<ol start="6">
+<li>지속적 통합 (CI)</li>
+</ol>
+<p>다음날 갑자기 서비스에 문제가 생겼다. 코드를 이전 커밋으로 돌려 장애는 금방 대응했지만 우리는 포스트 모템을 진행해 원인을 파악하고 앞으로 이와 같은 일이 재발하는 것을 차단하려고 한다.</p>
+<p>이유는 간단했다. 누군가 코드에 오타를 포함시켜 커밋을 하고 테스트 코드를 돌리는 것을 까먹고 코드 저장소에 푸쉬했으며 이 코드가 prod 환경에 배포됐다. 근본적인 이유는 테스트 코드 돌리는 일을 실수로 빼먹은것. 개발팀은 테스트 절차를 사람 손으로 직접 진행하기보다, CI 환경에서 자동적으로 테스트 절차를 밟도록 만들기로 했다.</p>
+<p>CI 를 도입하면 두가지 이점을 얻을수 있다.</p>
+<p>첫째는 사람이 실수할 가능성이 있는 일들은 자동화를 시켜 실수를 방지해 감염된 코드가 코드 저장소에 올라가는 것을 차단한다.</p>
+<p>둘째는 반복적으로 해야하는 일을 자동화 시킴으로써 개발자가 오로지 개발에 집중 할 수 있는 환경을 마련할수 있다. 이는 개발팀의 전체적인 퍼포먼스에 영향을 주므로 매우 중요하다.</p>
+<p>추가로 CI 환경에서 테스트 결과를 Slack 으로 알림이 오도록 만들어 문제 인지 시간을 최소화 하기로했다.</p>
+<p><img src="https://cdn-images-1.medium.com/max/2000/1*za70lalb3k6eiIl-aTMD4A.png" alt=""></p>
+<ol start="7">
+<li>지속적 배포 (CD)</li>
+</ol>
+<p>작성중입니다.</p>
+
+        </div>
+
+        <div class="row middle-xs">
+          <div class="col-xs-12">
+            
+            <div class="post-category">
+              <a href="/categories/ci/cd/">
+                CI/CD
+              </a>
+            </div>
+            
+            <div class="post-category">
+              <a href="/categories/the%20twelve-factor%20application/">
+                The Twelve-Factor Application
+              </a>
+            </div>
+            
+            <div class="post-category">
+              <a href="/categories/stateless/">
+                Stateless
+              </a>
+            </div>
+            
+            <div class="post-category">
+              <a href="/categories/best%20practices/">
+                Best Practices
+              </a>
+            </div>
+            
+          </div>
+        </div>
+
+        
+        
+
+        
+        
+        <div style="height: 50px;"></div>
+        
+        <div class="post-comments">
+          <div id="disqus_thread"></div>
+<script>
+  window.addEventListener("load", () => {
+    (function() {
+      
+      var d = document,
+        s = d.createElement("script");
+      s.src = "https://sohn-dangen-blog.disqus.com/embed.js";
+      s.setAttribute("data-timestamp", +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  });
+</script>
+<noscript
+  >Please enable JavaScript to view the
+  <a href="https://disqus.com/?ref_noscript"
+    >comments powered by Disqus.</a
+  ></noscript
+>
+
+        </div>
+        
+        
+
+        <div class="site-footer">
+  
+  <div class="site-footer-item">
+    <a href="https://dangen-effy.github.io/about" target="_blank">Me</a>
+  </div>
+  
+  <div class="site-footer-item">
+    <a href="/index.xml" target="_blank">RSS</a>
+  </div>
+  
+  
+</div>
+
+      </div>
+    </div>
+  </article>
+
+  <script src="/js/highlight.pack.js"></script>
+
+
+<script>
+  hljs.initHighlightingOnLoad();
+  
+  
+  
+    
+    
+  
+</script>
+
+  
+
+</body>
+
+</html>

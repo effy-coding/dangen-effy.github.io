@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>손당근 개발 블로그</title>
+    <link>https://dangen-effy.github.io/</link>
+    <description>Recent content on 손당근 개발 블로그</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-kr</language>
+    <lastBuildDate>Thu, 01 Jan 1970 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://dangen-effy.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>About</title>
+      <link>https://dangen-effy.github.io/about/</link>
+      <pubDate>Thu, 01 Jan 1970 00:00:00 +0000</pubDate>
+      
+      <guid>https://dangen-effy.github.io/about/</guid>
+      <description>😇
+Youtube
+GitHub
+Twitter
+LinkedIn</description>
+    </item>
+    
+    <item>
+      <title>엘라스틱서치 클러스터 직접 구성하기 - 로그가 재산이다</title>
+      <link>https://dangen-effy.github.io/post/%EC%97%98%EB%9D%BC%EC%8A%A4%ED%8B%B1%EC%84%9C%EC%B9%98-%ED%81%B4%EB%9F%AC%EC%8A%A4%ED%84%B0-%EC%A7%81%EC%A0%91-%EA%B5%AC%EC%84%B1%ED%95%98%EA%B8%B0-%EB%A1%9C%EA%B7%B8%EA%B0%80-%EC%9E%AC%EC%82%B0%EC%9D%B4%EB%8B%A4/</link>
+      <pubDate>Sun, 23 Feb 2020 15:27:02 +0900</pubDate>
+      
+      <guid>https://dangen-effy.github.io/post/%EC%97%98%EB%9D%BC%EC%8A%A4%ED%8B%B1%EC%84%9C%EC%B9%98-%ED%81%B4%EB%9F%AC%EC%8A%A4%ED%84%B0-%EC%A7%81%EC%A0%91-%EA%B5%AC%EC%84%B1%ED%95%98%EA%B8%B0-%EB%A1%9C%EA%B7%B8%EA%B0%80-%EC%9E%AC%EC%82%B0%EC%9D%B4%EB%8B%A4/</guid>
+      <description>리모트몬스터는 다양한 형태의 로그를 수집해 점수를 매겨 통화/방송의 품질을 측정합니다. 📈
+예를 들어, 어느 구간에서 패킷 손실이 많이 일어나는지 혹은 어떤 네트워크 상황에서 실패율이 높은지 등 다양한 지표를 모델링하고 개선 점을 도출합니다. 즉 로그의 손실은 저희의 비즈니스 인사이트의 손실에 직결됩니다. 때문에 어떻게든 엘라스틱서치 같은 로그 저장소의 안정성을 확보 하는데 목숨을 걸어야 합니다. 서비스가 안정적인 상태에서 남는건 로그 밖에 없거든요 :)
+이제부터 제가 리모트몬스터에서 싱글 노드로 운영하던 엘라스틱서치를 멀티 클러스터 형태로 전환시킨 경험을 토대로 클러스터 구축 방법을 간략히 풀어 나가려고 합니다.</description>
+    </item>
+    
+    <item>
+      <title>가난한 스타트업의 WebRTC 비용절감 위한 고군분투기</title>
+      <link>https://dangen-effy.github.io/post/%EA%B0%80%EB%82%9C%ED%95%9C-%EC%8A%A4%ED%83%80%ED%8A%B8%EC%97%85%EC%9D%98-webrtc-%EB%B9%84%EC%9A%A9%EC%A0%88%EA%B0%90-%EC%9C%84%ED%95%9C-%EA%B3%A0%EA%B5%B0%EB%B6%84%ED%88%AC%EA%B8%B0/</link>
+      <pubDate>Sun, 23 Feb 2020 15:26:27 +0900</pubDate>
+      
+      <guid>https://dangen-effy.github.io/post/%EA%B0%80%EB%82%9C%ED%95%9C-%EC%8A%A4%ED%83%80%ED%8A%B8%EC%97%85%EC%9D%98-webrtc-%EB%B9%84%EC%9A%A9%EC%A0%88%EA%B0%90-%EC%9C%84%ED%95%9C-%EA%B3%A0%EA%B5%B0%EB%B6%84%ED%88%AC%EA%B8%B0/</guid>
+      <description>라이트세일에 꾸역꾸역 오토 스케일링 적용하기 리모트몬스터는 백엔드팀의 역할을 딱 한 단어로 좁혀서 이야기합니다. “비용 절감” (가용성 확보는 기본이고요) 💰💰💰
+비용 절감은 여러 가지 경로로 실현 가능한데,
+첫째로 자동화를 통한 인건비 절감입니다. 사람이 해야 할 일을 자동화 시켜놓으면 팀이 굴러가기 위한 노동력이 줄어듭니다. 실제로 리모트몬스터의 백엔드팀은 단 두명(혹은 3명)입니다. 자동화 없이 두 명이서 백엔드 자원을 관리 한다고 상상만 해도 끔찍합니다.
+둘째로 자동화를 통한 인프라 비용 절감입니다. 보통 On-demand 형태로 요금을 부과하는 클라우드 자원은 적게 쓸수록 돈을 적게 냅니다.</description>
+    </item>
+    
+    <item>
+      <title>(보안) AWS 루트 계정 버리기 — 모범 사례 따라하기</title>
+      <link>https://dangen-effy.github.io/post/%EB%B3%B4%EC%95%88-aws-%EB%A3%A8%ED%8A%B8-%EA%B3%84%EC%A0%95-%EB%B2%84%EB%A6%AC%EA%B8%B0-%EB%AA%A8%EB%B2%94-%EC%82%AC%EB%A1%80-%EB%94%B0%EB%9D%BC%ED%95%98%EA%B8%B0/</link>
+      <pubDate>Sun, 23 Feb 2020 15:25:42 +0900</pubDate>
+      
+      <guid>https://dangen-effy.github.io/post/%EB%B3%B4%EC%95%88-aws-%EB%A3%A8%ED%8A%B8-%EA%B3%84%EC%A0%95-%EB%B2%84%EB%A6%AC%EA%B8%B0-%EB%AA%A8%EB%B2%94-%EC%82%AC%EB%A1%80-%EB%94%B0%EB%9D%BC%ED%95%98%EA%B8%B0/</guid>
+      <description>대부분 스타트업의 자료는 클라우드에 저장됩니다. 루트 계정을 사용하면서요. 🔑
+AWS로 예를 들겠습니다. 어떤 스타트업이 탄생하고 AWS 계정을 생성합니다. 신용 카드를 등록하고 자원을 생성합니다. 시간이 지나서 구성원이 증가하고 모두가 여전히 루트 계정으로 AWS에 접근합니다. 누군가 현 상태의 문제점을 지적하지만 귀찮다는 이유 + 현재는 서비스가 작으니 보안보다 개발에 집중해야 한다는 핑계로 여전히 루트 계정을 사용합니다.
+기업에서 가장 막대한 피해를 보는 해킹 사례가 뭘 까요? 바로 클라우드 계정 탈취입니다. 지금부터 제가 AWS IAM 운영 모범 사례 기반으로 리모트몬스터를 루트 계정으로부터 자유롭게 만든 경험에 대해 얘기하겠습니다.</description>
+    </item>
+    
+    <item>
+      <title>Statless 소켓 서버 구현하기</title>
+      <link>https://dangen-effy.github.io/post/statless-%EC%86%8C%EC%BC%93-%EC%84%9C%EB%B2%84-%EA%B5%AC%ED%98%84%ED%95%98%EA%B8%B0/</link>
+      <pubDate>Sun, 23 Feb 2020 15:25:14 +0900</pubDate>
+      
+      <guid>https://dangen-effy.github.io/post/statless-%EC%86%8C%EC%BC%93-%EC%84%9C%EB%B2%84-%EA%B5%AC%ED%98%84%ED%95%98%EA%B8%B0/</guid>
+      <description>애플리케이션을 무 상태로 구현하는 것은 매우 중요합니다. 그래야 언제든 확장 및 축소가 가능하기 때문이죠. 그러나 구조적으로 유 상태 애플리케이션이 되는 것들이 있습니다. 대표적인 사례가 보통 소켓 통신을 사용하는 WebRTC의 시그널링 서버입니다. 따라서 이를 무 상태 구조로 만들어 주는게 가장 큰 과제죠.
+소켓 서버가 유 상태인 이유는 보통 소켓은 사용자끼리 데이터를 주소 받을때 사용합니다. 즉 사용자A와 사용자B가 채팅 방에 접속해 대화를 나누는 시나리오가 이미 유 상태라는거죠. 이유는 간단합니다. 소켓 서버에 접속한 클라이언트 정보가 서버 프로세스의 메모리 영역에서 관리되고 있기 때문입니다.</description>
+    </item>
+    
+    <item>
+      <title>클라우드 네이티브 인프라스트럭처란?</title>
+      <link>https://dangen-effy.github.io/post/%ED%81%B4%EB%9D%BC%EC%9A%B0%EB%93%9C-%EB%84%A4%EC%9D%B4%ED%8B%B0%EB%B8%8C-%EC%9D%B8%ED%94%84%EB%9D%BC%EC%8A%A4%ED%8A%B8%EB%9F%AD%EC%B2%98%EB%9E%80/</link>
+      <pubDate>Sun, 23 Feb 2020 15:24:35 +0900</pubDate>
+      
+      <guid>https://dangen-effy.github.io/post/%ED%81%B4%EB%9D%BC%EC%9A%B0%EB%93%9C-%EB%84%A4%EC%9D%B4%ED%8B%B0%EB%B8%8C-%EC%9D%B8%ED%94%84%EB%9D%BC%EC%8A%A4%ED%8A%B8%EB%9F%AD%EC%B2%98%EB%9E%80/</guid>
+      <description>클라우드 네이티브의 정의 클라우드 네이티브 컴퓨팅 재단(CNCF)에서 다음과 같이 공식적으로 정의하고 있습니다.
+ 클라우드-네이티브 기반 기술을 통해 조직은 퍼블릭, 프라이빗 및 하이브리드 클라우드와 같은 현대적이고 동적인 환경에서 확장 가능한 애플리케이션을 구축하고 실행할 수 있습니다. 컨테이너, 서비스 메시, 마이크로 서비스, 불변형 인프라 및 선언형 API가 이러한 접근 방식을 예시하고 있습니다. 이러한 기술을 통해 탄력성, 관리 및 관찰이 가능한 느슨하게 결합된 시스템을 사용할 수 있습니다. 강력한 자동화와 결합되어 엔지니어는 최소의 노력으로 영향을 많이 미치는 변화를 자주 예측 가능하게 되었습니다.</description>
+    </item>
+    
+    <item>
+      <title>Modern Web-App The Hard Way</title>
+      <link>https://dangen-effy.github.io/post/modern-web-app-the-hard-way/</link>
+      <pubDate>Sun, 23 Feb 2020 15:23:57 +0900</pubDate>
+      
+      <guid>https://dangen-effy.github.io/post/modern-web-app-the-hard-way/</guid>
+      <description>깃헙에서 보기
+이 문서는 당신이 어떤 그룹에 속해 있던지 IT 업계에서 실용적으로 활용 가능한 사례를 소개할것이다. 취업을 앞둔 학생은 학교에서 배우던 지식 외에 실무에서 요구하는 지식을 엿볼수 있을것이며 주니어 개발자라면 점점 성장하는 기업에 속해 있지 않은 이상 몸소 경험하기 어려운 주제들을 배울수있을것이다. 만약 당신이 스타트업의 대표 혹은 이를 준비하고 있다면 이 문서를 한 번 쯤 읽어보는 것을 추천한다.
+들어가며 이 문서는 비즈니스 요구 사항에 따른 자연스러운 개발 설계의 변화를 소개한다. 다만 나는 이 설계가 최대한 많은 독자들에게 유용한 정보이길 바라기 때문에 특정 비즈니스 로직에 한정지어 진행해 나갈 수 없다.</description>
+    </item>
+    
+    <item>
+      <title>Janus 소개와 Docker 기반으로 쉽게 사용하기</title>
+      <link>https://dangen-effy.github.io/post/janus-%EC%86%8C%EA%B0%9C%EC%99%80-docker-%EA%B8%B0%EB%B0%98%EC%9C%BC%EB%A1%9C-%EC%89%BD%EA%B2%8C-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0/</link>
+      <pubDate>Sun, 23 Feb 2020 15:22:11 +0900</pubDate>
+      
+      <guid>https://dangen-effy.github.io/post/janus-%EC%86%8C%EA%B0%9C%EC%99%80-docker-%EA%B8%B0%EB%B0%98%EC%9C%BC%EB%A1%9C-%EC%89%BD%EA%B2%8C-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0/</guid>
+      <description>리모트몬스터의 백엔드 로직 중 일부는 Janus의 힘을 빌리고 있습니다. 이번 시간에는 Janus가 무엇인지 알아보고 설치와 데모 실행까지 다뤄보겠습니다.
+Janus가 뭘까? Janus는 RTC 서비스 기술지원 및 컨설팅 전문회사 Meetcho에서 만든 범용 WebRTC 서버입니다. 범용 서버인 만큼, 브라우저와 WebRTC 미디어 통신을 설정하고, 브라우저와 JSON 메시지를 교환하며, 브라우저와 연결된 서버측 애플리케이션 로직 간에 RTP/RTCP와 메시지를 전달하는 방법 외에는 어떠한 기능도 제공하지 않습니다.
+이 말인즉슨, 서버 사이드에서 특정 기능 및 애플리케이션을 구현해야합니다. 이를 Plugin이라고 부르며 예로는 Echo Test, Video Call 그리고 Audio Bridge 등의 애플리케이션을 구현 할 수 있습니다.</description>
+    </item>
+    
+    <item>
+      <title>맥북 포맷 후 자바스크립트 개발 환경 세팅하기</title>
+      <link>https://dangen-effy.github.io/post/%EB%A7%A5%EB%B6%81-%ED%8F%AC%EB%A7%B7-%ED%9B%84-%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EA%B0%9C%EB%B0%9C-%ED%99%98%EA%B2%BD-%EC%84%B8%ED%8C%85%ED%95%98%EA%B8%B0/</link>
+      <pubDate>Sun, 23 Feb 2020 15:18:53 +0900</pubDate>
+      
+      <guid>https://dangen-effy.github.io/post/%EB%A7%A5%EB%B6%81-%ED%8F%AC%EB%A7%B7-%ED%9B%84-%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EA%B0%9C%EB%B0%9C-%ED%99%98%EA%B2%BD-%EC%84%B8%ED%8C%85%ED%95%98%EA%B8%B0/</guid>
+      <description>노트북 포맷을 할때마다 기존에 개발하던 환경과 동일하게 설정해줘야 마음이 편하다.
+시작하기   포맷 후 첫 부팅
+  Dock 기본 앱 모두 제거
+  Dock 크기 최소화
+  Dock — ‘최근에 사용한 응용 프로그램 보기’ 체크 해제
+  트랙패드 클릭 강도 ‘세게’로 바꾸기
+  트랙패드 ‘스크롤 방향: 자연스럽게’ 체크 해제
+  ‘메뉴 막대에서 Bluetooth 표시’ 체크
+  Chrome 설치 및 구글 계정 Sync</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>LINQ on 손당근 개발 블로그</title>
+    <link>https://dangen-effy.github.io/categories/linq/</link>
+    <description>Recent content in LINQ on 손당근 개발 블로그</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-kr</language>
+    <lastBuildDate>Sun, 18 Oct 2020 17:13:52 +0900</lastBuildDate>
+    
+	<atom:link href="https://dangen-effy.github.io/categories/linq/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>유니티 for문 없이 가장 가까운 오브젝트 구하기</title>
+      <link>https://dangen-effy.github.io/post/%EC%9C%A0%EB%8B%88%ED%8B%B0-for%EB%AC%B8-%EC%97%86%EC%9D%B4-%EA%B0%80%EC%9E%A5-%EA%B0%80%EA%B9%8C%EC%9A%B4-%EC%98%A4%EB%B8%8C%EC%A0%9D%ED%8A%B8-%EA%B5%AC%ED%95%98%EA%B8%B0/</link>
+      <pubDate>Sun, 18 Oct 2020 17:13:52 +0900</pubDate>
+      
+      <guid>https://dangen-effy.github.io/post/%EC%9C%A0%EB%8B%88%ED%8B%B0-for%EB%AC%B8-%EC%97%86%EC%9D%B4-%EA%B0%80%EC%9E%A5-%EA%B0%80%EA%B9%8C%EC%9A%B4-%EC%98%A4%EB%B8%8C%EC%A0%9D%ED%8A%B8-%EA%B5%AC%ED%95%98%EA%B8%B0/</guid>
+      <description>유니티에서 가장 가까운 오브젝트를 구하는 일은 비일비재합니다. &amp;ldquo;unity find nearest gameobject&amp;rdquo; 라는 키워드로 구글링 해보면 정말 많은 예시 코드들이 있는데요, 대부분 for loop 를 이용한 장황한 코드들입니다. 🤦‍♂️
+LINQ 하지만 C# 은 LINQ 로 강력하고 풍부한 열거형 메소드를 지원합니다. 이 LINQ 의 편리한 메소드들을 조합하면 for loop 을 이용한 장황한 코드 없이 간결하게 문제를 해결할 수 있습니다. 😊
+가장 가까운 오브젝트 찾기 private GameObject FindNearestObjectByTag(string tag) { // 탐색할 오브젝트 목록을 List 로 저장합니다.</description>
+    </item>
+    
+  </channel>
+</rss>

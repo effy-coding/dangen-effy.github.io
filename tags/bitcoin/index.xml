@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Bitcoin on 손당근 블로그</title>
+    <link>https://dangen-effy.github.io/tags/bitcoin/</link>
+    <description>Recent content in Bitcoin on 손당근 블로그</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-kr</language>
+    <lastBuildDate>Fri, 27 Aug 2021 13:25:40 +0900</lastBuildDate><atom:link href="https://dangen-effy.github.io/tags/bitcoin/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>퇴사하고 비트코인 코드 까보고 있는 나, 정상인가요?</title>
+      <link>https://dangen-effy.github.io/post/%ED%87%B4%EC%82%AC%ED%95%98%EA%B3%A0-%EB%B9%84%ED%8A%B8%EC%BD%94%EC%9D%B8-%EC%BD%94%EB%93%9C-%EA%B9%8C%EB%B3%B4%EA%B3%A0-%EC%9E%88%EB%8A%94-%EB%82%98-%EC%A0%95%EC%83%81%EC%9D%B8%EA%B0%80%EC%9A%94/</link>
+      <pubDate>Fri, 27 Aug 2021 13:25:40 +0900</pubDate>
+      
+      <guid>https://dangen-effy.github.io/post/%ED%87%B4%EC%82%AC%ED%95%98%EA%B3%A0-%EB%B9%84%ED%8A%B8%EC%BD%94%EC%9D%B8-%EC%BD%94%EB%93%9C-%EA%B9%8C%EB%B3%B4%EA%B3%A0-%EC%9E%88%EB%8A%94-%EB%82%98-%EC%A0%95%EC%83%81%EC%9D%B8%EA%B0%80%EC%9A%94/</guid>
+      <description>개발자 생활을 중단하고 백수 생활 4개월째, 원하는 가격까지 비트코인이 내려오지 않아서 트레이딩도 잠시 쉬고 있었다. 할 짓이 없어 오랜만에 코드 좀 볼겸 재밌는 일 하나 하기로 했다.
+과연 블로그나 각종 매체에서 말하는 비트코인 반감기, 채굴 보상에 관한 정보는 사실일까? 실제로 코드가 그렇게 작성되어 있을까?
+ 비트코인 반감기 및 보상에 대해 알려진 정보들
+  최초 보상은 50 BTC 였다
+  반감기는 210,000 블록이 생성될때마다 온다
+  등등&amp;hellip;</description>
+    </item>
+    
+  </channel>
+</rss>

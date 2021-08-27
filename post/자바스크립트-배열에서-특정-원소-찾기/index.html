@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.87.0" />
+  
+    
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="dangen-effy" />
+    <meta property="og:url" content="https://dangen-effy.github.io/post/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EB%B0%B0%EC%97%B4%EC%97%90%EC%84%9C-%ED%8A%B9%EC%A0%95-%EC%9B%90%EC%86%8C-%EC%B0%BE%EA%B8%B0/" />
+    <link rel="canonical" href="https://dangen-effy.github.io/post/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EB%B0%B0%EC%97%B4%EC%97%90%EC%84%9C-%ED%8A%B9%EC%A0%95-%EC%9B%90%EC%86%8C-%EC%B0%BE%EA%B8%B0/" /><link rel="shortcut icon" href="/favicon.ico" type="image/x-png" /><script type="application/ld+json">
+  {
+      "@context" : "http://schema.org",
+      "@type" : "BlogPosting",
+      "mainEntityOfPage": {
+           "@type": "WebPage",
+           "@id": "https:\/\/dangen-effy.github.io\/"
+      },
+      "articleSection" : "post",
+      "name" : "자바스크립트 배열에서 특정 원소 찾는 방법에 대해 알아보자",
+      "headline" : "자바스크립트 배열에서 특정 원소 찾는 방법에 대해 알아보자",
+      "description" : "아직도 for 문 쓰시나요?",
+      "inLanguage" : "en-US",
+      "author" : "dangen-effy",
+      "creator" : "dangen-effy",
+      "publisher": "dangen-effy",
+      "accountablePerson" : "dangen-effy",
+      "copyrightHolder" : "dangen-effy",
+      "copyrightYear" : "2020",
+      "datePublished": "2020-11-16 23:30:00 \u002b0900 KST",
+      "dateModified" : "2020-11-16 23:30:00 \u002b0900 KST",
+      "url" : "https:\/\/dangen-effy.github.io\/post\/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EB%B0%B0%EC%97%B4%EC%97%90%EC%84%9C-%ED%8A%B9%EC%A0%95-%EC%9B%90%EC%86%8C-%EC%B0%BE%EA%B8%B0\/",
+      "keywords" : [ "JavaScript", ]
+  }
+</script>
+<title>자바스크립트 배열에서 특정 원소 찾는 방법에 대해 알아보자 - 손당근 블로그</title>
+    <meta property="og:title" content="자바스크립트 배열에서 특정 원소 찾는 방법에 대해 알아보자 - 손당근 블로그" />
+    <meta property="og:type" content="article" />
+    <meta name="description" content="아직도 for 문 쓰시나요?" />
+  
+    <link rel="stylesheet" href="/css/flexboxgrid-6.3.1.min.css" />
+    <link rel="stylesheet"
+      href="/css/github-markdown.min.css" />
+    <link rel="stylesheet" href="/css/highlight/tomorrow.min.css" />
+    <link rel="stylesheet" href="/css/index.css">
+    <link href="/index.xml" rel="alternate" type="application/rss+xml" title="손당근 블로그">
+    
+    <link href="https://fonts.googleapis.com/css?family=Arvo|Permanent+Marker" rel="stylesheet">
+    
+    
+  
+    <script data-ad-client="ca-pub-8860756584846944" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-158927245-1"></script>
+    
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-158927245-1');
+    </script>
+  </head>
+  
+
+<body>
+  <article class="post " id="article">
+    <div class="row">
+      <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2 col-lg-6 col-lg-offset-3">
+        <div class="site-header">
+          
+<header>
+  <div class="signatures site-title">
+    <a href="/">🥕 성공한 젊은이</a>
+  </div>
+</header>
+<div class="row end-xs">
+  
+  
+</div>
+<div class="header-line"></div>
+
+        </div>
+        <header class="post-header">
+          <h1 class="post-title">자바스크립트 배열에서 특정 원소 찾는 방법에 대해 알아보자</h1>
+          
+          <div class="row post-desc">
+            <div class="col-xs-6">
+              
+              <time class="post-date" datetime="2020-11-16 23:30:00 KST">
+                16 Nov 2020
+              </time>
+              
+            </div>
+            <div class="col-xs-6">
+              
+              <div class="post-author">
+                <a target="_blank" href="https://dangen-effy.github.io/">@dangen-effy</a>
+              </div>
+              
+            </div>
+          </div>
+          
+        </header>
+
+        <div class="post-content markdown-body">
+          <img src="/images/javascript_logo.png" alt="JavaScript" width="100" height="100">
+<br/>
+<p>배열을 순회하면서 특정 원소를 찾는 일은 매우 흔합니다. 어떤 방법들이 있을까요?</p>
+<h1 id="for-문-이용하기">for 문 이용하기</h1>
+<p>가장 먼저 떠오르는 방법은 for 문을 사용해 index 로 순차 접근하는 방법이 있습니다.</p>
+<pre><code>const array = [1, 2, 3, 4]
+const toFind = 4
+
+for (let i = 0; i &lt; array.length; i++) {
+  if (array[i] === toFind) {
+    console.log('찾았다!')
+    break
+  }
+}
+</code></pre><p>하지만 이 방법은 코드가 다소 장황하며 <code>i</code> 라는 상태를 변조하는 게 마음에 안 듭니다.</p>
+<p>더 간단하고 의도가 드러나는 방식은 없을까요? 😥</p>
+<h1 id="열거형-메소드-이용하기">열거형 메소드 이용하기</h1>
+<p>자바스크립트에 내장된 Array 메소드를 사용하면 손쉽게 읽기 좋은 코드를 작성할 수 있습니다.</p>
+<h2 id="arrayprototypefind">Array.prototype.find</h2>
+<blockquote>
+<p>find 메소드는 주어진 판별 함수를 만족하는 첫 번째 요소의 값을 반환합니다. 그런 요소가 없다면 undefined를 반환합니다.</p>
+</blockquote>
+<pre><code>const array = [1, 2, 3, 4]
+const toFind = 4
+
+const found = array.find(toFind) // -&gt; 4
+</code></pre><h2 id="arrayprototypeindexof">Array.prototype.indexOf</h2>
+<p>만약 찾은 원소의 위치를 알고 싶으면 어떡할까요? 바로 indexOf 메소드를 사용하면 됩니다.</p>
+<blockquote>
+<p>indexOf 메소드는 배열에서 지정된 요소를 찾을 수 있는 첫 번째 인덱스를 반환하고 존재하지 않으면 -1을 반환합니다.</p>
+</blockquote>
+<pre><code>const array = ['A', 'B', 'C']
+const toFind = 'B'
+
+const index = array.indexOf(toFind) // -&gt; 1
+</code></pre><h2 id="arrayprototypeincludes">Array.prototype.includes</h2>
+<p>마지막으로 원소를 가지고 있는지 없는지만 판별하고 싶다면? true 혹은 false 를 반환하는 includes 메소드가 있습니다.</p>
+<blockquote>
+<p>includes 메서드는 배열이 특정 요소를 포함하고 있는지 판별합니다.</p>
+</blockquote>
+<pre><code>const array = ['A', 'B', 'C']
+const toFind = 'Z'
+
+const found = array.includes(toFind) // -&gt; false
+</code></pre><h2 id="성능">성능</h2>
+<p>위에서 소개한 열거형 메소드 모두 내부적으로 for 문을 사용하겠죠? 거기에 추가적인 기능이 더해져 가장 처음 소개한 일반적인 for 문보다 일반적으로 수행 속도가 느립니다. 때문에 성능이 중요한 작업을 수행해야 할 때는 for 문을 사용하세요!</p>
+<h2 id="더-알아보기">더 알아보기</h2>
+<ul>
+<li><a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/find">https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/find</a></li>
+<li><a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf">https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf</a></li>
+</ul>
+
+        </div>
+
+        <div class="row middle-xs">
+          <div class="col-xs-12">
+            
+            <div class="post-category">
+              <a href="/categories/javascript/">
+                JavaScript
+              </a>
+            </div>
+            
+          </div>
+        </div>
+
+        
+        
+
+<div class="releated-content">
+  <h3>Related Posts</h3>
+  <ul>
+    
+    <li><a href="/post/%EC%97%98%EB%A6%AD%EC%84%9C%EC%99%80-%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%BD%94%EB%93%9C%EB%A5%BC-%EB%B9%A0%EB%A5%B4%EA%B2%8C-%EB%B9%84%EA%B5%90%ED%95%B4%EB%B3%B4%EC%9E%90/">엘릭서와 자바스크립트 코드를 빠르게 비교해보자</a></li>
+    
+    <li><a href="/post/%EB%A7%A5%EB%B6%81-%ED%8F%AC%EB%A7%B7-%ED%9B%84-%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EA%B0%9C%EB%B0%9C-%ED%99%98%EA%B2%BD-%EC%84%B8%ED%8C%85%ED%95%98%EA%B8%B0/">맥북 포맷 후 자바스크립트 개발 환경 세팅하기</a></li>
+    
+  </ul>
+</div>
+
+        
+        
+        <div style="height: 50px;"></div>
+        
+        <div class="post-comments">
+          <div id="disqus_thread"></div>
+<script>
+  window.addEventListener("load", () => {
+    (function() {
+      
+      var d = document,
+        s = d.createElement("script");
+      s.src = "https://sohn-dangen-blog.disqus.com/embed.js";
+      s.setAttribute("data-timestamp", +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  });
+</script>
+<noscript
+  >Please enable JavaScript to view the
+  <a href="https://disqus.com/?ref_noscript"
+    >comments powered by Disqus.</a
+  ></noscript
+>
+
+        </div>
+        
+        
+
+        <div class="site-footer">
+  
+  <div class="site-footer-item">
+    <a href="https://dangen-effy.github.io/about" target="_blank">Me</a>
+  </div>
+  
+  <div class="site-footer-item">
+    <a href="/index.xml" target="_blank">RSS</a>
+  </div>
+  
+  
+</div>
+
+      </div>
+    </div>
+  </article>
+
+  <script src="/js/highlight.pack.js"></script>
+
+
+<script>
+  hljs.initHighlightingOnLoad();
+  
+  
+  
+    
+    
+  
+</script>
+
+  
+
+</body>
+
+</html>

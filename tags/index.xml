@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on 손당근 블로그</title>
+    <link>https://dangen-effy.github.io/tags/</link>
+    <description>Recent content in Tags on 손당근 블로그</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-kr</language>
+    <lastBuildDate>Fri, 27 Aug 2021 13:25:40 +0900</lastBuildDate><atom:link href="https://dangen-effy.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Bitcoin</title>
+      <link>https://dangen-effy.github.io/tags/bitcoin/</link>
+      <pubDate>Fri, 27 Aug 2021 13:25:40 +0900</pubDate>
+      
+      <guid>https://dangen-effy.github.io/tags/bitcoin/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>AdMob</title>
+      <link>https://dangen-effy.github.io/tags/admob/</link>
+      <pubDate>Tue, 24 Nov 2020 00:00:00 +0900</pubDate>
+      
+      <guid>https://dangen-effy.github.io/tags/admob/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Unity</title>
+      <link>https://dangen-effy.github.io/tags/unity/</link>
+      <pubDate>Tue, 24 Nov 2020 00:00:00 +0900</pubDate>
+      
+      <guid>https://dangen-effy.github.io/tags/unity/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Docker</title>
+      <link>https://dangen-effy.github.io/tags/docker/</link>
+      <pubDate>Thu, 19 Nov 2020 21:00:00 +0900</pubDate>
+      
+      <guid>https://dangen-effy.github.io/tags/docker/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Dockerfile</title>
+      <link>https://dangen-effy.github.io/tags/dockerfile/</link>
+      <pubDate>Thu, 19 Nov 2020 21:00:00 +0900</pubDate>
+      
+      <guid>https://dangen-effy.github.io/tags/dockerfile/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>JavaScript</title>
+      <link>https://dangen-effy.github.io/tags/javascript/</link>
+      <pubDate>Mon, 16 Nov 2020 23:30:00 +0900</pubDate>
+      
+      <guid>https://dangen-effy.github.io/tags/javascript/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Elixir</title>
+      <link>https://dangen-effy.github.io/tags/elixir/</link>
+      <pubDate>Fri, 23 Oct 2020 19:51:24 +0900</pubDate>
+      
+      <guid>https://dangen-effy.github.io/tags/elixir/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>LINQ</title>
+      <link>https://dangen-effy.github.io/tags/linq/</link>
+      <pubDate>Sun, 18 Oct 2020 17:13:52 +0900</pubDate>
+      
+      <guid>https://dangen-effy.github.io/tags/linq/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Cloud_Native</title>
+      <link>https://dangen-effy.github.io/tags/cloud_native/</link>
+      <pubDate>Sat, 05 Sep 2020 17:34:18 +0900</pubDate>
+      
+      <guid>https://dangen-effy.github.io/tags/cloud_native/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Kubernetes</title>
+      <link>https://dangen-effy.github.io/tags/kubernetes/</link>
+      <pubDate>Sat, 05 Sep 2020 17:34:18 +0900</pubDate>
+      
+      <guid>https://dangen-effy.github.io/tags/kubernetes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>The_Twelve-Factor_Application</title>
+      <link>https://dangen-effy.github.io/tags/the_twelve-factor_application/</link>
+      <pubDate>Sat, 05 Sep 2020 17:34:18 +0900</pubDate>
+      
+      <guid>https://dangen-effy.github.io/tags/the_twelve-factor_application/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Company</title>
+      <link>https://dangen-effy.github.io/tags/company/</link>
+      <pubDate>Sat, 07 Mar 2020 17:01:18 +0900</pubDate>
+      
+      <guid>https://dangen-effy.github.io/tags/company/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Remote_Job</title>
+      <link>https://dangen-effy.github.io/tags/remote_job/</link>
+      <pubDate>Sat, 07 Mar 2020 17:01:18 +0900</pubDate>
+      
+      <guid>https://dangen-effy.github.io/tags/remote_job/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Career</title>
+      <link>https://dangen-effy.github.io/tags/career/</link>
+      <pubDate>Sat, 07 Mar 2020 14:47:17 +0900</pubDate>
+      
+      <guid>https://dangen-effy.github.io/tags/career/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Job</title>
+      <link>https://dangen-effy.github.io/tags/job/</link>
+      <pubDate>Sat, 07 Mar 2020 14:47:17 +0900</pubDate>
+      
+      <guid>https://dangen-effy.github.io/tags/job/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>AWS</title>
+      <link>https://dangen-effy.github.io/tags/aws/</link>
+      <pubDate>Sun, 23 Feb 2020 15:26:27 +0900</pubDate>
+      
+      <guid>https://dangen-effy.github.io/tags/aws/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>DevOps</title>
+      <link>https://dangen-effy.github.io/tags/devops/</link>
+      <pubDate>Sun, 23 Feb 2020 15:26:27 +0900</pubDate>
+      
+      <guid>https://dangen-effy.github.io/tags/devops/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Lightsail</title>
+      <link>https://dangen-effy.github.io/tags/lightsail/</link>
+      <pubDate>Sun, 23 Feb 2020 15:26:27 +0900</pubDate>
+      
+      <guid>https://dangen-effy.github.io/tags/lightsail/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>MFA</title>
+      <link>https://dangen-effy.github.io/tags/mfa/</link>
+      <pubDate>Sun, 23 Feb 2020 15:25:42 +0900</pubDate>
+      
+      <guid>https://dangen-effy.github.io/tags/mfa/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Security</title>
+      <link>https://dangen-effy.github.io/tags/security/</link>
+      <pubDate>Sun, 23 Feb 2020 15:25:42 +0900</pubDate>
+      
+      <guid>https://dangen-effy.github.io/tags/security/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Stateless</title>
+      <link>https://dangen-effy.github.io/tags/stateless/</link>
+      <pubDate>Sun, 23 Feb 2020 15:25:14 +0900</pubDate>
+      
+      <guid>https://dangen-effy.github.io/tags/stateless/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>WebSocket</title>
+      <link>https://dangen-effy.github.io/tags/websocket/</link>
+      <pubDate>Sun, 23 Feb 2020 15:25:14 +0900</pubDate>
+      
+      <guid>https://dangen-effy.github.io/tags/websocket/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>WebRTC</title>
+      <link>https://dangen-effy.github.io/tags/webrtc/</link>
+      <pubDate>Sun, 23 Feb 2020 15:22:11 +0900</pubDate>
+      
+      <guid>https://dangen-effy.github.io/tags/webrtc/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>IDE</title>
+      <link>https://dangen-effy.github.io/tags/ide/</link>
+      <pubDate>Sun, 23 Feb 2020 15:18:53 +0900</pubDate>
+      
+      <guid>https://dangen-effy.github.io/tags/ide/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Macbook</title>
+      <link>https://dangen-effy.github.io/tags/macbook/</link>
+      <pubDate>Sun, 23 Feb 2020 15:18:53 +0900</pubDate>
+      
+      <guid>https://dangen-effy.github.io/tags/macbook/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

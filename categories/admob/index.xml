@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>AdMob on 손당근 블로그</title>
+    <link>https://dangen-effy.github.io/categories/admob/</link>
+    <description>Recent content in AdMob on 손당근 블로그</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-kr</language>
+    <lastBuildDate>Tue, 24 Nov 2020 00:00:00 +0900</lastBuildDate><atom:link href="https://dangen-effy.github.io/categories/admob/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>앱 수익화 - 유니티 구글 애드몹 광고 넣는 법 💰</title>
+      <link>https://dangen-effy.github.io/post/%EC%95%B1-%EC%88%98%EC%9D%B5%ED%99%94-%EC%9C%A0%EB%8B%88%ED%8B%B0-%EA%B5%AC%EA%B8%80-%EC%95%A0%EB%93%9C%EB%AA%B9-%EA%B4%91%EA%B3%A0-%EB%84%A3%EB%8A%94-%EB%B2%95/</link>
+      <pubDate>Tue, 24 Nov 2020 00:00:00 +0900</pubDate>
+      
+      <guid>https://dangen-effy.github.io/post/%EC%95%B1-%EC%88%98%EC%9D%B5%ED%99%94-%EC%9C%A0%EB%8B%88%ED%8B%B0-%EA%B5%AC%EA%B8%80-%EC%95%A0%EB%93%9C%EB%AA%B9-%EA%B4%91%EA%B3%A0-%EB%84%A3%EB%8A%94-%EB%B2%95/</guid>
+      <description>이 글을 읽고 얻는 지식  유니티에서 애드몹 광고 띄우는 방법   앱을 만들었으면 수익화를 해야겠죠? 다행히 유니티와 애드몹 연동은 아주 쉽습니다.
+선행 조건  애드몹 계정 생성 및 로그인  애드몹 플러그인 설치하기 애드몹은 구글에서 만든 서비스기 때문에 유니티에 기본 장착되어있지 않습니다. 때문에 유니티 패키지 파일을 실행해 여러분의 프로젝트에 애드몹 플러그인을 임포트 해야합니다.
+링크를 클릭해 패키지 파일을 다운로드 하세요.
+ Assets 섹션을 보시면 *.unitypackage 확장자 명을 가진 파일이 있을겁니다.</description>
+    </item>
+    
+  </channel>
+</rss>

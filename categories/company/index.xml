@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Company on 손당근 블로그</title>
+    <link>https://dangen-effy.github.io/categories/company/</link>
+    <description>Recent content in Company on 손당근 블로그</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-kr</language>
+    <lastBuildDate>Sat, 07 Mar 2020 17:01:18 +0900</lastBuildDate><atom:link href="https://dangen-effy.github.io/categories/company/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>코로나 사태와 원격 근무로 느낀 점 😂</title>
+      <link>https://dangen-effy.github.io/post/%EC%BD%94%EB%A1%9C%EB%82%98-%EC%82%AC%ED%83%9C%EC%99%80-%EC%9B%90%EA%B2%A9-%EA%B7%BC%EB%AC%B4%EB%A1%9C-%EB%8A%90%EB%82%80-%EC%A0%90/</link>
+      <pubDate>Sat, 07 Mar 2020 17:01:18 +0900</pubDate>
+      
+      <guid>https://dangen-effy.github.io/post/%EC%BD%94%EB%A1%9C%EB%82%98-%EC%82%AC%ED%83%9C%EC%99%80-%EC%9B%90%EA%B2%A9-%EA%B7%BC%EB%AC%B4%EB%A1%9C-%EB%8A%90%EB%82%80-%EC%A0%90/</guid>
+      <description>깃랩이라는 기업형 소스 관리 도구를 파는 회사가 있습니다. 개발자 분들은 당연히 들어보셨을거에요. 이 회사가 재밌는 점이 67 개국에 있는 1,221 명의 직원이 완전 원격 근무를 한다는 거에요. ✌️
+이게 어떻게 가능 할까요? 일하는 방식을 정리한 문서가 있는데요. 무려 3,000 페이지에 달합니다. 이 문서를 Handbook 이라고 부릅니다. 깃랩이 이 녀석을 어떻게 정의 했는지 한번 살펴보죠.
+The GitLab team handbook is the central repository for how we run the company. Printed, it consists of over 3,000 pages of text.</description>
+    </item>
+    
+  </channel>
+</rss>

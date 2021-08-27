@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.68.3" />
+  
+    
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Sohn Dangen" />
+    <meta property="og:url" content="https://dangen-effy.github.io/post/%EB%A7%A5%EB%B6%81-%ED%8F%AC%EB%A7%B7-%ED%9B%84-%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EA%B0%9C%EB%B0%9C-%ED%99%98%EA%B2%BD-%EC%84%B8%ED%8C%85%ED%95%98%EA%B8%B0/" />
+    <link rel="canonical" href="https://dangen-effy.github.io/post/%EB%A7%A5%EB%B6%81-%ED%8F%AC%EB%A7%B7-%ED%9B%84-%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EA%B0%9C%EB%B0%9C-%ED%99%98%EA%B2%BD-%EC%84%B8%ED%8C%85%ED%95%98%EA%B8%B0/" /><link rel="shortcut icon" href="/favicon.ico" type="image/x-png" /><script type="application/ld+json">
+  {
+      "@context" : "http://schema.org",
+      "@type" : "BlogPosting",
+      "mainEntityOfPage": {
+           "@type": "WebPage",
+           "@id": "https:\/\/dangen-effy.github.io\/"
+      },
+      "articleSection" : "post",
+      "name" : "맥북 포맷 후 자바스크립트 개발 환경 세팅하기",
+      "headline" : "맥북 포맷 후 자바스크립트 개발 환경 세팅하기",
+      "description" : "맥북 프로에서 자바스크립트 개발 세팅하기",
+      "inLanguage" : "en-US",
+      "author" : "Sohn Dangen",
+      "creator" : "Sohn Dangen",
+      "publisher": "Sohn Dangen",
+      "accountablePerson" : "Sohn Dangen",
+      "copyrightHolder" : "Sohn Dangen",
+      "copyrightYear" : "2020",
+      "datePublished": "2020-02-23 15:18:53 \x2b0900 KST",
+      "dateModified" : "2020-02-23 15:18:53 \x2b0900 KST",
+      "url" : "https:\/\/dangen-effy.github.io\/post\/%EB%A7%A5%EB%B6%81-%ED%8F%AC%EB%A7%B7-%ED%9B%84-%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EA%B0%9C%EB%B0%9C-%ED%99%98%EA%B2%BD-%EC%84%B8%ED%8C%85%ED%95%98%EA%B8%B0\/",
+      "keywords" : [ "Macbook","IDE","JavaScript", ]
+  }
+</script>
+<title>맥북 포맷 후 자바스크립트 개발 환경 세팅하기 - 손당근 개발 블로그</title>
+    <meta property="og:title" content="맥북 포맷 후 자바스크립트 개발 환경 세팅하기 - 손당근 개발 블로그" />
+    <meta property="og:type" content="article" />
+    <meta name="description" content="맥북 프로에서 자바스크립트 개발 세팅하기" />
+  
+    <link rel="stylesheet" href="/css/flexboxgrid-6.3.1.min.css" />
+    <link rel="stylesheet"
+      href="/css/github-markdown.min.css" />
+    <link rel="stylesheet" href="/css/highlight/tomorrow.min.css" />
+    <link rel="stylesheet" href="/css/index.css">
+    <link href="/index.xml" rel="alternate" type="application/rss+xml" title="손당근 개발 블로그">
+    
+    <link href="https://fonts.googleapis.com/css?family=Arvo|Permanent+Marker" rel="stylesheet">
+    
+    
+  
+    <script data-ad-client="ca-pub-8860756584846944" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-158927245-1"></script>
+    
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-158927245-1');
+    </script>
+  </head>
+  
+
+<body>
+  <article class="post " id="article">
+    <div class="row">
+      <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2 col-lg-6 col-lg-offset-3">
+        <div class="site-header">
+          
+<header>
+  <div class="signatures site-title">
+    <a href="/">🥕성공한 젊은이</a>
+  </div>
+</header>
+<div class="row end-xs">
+  
+  
+</div>
+<div class="header-line"></div>
+
+        </div>
+        <header class="post-header">
+          <h1 class="post-title">맥북 포맷 후 자바스크립트 개발 환경 세팅하기</h1>
+          
+          <div class="row post-desc">
+            <div class="col-xs-6">
+              
+              <time class="post-date" datetime="2020-02-23 15:18:53 KST">
+                23 Feb 2020
+              </time>
+              
+            </div>
+            <div class="col-xs-6">
+              
+              <div class="post-author">
+                <a target="_blank" href="https://dangen-effy.github.io/">@Sohn Dangen</a>
+              </div>
+              
+            </div>
+          </div>
+          
+        </header>
+
+        <div class="post-content markdown-body">
+          <p>노트북 포맷을 할때마다 기존에 개발하던 환경과 동일하게 설정해줘야 마음이 편하다.</p>
+<h2 id="시작하기">시작하기</h2>
+<ol>
+<li>
+<p>포맷 후 첫 부팅</p>
+</li>
+<li>
+<p>Dock 기본 앱 모두 제거</p>
+</li>
+<li>
+<p>Dock 크기 최소화</p>
+</li>
+<li>
+<p>Dock — ‘최근에 사용한 응용 프로그램 보기’ 체크 해제</p>
+</li>
+<li>
+<p>트랙패드 클릭 강도 ‘세게’로 바꾸기</p>
+</li>
+<li>
+<p>트랙패드 ‘스크롤 방향: 자연스럽게’ 체크 해제</p>
+</li>
+<li>
+<p>‘메뉴 막대에서 Bluetooth 표시’ 체크</p>
+</li>
+<li>
+<p><a href="https://www.google.com/chrome/">Chrome</a> 설치 및 구글 계정 Sync</p>
+</li>
+<li>
+<p>마우스 가속 끄기: defaults write .GlobalPreferences com.apple.mouse.scaling 1</p>
+</li>
+<li>
+<p><a href="https://git-scm.com/">Git</a> 설치</p>
+</li>
+<li>
+<p><a href="https://beomi.github.io/2017/07/07/Beautify-ZSH/">iTerm2 + Zsh + Homebrew</a> 설치</p>
+</li>
+<li>
+<p><a href="https://design.ubuntu.com/font/">Ubuntu Font</a> 설치</p>
+</li>
+<li>
+<p><a href="https://ksearch.wordpress.com/2017/06/20/increase-the-key-repeat-rate-in-os-x-sierra/">Keyboard Rate</a> 빠르게 설정</p>
+</li>
+<li>
+<p>키보드 <a href="https://apple.stackexchange.com/questions/31947/how-to-disable-accentuated-char-suggestion-on-long-click-on-mac">Press and Hold</a> 설정 해제</p>
+</li>
+<li>
+<p><a href="https://code.visualstudio.com/">VSCode</a> 설치</p>
+</li>
+<li>
+<p>VSCode ‘Shell Command: Install code command in PATH’ 설정</p>
+</li>
+<li>
+<p>VSCode 테마 변경</p>
+</li>
+<li>
+<p>VSCode 플러그인 설치 (Prettier, ESLint, GitLens, Docker, Material Icon Theme, YAML)</p>
+</li>
+<li>
+<p><a href="https://docs.aws.amazon.com/ko_kr/cli/latest/userguide/install-macos.html">AWS CLI</a> 설치</p>
+</li>
+<li>
+<p><a href="https://stedolan.github.io/jq/download/">jq</a> 설치</p>
+</li>
+<li>
+<p><a href="https://nodejs.org/ko/">Node</a> 설치</p>
+</li>
+<li>
+<p><a href="https://hub.docker.com/editions/community/docker-ce-desktop-mac">Docker</a> 설치</p>
+</li>
+<li>
+<p><a href="https://unity3d.com/kr/get-unity/download">Unity Hub</a> 설치</p>
+</li>
+<li>
+<p><a href="https://slack.com/intl/en-kr/downloads/mac">Slack</a> 설치</p>
+</li>
+<li>
+<p><a href="https://www.notion.so/desktop">Notion</a> 설치</p>
+</li>
+<li>
+<p><a href="https://www.kakaocorp.com/service/KakaoTalk">카카오톡</a> 설치</p>
+</li>
+</ol>
+<h2 id="확인하기">확인하기</h2>
+<p>사용중인 디스크 용량 확인할 차례 (21.55GB) 조건은</p>
+<ul>
+<li>
+<p>모든 .dmg 파일 제거</p>
+</li>
+<li>
+<p>모든 앱 설치 및 최초 실행</p>
+</li>
+</ul>
+
+        </div>
+
+        <div class="row middle-xs">
+          <div class="col-xs-12">
+            
+            <div class="post-category">
+              <a href="/categories/javascript/">
+                JavaScript
+              </a>
+            </div>
+            
+            <div class="post-category">
+              <a href="/categories/ide/">
+                IDE
+              </a>
+            </div>
+            
+          </div>
+        </div>
+
+        
+        
+
+        
+        
+        <div style="height: 50px;"></div>
+        
+        <div class="post-comments">
+          <div id="disqus_thread"></div>
+<script>
+  window.addEventListener("load", () => {
+    (function() {
+      
+      var d = document,
+        s = d.createElement("script");
+      s.src = "https://sohn-dangen-blog.disqus.com/embed.js";
+      s.setAttribute("data-timestamp", +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  });
+</script>
+<noscript
+  >Please enable JavaScript to view the
+  <a href="https://disqus.com/?ref_noscript"
+    >comments powered by Disqus.</a
+  ></noscript
+>
+
+        </div>
+        
+        
+
+        <div class="site-footer">
+  
+  <div class="site-footer-item">
+    <a href="https://dangen-effy.github.io/about" target="_blank">Me</a>
+  </div>
+  
+  <div class="site-footer-item">
+    <a href="/index.xml" target="_blank">RSS</a>
+  </div>
+  
+  
+</div>
+
+      </div>
+    </div>
+  </article>
+
+  <script src="/js/highlight.pack.js"></script>
+
+
+<script>
+  hljs.initHighlightingOnLoad();
+  
+  
+  
+    
+    
+  
+</script>
+
+  
+
+</body>
+
+</html>

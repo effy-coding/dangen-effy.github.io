@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>WebRTC on 손당근 개발 블로그</title>
+    <link>https://dangen-effy.github.io/categories/webrtc/</link>
+    <description>Recent content in WebRTC on 손당근 개발 블로그</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-kr</language>
+    <lastBuildDate>Sun, 23 Feb 2020 15:22:11 +0900</lastBuildDate>
+    
+	<atom:link href="https://dangen-effy.github.io/categories/webrtc/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Janus 소개와 Docker 기반으로 쉽게 사용하기</title>
+      <link>https://dangen-effy.github.io/post/janus-%EC%86%8C%EA%B0%9C%EC%99%80-docker-%EA%B8%B0%EB%B0%98%EC%9C%BC%EB%A1%9C-%EC%89%BD%EA%B2%8C-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0/</link>
+      <pubDate>Sun, 23 Feb 2020 15:22:11 +0900</pubDate>
+      
+      <guid>https://dangen-effy.github.io/post/janus-%EC%86%8C%EA%B0%9C%EC%99%80-docker-%EA%B8%B0%EB%B0%98%EC%9C%BC%EB%A1%9C-%EC%89%BD%EA%B2%8C-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0/</guid>
+      <description>리모트몬스터의 백엔드 로직 중 일부는 Janus의 힘을 빌리고 있습니다. 이번 시간에는 Janus가 무엇인지 알아보고 설치와 데모 실행까지 다뤄보겠습니다.
+Janus가 뭘까? Janus는 RTC 서비스 기술지원 및 컨설팅 전문회사 Meetcho에서 만든 범용 WebRTC 서버입니다. 범용 서버인 만큼, 브라우저와 WebRTC 미디어 통신을 설정하고, 브라우저와 JSON 메시지를 교환하며, 브라우저와 연결된 서버측 애플리케이션 로직 간에 RTP/RTCP와 메시지를 전달하는 방법 외에는 어떠한 기능도 제공하지 않습니다.
+이 말인즉슨, 서버 사이드에서 특정 기능 및 애플리케이션을 구현해야합니다. 이를 Plugin이라고 부르며 예로는 Echo Test, Video Call 그리고 Audio Bridge 등의 애플리케이션을 구현 할 수 있습니다.</description>
+    </item>
+    
+  </channel>
+</rss>

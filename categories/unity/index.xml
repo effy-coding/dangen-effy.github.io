@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Unity on 손당근 블로그</title>
+    <link>https://dangen-effy.github.io/categories/unity/</link>
+    <description>Recent content in Unity on 손당근 블로그</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-kr</language>
+    <lastBuildDate>Tue, 24 Nov 2020 00:00:00 +0900</lastBuildDate><atom:link href="https://dangen-effy.github.io/categories/unity/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>앱 수익화 - 유니티 구글 애드몹 광고 넣는 법 💰</title>
+      <link>https://dangen-effy.github.io/post/%EC%95%B1-%EC%88%98%EC%9D%B5%ED%99%94-%EC%9C%A0%EB%8B%88%ED%8B%B0-%EA%B5%AC%EA%B8%80-%EC%95%A0%EB%93%9C%EB%AA%B9-%EA%B4%91%EA%B3%A0-%EB%84%A3%EB%8A%94-%EB%B2%95/</link>
+      <pubDate>Tue, 24 Nov 2020 00:00:00 +0900</pubDate>
+      
+      <guid>https://dangen-effy.github.io/post/%EC%95%B1-%EC%88%98%EC%9D%B5%ED%99%94-%EC%9C%A0%EB%8B%88%ED%8B%B0-%EA%B5%AC%EA%B8%80-%EC%95%A0%EB%93%9C%EB%AA%B9-%EA%B4%91%EA%B3%A0-%EB%84%A3%EB%8A%94-%EB%B2%95/</guid>
+      <description>이 글을 읽고 얻는 지식  유니티에서 애드몹 광고 띄우는 방법   앱을 만들었으면 수익화를 해야겠죠? 다행히 유니티와 애드몹 연동은 아주 쉽습니다.
+선행 조건  애드몹 계정 생성 및 로그인  애드몹 플러그인 설치하기 애드몹은 구글에서 만든 서비스기 때문에 유니티에 기본 장착되어있지 않습니다. 때문에 유니티 패키지 파일을 실행해 여러분의 프로젝트에 애드몹 플러그인을 임포트 해야합니다.
+링크를 클릭해 패키지 파일을 다운로드 하세요.
+ Assets 섹션을 보시면 *.unitypackage 확장자 명을 가진 파일이 있을겁니다.</description>
+    </item>
+    
+    <item>
+      <title>유니티 오브젝트 이동, 회전 및 크기 조절하기</title>
+      <link>https://dangen-effy.github.io/post/%EC%9C%A0%EB%8B%88%ED%8B%B0-%EC%98%A4%EB%B8%8C%EC%A0%9D%ED%8A%B8-%EC%9D%B4%EB%8F%99-%EB%B0%8F-%ED%81%AC%EA%B8%B0-%EC%A1%B0%EC%A0%88%ED%95%98%EA%B8%B0/</link>
+      <pubDate>Sat, 21 Nov 2020 02:26:26 +0900</pubDate>
+      
+      <guid>https://dangen-effy.github.io/post/%EC%9C%A0%EB%8B%88%ED%8B%B0-%EC%98%A4%EB%B8%8C%EC%A0%9D%ED%8A%B8-%EC%9D%B4%EB%8F%99-%EB%B0%8F-%ED%81%AC%EA%B8%B0-%EC%A1%B0%EC%A0%88%ED%95%98%EA%B8%B0/</guid>
+      <description>Transform 컴포넌트를 다뤄보자 😜  이 글을 읽고 얻는 지식  유니티 오브젝트 크기, 회전 그리고 크기 조절하기  유니티의 모든 게임 오브젝트는 위치, 회전율 그리고 크기를 가집니다. 이들은 모두 Transform 컴포넌트의 멤버 변수로 존재합니다. 그럼 간단한 실습을 진행해볼까요?
+프로젝트 생성하기 먼저 유니티 프로젝트를 생성해 주세요. 이름과 경로는 적절히 설정합시다.
+게임 오브젝트 생성하기 Hierarchy 뷰에서 우클릭 - [3D Object] - [Cube] 버튼을 클릭해 오브젝트를 월드에 생성해봅시다.
+Transform 컴포넌트 앞서 위치, 회전율 그리고 크기는 모두 Transform 컴포넌트의 멤버 변수 라고 말씀드렸었죠?</description>
+    </item>
+    
+    <item>
+      <title>유니티 for문 없이 가장 가까운 오브젝트 구하기</title>
+      <link>https://dangen-effy.github.io/post/%EC%9C%A0%EB%8B%88%ED%8B%B0-for%EB%AC%B8-%EC%97%86%EC%9D%B4-%EA%B0%80%EC%9E%A5-%EA%B0%80%EA%B9%8C%EC%9A%B4-%EC%98%A4%EB%B8%8C%EC%A0%9D%ED%8A%B8-%EA%B5%AC%ED%95%98%EA%B8%B0/</link>
+      <pubDate>Sun, 18 Oct 2020 17:13:52 +0900</pubDate>
+      
+      <guid>https://dangen-effy.github.io/post/%EC%9C%A0%EB%8B%88%ED%8B%B0-for%EB%AC%B8-%EC%97%86%EC%9D%B4-%EA%B0%80%EC%9E%A5-%EA%B0%80%EA%B9%8C%EC%9A%B4-%EC%98%A4%EB%B8%8C%EC%A0%9D%ED%8A%B8-%EA%B5%AC%ED%95%98%EA%B8%B0/</guid>
+      <description>유니티에서 가장 가까운 오브젝트를 구하는 일은 비일비재합니다. &amp;ldquo;unity find nearest gameobject&amp;rdquo; 라는 키워드로 구글링 해보면 정말 많은 예시 코드들이 있는데요, 대부분 for loop 를 이용한 장황한 코드들입니다. 🤦‍♂️
+LINQ 하지만 C# 은 LINQ 로 강력하고 풍부한 열거형 메소드를 지원합니다. 이 LINQ 의 편리한 메소드들을 조합하면 for loop 을 이용한 장황한 코드 없이 간결하게 문제를 해결할 수 있습니다. 😊
+가장 가까운 오브젝트 찾기 private GameObject FindNearestObjectByTag(string tag) { // 탐색할 오브젝트 목록을 List 로 저장합니다.</description>
+    </item>
+    
+  </channel>
+</rss>

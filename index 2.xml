@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>손당근 개발 블로그</title>
+    <link>https://dangen-effy.github.io/</link>
+    <description>Recent content on 손당근 개발 블로그</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-kr</language>
+    <lastBuildDate>Sun, 18 Oct 2020 17:13:52 +0900</lastBuildDate>
+    
+	<atom:link href="https://dangen-effy.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>About</title>
+      <link>https://dangen-effy.github.io/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dangen-effy.github.io/about/</guid>
+      <description>GitHub
+LinkedIn</description>
+    </item>
+    
+    <item>
+      <title>유니티 for문 없이 가장 가까운 오브젝트 구하기</title>
+      <link>https://dangen-effy.github.io/post/%EC%9C%A0%EB%8B%88%ED%8B%B0-for%EB%AC%B8-%EC%97%86%EC%9D%B4-%EA%B0%80%EC%9E%A5-%EA%B0%80%EA%B9%8C%EC%9A%B4-%EC%98%A4%EB%B8%8C%EC%A0%9D%ED%8A%B8-%EA%B5%AC%ED%95%98%EA%B8%B0/</link>
+      <pubDate>Sun, 18 Oct 2020 17:13:52 +0900</pubDate>
+      
+      <guid>https://dangen-effy.github.io/post/%EC%9C%A0%EB%8B%88%ED%8B%B0-for%EB%AC%B8-%EC%97%86%EC%9D%B4-%EA%B0%80%EC%9E%A5-%EA%B0%80%EA%B9%8C%EC%9A%B4-%EC%98%A4%EB%B8%8C%EC%A0%9D%ED%8A%B8-%EA%B5%AC%ED%95%98%EA%B8%B0/</guid>
+      <description>유니티에서 가장 가까운 오브젝트를 구하는 일은 비일비재합니다. &amp;ldquo;unity find nearest gameobject&amp;rdquo; 라는 키워드로 구글링 해보면 정말 많은 예시 코드들이 있는데요, 대부분 for loop 를 이용한 장황한 코드들입니다. 🤦‍♂️
+LINQ 하지만 C# 은 LINQ 로 강력하고 풍부한 열거형 메소드를 지원합니다. 이 LINQ 의 편리한 메소드들을 조합하면 for loop 을 이용한 장황한 코드 없이 간결하게 문제를 해결할 수 있습니다. 😊
+가장 가까운 오브젝트 찾기 private GameObject FindNearestObjectByTag(string tag) { // 탐색할 오브젝트 목록을 List 로 저장합니다.</description>
+    </item>
+    
+    <item>
+      <title>프로덕션 환경을 위한 최소한의 쿠버네티스 세팅</title>
+      <link>https://dangen-effy.github.io/post/%ED%94%84%EB%A1%9C%EB%8D%95%EC%85%98-%ED%99%98%EA%B2%BD%EC%9D%84-%EC%9C%84%ED%95%9C-%EC%B5%9C%EC%86%8C%ED%95%9C%EC%9D%98-%EC%BF%A0%EB%B2%84%EB%84%A4%ED%8B%B0%EC%8A%A4-%EC%84%B8%ED%8C%85/</link>
+      <pubDate>Sat, 05 Sep 2020 17:34:18 +0900</pubDate>
+      
+      <guid>https://dangen-effy.github.io/post/%ED%94%84%EB%A1%9C%EB%8D%95%EC%85%98-%ED%99%98%EA%B2%BD%EC%9D%84-%EC%9C%84%ED%95%9C-%EC%B5%9C%EC%86%8C%ED%95%9C%EC%9D%98-%EC%BF%A0%EB%B2%84%EB%84%A4%ED%8B%B0%EC%8A%A4-%EC%84%B8%ED%8C%85/</guid>
+      <description>쿠버네티스의 장점은 프로덕션 레벨에서 챙겨야 하는 인프라 스킬들을 단순한 YAML 파일만으로 이를 달성해 주는 겁니다.
+그러면 쿠버네티스가 제공하는 기능들은 뭘까요? 대표적으로
+ 무중 단 배포 커밋 롤백 자동 스케일 아웃  가 있습니다. 이들을 직접 구현하는 건 비용이 많이 들고 각 기능의 안정성도 보장받지 못합니다. 여러분이 버그 없는 무중단 배포 툴을 직접 코딩한다고 생각해보세요. 쉽지 않겠죠?
+😄 하지만 여러분의 노력 없이 쿠버네티스가 자동으로 애플리케이션을 무중단 배포해 주거나, 자동 스케일 아웃을 해주지는 않습니다.</description>
+    </item>
+    
+    <item>
+      <title>엘릭서와 자바스크립트 코드를 빠르게 비교해보자</title>
+      <link>https://dangen-effy.github.io/post/%EC%97%98%EB%A6%AD%EC%84%9C%EC%99%80-%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%BD%94%EB%93%9C%EB%A5%BC-%EB%B9%A0%EB%A5%B4%EA%B2%8C-%EB%B9%84%EA%B5%90%ED%95%B4%EB%B3%B4%EC%9E%90/</link>
+      <pubDate>Sun, 09 Aug 2020 15:25:42 +0900</pubDate>
+      
+      <guid>https://dangen-effy.github.io/post/%EC%97%98%EB%A6%AD%EC%84%9C%EC%99%80-%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%BD%94%EB%93%9C%EB%A5%BC-%EB%B9%A0%EB%A5%B4%EA%B2%8C-%EB%B9%84%EA%B5%90%ED%95%B4%EB%B3%B4%EC%9E%90/</guid>
+      <description>누구든 새로운 언어를 배우기 전에 내게 가장 익숙한 언어와 얼마나 다를지 비교해보고 싶을 텐데요.
+이 욕구를 해소하고자 간단히 자바스크립트와 엘릭서 코드를 비교해 볼 수 있는 레포를 만들어봤습니다.
+ 엘릭서(Elixir)는 얼랭(Erlang) 가상 머신(BEAM) 위에서 동작하는 함수형, 동시성 프로그래밍 언어이다. 엘릭서는 얼랭이 보유하고 있는 분산 처리, 장애 내구성, 실시간, 무정지 애플리케이션 등의 특징을 공유한다
+ 출처: 위키백과
+Map [1, 2, 3].map(x =&amp;gt; x * 2) // -&amp;gt; [ 2, 4, 6 ] Enum.</description>
+    </item>
+    
+    <item>
+      <title>코로나 사태와 원격 근무로 느낀 점</title>
+      <link>https://dangen-effy.github.io/post/%EC%BD%94%EB%A1%9C%EB%82%98-%EC%82%AC%ED%83%9C%EC%99%80-%EC%9B%90%EA%B2%A9-%EA%B7%BC%EB%AC%B4%EB%A1%9C-%EB%8A%90%EB%82%80-%EC%A0%90/</link>
+      <pubDate>Sat, 07 Mar 2020 17:01:18 +0900</pubDate>
+      
+      <guid>https://dangen-effy.github.io/post/%EC%BD%94%EB%A1%9C%EB%82%98-%EC%82%AC%ED%83%9C%EC%99%80-%EC%9B%90%EA%B2%A9-%EA%B7%BC%EB%AC%B4%EB%A1%9C-%EB%8A%90%EB%82%80-%EC%A0%90/</guid>
+      <description>깃랩이라는 기업형 소스 관리 도구를 파는 회사가 있습니다. 개발자 분들은 당연히 들어보셨을거에요. 이 회사가 재밌는 점이 67 개국에 있는 1,221 명의 직원이 완전 원격 근무를 한다는 거에요. ✌️
+이게 어떻게 가능 할까요? 일하는 방식을 정리한 문서가 있는데요. 무려 3,000 페이지에 달합니다. 이 문서를 Handbook 이라고 부릅니다. 깃랩이 이 녀석을 어떻게 정의 했는지 한번 살펴보죠.
+The GitLab team handbook is the central repository for how we run the company. Printed, it consists of over 3,000 pages of text.</description>
+    </item>
+    
+    <item>
+      <title>면접? 그냥 대충 가세요</title>
+      <link>https://dangen-effy.github.io/post/%EB%A9%B4%EC%A0%91-%EA%B7%B8%EB%83%A5-%EB%8C%80%EC%B6%A9-%EA%B0%80%EC%84%B8%EC%9A%94/</link>
+      <pubDate>Sat, 07 Mar 2020 14:47:17 +0900</pubDate>
+      
+      <guid>https://dangen-effy.github.io/post/%EB%A9%B4%EC%A0%91-%EA%B7%B8%EB%83%A5-%EB%8C%80%EC%B6%A9-%EA%B0%80%EC%84%B8%EC%9A%94/</guid>
+      <description>📆
+&amp;ldquo;면접 복장&amp;rdquo; &amp;ldquo;면접 복장 추천&amp;rdquo; 구글링 결과를 참고해 멋지게 차려입습니다. 거울을 보니 매우 어색합니다. 평소 자신의 모습이 아니기 때문이죠. &amp;ldquo;면접 말투&amp;rdquo; &amp;ldquo;면접 말투 추천&amp;rdquo; 을 검색해 말투 고치기 연습에 들어갑니다. 이상하게 버벅대고 더듬게 되죠. 평생 다른 말투로 살아왔기 때문이죠.
+어쨌든 조금 어색하지만 그 상태로 면접을 보러 갑니다. 어딘가 부자연스럽고 딱딱한 인상과 말투로 면접을 진행합니다. 면접관은 속으로 &amp;ldquo;이 사람 왜 이렇게 긴장하지?&amp;rdquo; 라고 생각합니다.
+최상의 컨디션으로 가도 말이 술술 나올까 말까 한데 이상한 옷차림에 이상한 말투로 실력을 발휘 할 리가 없겠죠.</description>
+    </item>
+    
+    <item>
+      <title>가난한 스타트업의 WebRTC 비용절감 위한 고군분투기</title>
+      <link>https://dangen-effy.github.io/post/%EA%B0%80%EB%82%9C%ED%95%9C-%EC%8A%A4%ED%83%80%ED%8A%B8%EC%97%85%EC%9D%98-webrtc-%EB%B9%84%EC%9A%A9%EC%A0%88%EA%B0%90-%EC%9C%84%ED%95%9C-%EA%B3%A0%EA%B5%B0%EB%B6%84%ED%88%AC%EA%B8%B0/</link>
+      <pubDate>Sun, 23 Feb 2020 15:26:27 +0900</pubDate>
+      
+      <guid>https://dangen-effy.github.io/post/%EA%B0%80%EB%82%9C%ED%95%9C-%EC%8A%A4%ED%83%80%ED%8A%B8%EC%97%85%EC%9D%98-webrtc-%EB%B9%84%EC%9A%A9%EC%A0%88%EA%B0%90-%EC%9C%84%ED%95%9C-%EA%B3%A0%EA%B5%B0%EB%B6%84%ED%88%AC%EA%B8%B0/</guid>
+      <description>라이트세일에 꾸역꾸역 오토 스케일링 적용하기 리모트몬스터는 백엔드팀의 역할을 딱 한 단어로 좁혀서 이야기합니다. “비용 절감” (가용성 확보는 기본이고요) 💰💰💰
+비용 절감은 여러 가지 경로로 실현 가능한데,
+첫째로 자동화를 통한 인건비 절감입니다. 사람이 해야 할 일을 자동화 시켜놓으면 팀이 굴러가기 위한 노동력이 줄어듭니다. 실제로 리모트몬스터의 백엔드팀은 단 두명(혹은 3명)입니다. 자동화 없이 두 명이서 백엔드 자원을 관리 한다고 상상만 해도 끔찍합니다.
+둘째로 자동화를 통한 인프라 비용 절감입니다. 보통 On-demand 형태로 요금을 부과하는 클라우드 자원은 적게 쓸수록 돈을 적게 냅니다.</description>
+    </item>
+    
+    <item>
+      <title>(보안) AWS 루트 계정 버리기 — 모범 사례 따라하기</title>
+      <link>https://dangen-effy.github.io/post/%EB%B3%B4%EC%95%88-aws-%EB%A3%A8%ED%8A%B8-%EA%B3%84%EC%A0%95-%EB%B2%84%EB%A6%AC%EA%B8%B0-%EB%AA%A8%EB%B2%94-%EC%82%AC%EB%A1%80-%EB%94%B0%EB%9D%BC%ED%95%98%EA%B8%B0/</link>
+      <pubDate>Sun, 23 Feb 2020 15:25:42 +0900</pubDate>
+      
+      <guid>https://dangen-effy.github.io/post/%EB%B3%B4%EC%95%88-aws-%EB%A3%A8%ED%8A%B8-%EA%B3%84%EC%A0%95-%EB%B2%84%EB%A6%AC%EA%B8%B0-%EB%AA%A8%EB%B2%94-%EC%82%AC%EB%A1%80-%EB%94%B0%EB%9D%BC%ED%95%98%EA%B8%B0/</guid>
+      <description>대부분 스타트업의 자료는 클라우드에 저장됩니다. 루트 계정을 사용하면서요. 🔑
+AWS로 예를 들겠습니다. 어떤 스타트업이 탄생하고 AWS 계정을 생성합니다. 신용 카드를 등록하고 자원을 생성합니다. 시간이 지나서 구성원이 증가하고 모두가 여전히 루트 계정으로 AWS에 접근합니다. 누군가 현 상태의 문제점을 지적하지만 귀찮다는 이유 + 현재는 서비스가 작으니 보안보다 개발에 집중해야 한다는 핑계로 여전히 루트 계정을 사용합니다.
+기업에서 가장 막대한 피해를 보는 해킹 사례가 뭘 까요? 바로 클라우드 계정 탈취입니다. 지금부터 제가 AWS IAM 운영 모범 사례 기반으로 리모트몬스터를 루트 계정으로부터 자유롭게 만든 경험에 대해 얘기하겠습니다.</description>
+    </item>
+    
+    <item>
+      <title>Statless 소켓 서버 구현하기</title>
+      <link>https://dangen-effy.github.io/post/statless-%EC%86%8C%EC%BC%93-%EC%84%9C%EB%B2%84-%EA%B5%AC%ED%98%84%ED%95%98%EA%B8%B0/</link>
+      <pubDate>Sun, 23 Feb 2020 15:25:14 +0900</pubDate>
+      
+      <guid>https://dangen-effy.github.io/post/statless-%EC%86%8C%EC%BC%93-%EC%84%9C%EB%B2%84-%EA%B5%AC%ED%98%84%ED%95%98%EA%B8%B0/</guid>
+      <description>애플리케이션을 무 상태로 구현하는 것은 매우 중요합니다. 그래야 언제든 확장 및 축소가 가능하기 때문이죠. 그러나 구조적으로 유 상태 애플리케이션이 되는 것들이 있습니다. 대표적인 사례가 보통 소켓 통신을 사용하는 WebRTC의 시그널링 서버입니다. 따라서 이를 무 상태 구조로 만들어 주는게 가장 큰 과제죠.
+소켓 서버가 유 상태인 이유는 보통 소켓은 사용자끼리 데이터를 주소 받을때 사용합니다. 즉 사용자A와 사용자B가 채팅 방에 접속해 대화를 나누는 시나리오가 이미 유 상태라는거죠. 이유는 간단합니다. 소켓 서버에 접속한 클라이언트 정보가 서버 프로세스의 메모리 영역에서 관리되고 있기 때문입니다.</description>
+    </item>
+    
+    <item>
+      <title>클라우드 네이티브 인프라스트럭처란?</title>
+      <link>https://dangen-effy.github.io/post/%ED%81%B4%EB%9D%BC%EC%9A%B0%EB%93%9C-%EB%84%A4%EC%9D%B4%ED%8B%B0%EB%B8%8C-%EC%9D%B8%ED%94%84%EB%9D%BC%EC%8A%A4%ED%8A%B8%EB%9F%AD%EC%B2%98%EB%9E%80/</link>
+      <pubDate>Sun, 23 Feb 2020 15:24:35 +0900</pubDate>
+      
+      <guid>https://dangen-effy.github.io/post/%ED%81%B4%EB%9D%BC%EC%9A%B0%EB%93%9C-%EB%84%A4%EC%9D%B4%ED%8B%B0%EB%B8%8C-%EC%9D%B8%ED%94%84%EB%9D%BC%EC%8A%A4%ED%8A%B8%EB%9F%AD%EC%B2%98%EB%9E%80/</guid>
+      <description>클라우드 네이티브의 정의 클라우드 네이티브 컴퓨팅 재단(CNCF)에서 다음과 같이 공식적으로 정의하고 있습니다.
+ 클라우드-네이티브 기반 기술을 통해 조직은 퍼블릭, 프라이빗 및 하이브리드 클라우드와 같은 현대적이고 동적인 환경에서 확장 가능한 애플리케이션을 구축하고 실행할 수 있습니다. 컨테이너, 서비스 메시, 마이크로 서비스, 불변형 인프라 및 선언형 API가 이러한 접근 방식을 예시하고 있습니다. 이러한 기술을 통해 탄력성, 관리 및 관찰이 가능한 느슨하게 결합된 시스템을 사용할 수 있습니다. 강력한 자동화와 결합되어 엔지니어는 최소의 노력으로 영향을 많이 미치는 변화를 자주 예측 가능하게 되었습니다.</description>
+    </item>
+    
+    <item>
+      <title>Janus 소개와 Docker 기반으로 쉽게 사용하기</title>
+      <link>https://dangen-effy.github.io/post/janus-%EC%86%8C%EA%B0%9C%EC%99%80-docker-%EA%B8%B0%EB%B0%98%EC%9C%BC%EB%A1%9C-%EC%89%BD%EA%B2%8C-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0/</link>
+      <pubDate>Sun, 23 Feb 2020 15:22:11 +0900</pubDate>
+      
+      <guid>https://dangen-effy.github.io/post/janus-%EC%86%8C%EA%B0%9C%EC%99%80-docker-%EA%B8%B0%EB%B0%98%EC%9C%BC%EB%A1%9C-%EC%89%BD%EA%B2%8C-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0/</guid>
+      <description>리모트몬스터의 백엔드 로직 중 일부는 Janus의 힘을 빌리고 있습니다. 이번 시간에는 Janus가 무엇인지 알아보고 설치와 데모 실행까지 다뤄보겠습니다.
+Janus가 뭘까? Janus는 RTC 서비스 기술지원 및 컨설팅 전문회사 Meetcho에서 만든 범용 WebRTC 서버입니다. 범용 서버인 만큼, 브라우저와 WebRTC 미디어 통신을 설정하고, 브라우저와 JSON 메시지를 교환하며, 브라우저와 연결된 서버측 애플리케이션 로직 간에 RTP/RTCP와 메시지를 전달하는 방법 외에는 어떠한 기능도 제공하지 않습니다.
+이 말인즉슨, 서버 사이드에서 특정 기능 및 애플리케이션을 구현해야합니다. 이를 Plugin이라고 부르며 예로는 Echo Test, Video Call 그리고 Audio Bridge 등의 애플리케이션을 구현 할 수 있습니다.</description>
+    </item>
+    
+    <item>
+      <title>맥북 포맷 후 자바스크립트 개발 환경 세팅하기</title>
+      <link>https://dangen-effy.github.io/post/%EB%A7%A5%EB%B6%81-%ED%8F%AC%EB%A7%B7-%ED%9B%84-%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EA%B0%9C%EB%B0%9C-%ED%99%98%EA%B2%BD-%EC%84%B8%ED%8C%85%ED%95%98%EA%B8%B0/</link>
+      <pubDate>Sun, 23 Feb 2020 15:18:53 +0900</pubDate>
+      
+      <guid>https://dangen-effy.github.io/post/%EB%A7%A5%EB%B6%81-%ED%8F%AC%EB%A7%B7-%ED%9B%84-%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EA%B0%9C%EB%B0%9C-%ED%99%98%EA%B2%BD-%EC%84%B8%ED%8C%85%ED%95%98%EA%B8%B0/</guid>
+      <description>노트북 포맷을 할때마다 기존에 개발하던 환경과 동일하게 설정해줘야 마음이 편하다.
+시작하기   포맷 후 첫 부팅
+  Dock 기본 앱 모두 제거
+  Dock 크기 최소화
+  Dock — ‘최근에 사용한 응용 프로그램 보기’ 체크 해제
+  트랙패드 클릭 강도 ‘세게’로 바꾸기
+  트랙패드 ‘스크롤 방향: 자연스럽게’ 체크 해제
+  ‘메뉴 막대에서 Bluetooth 표시’ 체크
+  Chrome 설치 및 구글 계정 Sync</description>
+    </item>
+    
+  </channel>
+</rss>

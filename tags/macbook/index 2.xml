@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Macbook on 손당근 개발 블로그</title>
+    <link>https://dangen-effy.github.io/tags/macbook/</link>
+    <description>Recent content in Macbook on 손당근 개발 블로그</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-kr</language>
+    <lastBuildDate>Sun, 23 Feb 2020 15:18:53 +0900</lastBuildDate>
+    
+	<atom:link href="https://dangen-effy.github.io/tags/macbook/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>맥북 포맷 후 자바스크립트 개발 환경 세팅하기</title>
+      <link>https://dangen-effy.github.io/post/%EB%A7%A5%EB%B6%81-%ED%8F%AC%EB%A7%B7-%ED%9B%84-%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EA%B0%9C%EB%B0%9C-%ED%99%98%EA%B2%BD-%EC%84%B8%ED%8C%85%ED%95%98%EA%B8%B0/</link>
+      <pubDate>Sun, 23 Feb 2020 15:18:53 +0900</pubDate>
+      
+      <guid>https://dangen-effy.github.io/post/%EB%A7%A5%EB%B6%81-%ED%8F%AC%EB%A7%B7-%ED%9B%84-%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EA%B0%9C%EB%B0%9C-%ED%99%98%EA%B2%BD-%EC%84%B8%ED%8C%85%ED%95%98%EA%B8%B0/</guid>
+      <description>노트북 포맷을 할때마다 기존에 개발하던 환경과 동일하게 설정해줘야 마음이 편하다.
+시작하기   포맷 후 첫 부팅
+  Dock 기본 앱 모두 제거
+  Dock 크기 최소화
+  Dock — ‘최근에 사용한 응용 프로그램 보기’ 체크 해제
+  트랙패드 클릭 강도 ‘세게’로 바꾸기
+  트랙패드 ‘스크롤 방향: 자연스럽게’ 체크 해제
+  ‘메뉴 막대에서 Bluetooth 표시’ 체크
+  Chrome 설치 및 구글 계정 Sync</description>
+    </item>
+    
+  </channel>
+</rss>

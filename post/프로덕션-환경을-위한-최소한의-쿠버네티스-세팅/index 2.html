@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.68.3" />
+  
+    
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Sohn Dangen" />
+    <meta property="og:url" content="https://dangen-effy.github.io/post/%ED%94%84%EB%A1%9C%EB%8D%95%EC%85%98-%ED%99%98%EA%B2%BD%EC%9D%84-%EC%9C%84%ED%95%9C-%EC%B5%9C%EC%86%8C%ED%95%9C%EC%9D%98-%EC%BF%A0%EB%B2%84%EB%84%A4%ED%8B%B0%EC%8A%A4-%EC%84%B8%ED%8C%85/" />
+    <link rel="canonical" href="https://dangen-effy.github.io/post/%ED%94%84%EB%A1%9C%EB%8D%95%EC%85%98-%ED%99%98%EA%B2%BD%EC%9D%84-%EC%9C%84%ED%95%9C-%EC%B5%9C%EC%86%8C%ED%95%9C%EC%9D%98-%EC%BF%A0%EB%B2%84%EB%84%A4%ED%8B%B0%EC%8A%A4-%EC%84%B8%ED%8C%85/" /><link rel="shortcut icon" href="/favicon.ico" type="image/x-png" /><script type="application/ld+json">
+  {
+      "@context" : "http://schema.org",
+      "@type" : "BlogPosting",
+      "mainEntityOfPage": {
+           "@type": "WebPage",
+           "@id": "https:\/\/dangen-effy.github.io\/"
+      },
+      "articleSection" : "post",
+      "name" : "프로덕션 환경을 위한 최소한의 쿠버네티스 세팅",
+      "headline" : "프로덕션 환경을 위한 최소한의 쿠버네티스 세팅",
+      "description" : "모든 기능을 사용할 필요는 없습니다",
+      "inLanguage" : "en-US",
+      "author" : "Sohn Dangen",
+      "creator" : "Sohn Dangen",
+      "publisher": "Sohn Dangen",
+      "accountablePerson" : "Sohn Dangen",
+      "copyrightHolder" : "Sohn Dangen",
+      "copyrightYear" : "2020",
+      "datePublished": "2020-09-05 17:34:18 \x2b0900 KST",
+      "dateModified" : "2020-09-05 17:34:18 \x2b0900 KST",
+      "url" : "https:\/\/dangen-effy.github.io\/post\/%ED%94%84%EB%A1%9C%EB%8D%95%EC%85%98-%ED%99%98%EA%B2%BD%EC%9D%84-%EC%9C%84%ED%95%9C-%EC%B5%9C%EC%86%8C%ED%95%9C%EC%9D%98-%EC%BF%A0%EB%B2%84%EB%84%A4%ED%8B%B0%EC%8A%A4-%EC%84%B8%ED%8C%85\/",
+      "keywords" : [ "Kubernetes","Cloud Native","The Twelve-Factor Application","Docker", ]
+  }
+</script>
+<title>프로덕션 환경을 위한 최소한의 쿠버네티스 세팅 - 손당근 개발 블로그</title>
+    <meta property="og:title" content="프로덕션 환경을 위한 최소한의 쿠버네티스 세팅 - 손당근 개발 블로그" />
+    <meta property="og:type" content="article" />
+    <meta name="description" content="모든 기능을 사용할 필요는 없습니다" />
+  
+    <link rel="stylesheet" href="/css/flexboxgrid-6.3.1.min.css" />
+    <link rel="stylesheet"
+      href="/css/github-markdown.min.css" />
+    <link rel="stylesheet" href="/css/highlight/tomorrow.min.css" />
+    <link rel="stylesheet" href="/css/index.css">
+    <link href="/index.xml" rel="alternate" type="application/rss+xml" title="손당근 개발 블로그">
+    
+    <link href="https://fonts.googleapis.com/css?family=Arvo|Permanent+Marker" rel="stylesheet">
+    
+    
+  
+    <script data-ad-client="ca-pub-8860756584846944" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-158927245-1"></script>
+    
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-158927245-1');
+    </script>
+  </head>
+  
+
+<body>
+  <article class="post " id="article">
+    <div class="row">
+      <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2 col-lg-6 col-lg-offset-3">
+        <div class="site-header">
+          
+<header>
+  <div class="signatures site-title">
+    <a href="/">🥕성공한 젊은이</a>
+  </div>
+</header>
+<div class="row end-xs">
+  
+  
+</div>
+<div class="header-line"></div>
+
+        </div>
+        <header class="post-header">
+          <h1 class="post-title">프로덕션 환경을 위한 최소한의 쿠버네티스 세팅</h1>
+          
+          <div class="row post-desc">
+            <div class="col-xs-6">
+              
+              <time class="post-date" datetime="2020-09-05 17:34:18 KST">
+                05 Sep 2020
+              </time>
+              
+            </div>
+            <div class="col-xs-6">
+              
+              <div class="post-author">
+                <a target="_blank" href="https://dangen-effy.github.io/">@Sohn Dangen</a>
+              </div>
+              
+            </div>
+          </div>
+          
+        </header>
+
+        <div class="post-content markdown-body">
+          <p><img src="/images/kubernetes_logo.png" alt="쿠버네티스 로고"></p>
+<p>쿠버네티스의 장점은 프로덕션 레벨에서 챙겨야 하는 인프라 스킬들을 단순한 YAML 파일만으로 이를 달성해 주는 겁니다.</p>
+<p>그러면 쿠버네티스가 제공하는 기능들은 뭘까요? 대표적으로</p>
+<ul>
+<li>무중 단 배포</li>
+<li>커밋 롤백</li>
+<li>자동 스케일 아웃</li>
+</ul>
+<p>가 있습니다. 이들을 직접 구현하는 건 비용이 많이 들고 각 기능의 안정성도 보장받지 못합니다. 여러분이 버그 없는 무중단 배포 툴을 직접 코딩한다고 생각해보세요. 쉽지 않겠죠?</p>
+<p>😄 하지만 여러분의 노력 없이 쿠버네티스가 자동으로 애플리케이션을 무중단 배포해 주거나, 자동 스케일 아웃을 해주지는 않습니다. 어차피 쿠버네티스도 여러분들이 시키는 대로 일을 하기 때문에 컨테이너(Pod)를 언제 종료 시킬지 혹은 CPU 가 몇 % 이상 사용 중일 때 스케일 아웃을 할지 정의해 줘야 합니다.</p>
+<p>추가로 드리고 싶은 말은 처음부터 쿠버네티스의 모든 기능을 알고 사용할 필요는 없습니다. 쿠버네티스가 제공하는 핵심 기능만 잘 사용해도 프로덕션 레벨에서 안정적으로 서비스를 제공할 수가 있거든요.</p>
+<h2 id="1-컨테이너가-잘-구동됐다고-알려주기-">1. 컨테이너가 잘 구동됐다고 알려주기 🧑</h2>
+<p>쿠버네티스는 컨테이너가 잘 켜졌는지 안 켜졌는지에 대해 관심이 많습니다. 이 지표는 쿠버네티스가 이번 배포(Deployment)가 성공했는지 실패했는지 판단하는 근거가 되기 때문입니다. 하지만 컨테이너가 잘 구동됐다는 기준이 뭘까요? 그런 기준 같은 건 없습니다. 앞서 말한 대로 쿠버네티스는 여러분들이 시키는 대로 일을 하고 결과를 판단하기 때문에 컨테이너가 잘 구동된 기준을 정의해 줘야 합니다. 가장 간단한 방법은 <code>/api/v1/some-api</code>로 요청 시 <code>OK</code> 응답이 오면 컨테이너가 잘 구동됐다고 판단하게 만드는 겁니다.</p>
+<pre><code>livenessProbe:
+    httpGet:
+        path: /some-api
+        port: 5000
+</code></pre><h2 id="2-애플리케이션이-요청을-받을-준비됐다고-알려주기-">2. 애플리케이션이 요청을 받을 준비됐다고 알려주기 🧑</h2>
+<p>쿠버네티스는 컨테이너가 잘 구동됐다고 해서 사용자의 요청을 해당 컨테이너로 전달해 주지 않습니다. 쿠버네티스는 애플리케이션이 요청받을 준비가 된 것까지 확인한 뒤 요청을 전달합니다.
+하지만 쿠버네티스는 여러분들이 작성한 애플리케이션이 사용자의 요청을 받을 준비됐는지 아닌지 스스로 알 수 없습니다. 때문에 이를 직접적으로 알려줘야 합니다. 가장 간단한 방법은 <code>/api/v1/some-api</code>로 요청 시 <code>OK</code> 응답이 오면 애플리케이션이 준비됐다고 말해주는 겁니다.</p>
+<pre><code>readinessProbe:
+    httpGet:
+        path: /some-api
+        port: 5000
+</code></pre><h2 id="3-graceful-하게-애플리케이션-종료하기-무중단-배포를-위한">3. Graceful 하게 애플리케이션 종료하기 (무중단 배포를 위한)</h2>
+<p>이 섹션은 쿠버네티스의 세팅은 아닙니다. 하지만 여러분의 애플리케이션이 쿠버네티스 환경에서 무중단 배포를 가능케 하려면 꼭 구현해야 하는 기능입니다.</p>
+<p>모든 사용자의 요청은 중요합니다. 여러분들이 인터넷 뱅킹을 사용하다가 갑자기 페이지가 응답하지 않는다고 생각해보세요. 저라면 해당 은행은 두 번 다시 사용 안 할 겁니다. 이런 불상사를 방지하려면 사용자의 모든 요청에 응답해 주면 되는데요. 문제는 아무리 애플리케이션 코드를 잘 작성해도, 사용자의 요청을 처리하는 중간에 컨테이너가 종료되면 사용자는 비정상적인 응답을 받을 겁니다.</p>
+<p>이 문제는 간단히 해결할 수 있습니다. 먼저 컨테이너가 종료 명령을 받으면 모든 요청을 차단합니다. 하지만 종료 직전까지 받은 모든 요청을 처리하고 응답을 보냈다면 그제서야 컨테이너를 종료 시키면 됩니다. 이를 Graceful Shutdown 이라고 부르는데요, 자세한 내용은 <a href="https://blog.risingstack.com/graceful-shutdown-node-js-kubernetes/">여기</a>를 참고하세요.</p>
+<h2 id="4-컨테이너가-얼마큼의-자원을-필요로-하는지-알려주기-">4. 컨테이너가 얼마큼의 자원을 필요로 하는지 알려주기 🧑</h2>
+<p>자원(CPU, Memroy)은 유한합니다. 그리고 돈과 직결되기 때문에 언제나 효율적으로 사용해야 하고 이를 달성하기 위해 수많은 오케스트레이션 툴이 등장했습니다. 쿠버네티스도 그중 하나고요. 애플리케이션마다 필요한 CPU의 양은 다릅니다. 쿠버네티스는 이를 혼자서 판단할 수 없습니다. 때문에 여러분들의 컨테이너가 얼마만큼의 자원을 필요로 하는지 정의해 줘야 합니다.</p>
+<p><img src="/images/cpu_cores.png" alt="CPU"></p>
+<p>또한 이 지표는 쿠버네티스가 해당 컨테이너를 오토 스케일링을 할지 말지 판단하는 근거로 사용됩니다.</p>
+<pre><code>resources:
+    limits:
+        cpu: 500m
+        memory: 1Gi
+    requests:
+        cpu: 500m
+        memory: 1Gi
+</code></pre><h2 id="5-언제-얼마큼-컨테이너를-스케일링할지-알려주기-">5. 언제, 얼마큼 컨테이너를 스케일링할지 알려주기 🧑</h2>
+<p>쿠버네티스의 장점 중 하나는 사용자의 요청이 늘어나 자원 소모가 많아졌을 때 부하 분산을 위해서 스케일-아웃을 해주는 겁니다. 하지만 쿠버네티스 혼자서 컨테이너 수를 늘리고 줄일지 판단할 수 없고, 컨테이너를 몇 개까지 추가할지 정할 수 없습니다. 때문에 얼마큼의 CPU를 사용했을 때 최대 몇 개 만큼 컨테이너를 늘릴지 알려줘야 합니다.</p>
+<p>중요: 이 기능을 사용하려면 컨테이너의 메트릭을 수집하는 기능을 추가해야 합니다. 자세한 내용은 <a href="https://github.com/kubernetes-sigs/metrics-server">여기</a>를 참고하세요.</p>
+<pre><code>metrics:
+    - type: Resource
+        resource:
+            name: cpu
+            target:
+            type: Utilization
+            averageUtilization: 40
+</code></pre><p>더 알아보기</p>
+<ul>
+<li><a href="https://12factor.net/">https://12factor.net/</a></li>
+<li><a href="https://kubernetes.io/docs/concepts/overview/what-is-kubernetes/">https://kubernetes.io/docs/concepts/overview/what-is-kubernetes/</a></li>
+</ul>
+
+        </div>
+
+        <div class="row middle-xs">
+          <div class="col-xs-12">
+            
+            <div class="post-category">
+              <a href="/categories/kubernetes/">
+                Kubernetes
+              </a>
+            </div>
+            
+            <div class="post-category">
+              <a href="/categories/cloud%20native/">
+                Cloud Native
+              </a>
+            </div>
+            
+          </div>
+        </div>
+
+        
+        
+
+<div class="releated-content">
+  <h3>Related Posts</h3>
+  <ul>
+    
+    <li><a href="/post/%ED%81%B4%EB%9D%BC%EC%9A%B0%EB%93%9C-%EB%84%A4%EC%9D%B4%ED%8B%B0%EB%B8%8C-%EC%9D%B8%ED%94%84%EB%9D%BC%EC%8A%A4%ED%8A%B8%EB%9F%AD%EC%B2%98%EB%9E%80/">클라우드 네이티브 인프라스트럭처란?</a></li>
+    
+    <li><a href="/post/janus-%EC%86%8C%EA%B0%9C%EC%99%80-docker-%EA%B8%B0%EB%B0%98%EC%9C%BC%EB%A1%9C-%EC%89%BD%EA%B2%8C-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0/">Janus 소개와 Docker 기반으로 쉽게 사용하기</a></li>
+    
+  </ul>
+</div>
+
+        
+        
+        <div style="height: 50px;"></div>
+        
+        <div class="post-comments">
+          <div id="disqus_thread"></div>
+<script>
+  window.addEventListener("load", () => {
+    (function() {
+      
+      var d = document,
+        s = d.createElement("script");
+      s.src = "https://sohn-dangen-blog.disqus.com/embed.js";
+      s.setAttribute("data-timestamp", +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  });
+</script>
+<noscript
+  >Please enable JavaScript to view the
+  <a href="https://disqus.com/?ref_noscript"
+    >comments powered by Disqus.</a
+  ></noscript
+>
+
+        </div>
+        
+        
+
+        <div class="site-footer">
+  
+  <div class="site-footer-item">
+    <a href="https://dangen-effy.github.io/about" target="_blank">Me</a>
+  </div>
+  
+  <div class="site-footer-item">
+    <a href="/index.xml" target="_blank">RSS</a>
+  </div>
+  
+  
+</div>
+
+      </div>
+    </div>
+  </article>
+
+  <script src="/js/highlight.pack.js"></script>
+
+
+<script>
+  hljs.initHighlightingOnLoad();
+  
+  
+  
+    
+    
+  
+</script>
+
+  
+
+</body>
+
+</html>

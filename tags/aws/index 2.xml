@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>AWS on 손당근 개발 블로그</title>
+    <link>https://dangen-effy.github.io/tags/aws/</link>
+    <description>Recent content in AWS on 손당근 개발 블로그</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-kr</language>
+    <lastBuildDate>Sun, 23 Feb 2020 15:26:27 +0900</lastBuildDate>
+    
+	<atom:link href="https://dangen-effy.github.io/tags/aws/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>가난한 스타트업의 WebRTC 비용절감 위한 고군분투기</title>
+      <link>https://dangen-effy.github.io/post/%EA%B0%80%EB%82%9C%ED%95%9C-%EC%8A%A4%ED%83%80%ED%8A%B8%EC%97%85%EC%9D%98-webrtc-%EB%B9%84%EC%9A%A9%EC%A0%88%EA%B0%90-%EC%9C%84%ED%95%9C-%EA%B3%A0%EA%B5%B0%EB%B6%84%ED%88%AC%EA%B8%B0/</link>
+      <pubDate>Sun, 23 Feb 2020 15:26:27 +0900</pubDate>
+      
+      <guid>https://dangen-effy.github.io/post/%EA%B0%80%EB%82%9C%ED%95%9C-%EC%8A%A4%ED%83%80%ED%8A%B8%EC%97%85%EC%9D%98-webrtc-%EB%B9%84%EC%9A%A9%EC%A0%88%EA%B0%90-%EC%9C%84%ED%95%9C-%EA%B3%A0%EA%B5%B0%EB%B6%84%ED%88%AC%EA%B8%B0/</guid>
+      <description>라이트세일에 꾸역꾸역 오토 스케일링 적용하기 리모트몬스터는 백엔드팀의 역할을 딱 한 단어로 좁혀서 이야기합니다. “비용 절감” (가용성 확보는 기본이고요) 💰💰💰
+비용 절감은 여러 가지 경로로 실현 가능한데,
+첫째로 자동화를 통한 인건비 절감입니다. 사람이 해야 할 일을 자동화 시켜놓으면 팀이 굴러가기 위한 노동력이 줄어듭니다. 실제로 리모트몬스터의 백엔드팀은 단 두명(혹은 3명)입니다. 자동화 없이 두 명이서 백엔드 자원을 관리 한다고 상상만 해도 끔찍합니다.
+둘째로 자동화를 통한 인프라 비용 절감입니다. 보통 On-demand 형태로 요금을 부과하는 클라우드 자원은 적게 쓸수록 돈을 적게 냅니다.</description>
+    </item>
+    
+    <item>
+      <title>(보안) AWS 루트 계정 버리기 — 모범 사례 따라하기</title>
+      <link>https://dangen-effy.github.io/post/%EB%B3%B4%EC%95%88-aws-%EB%A3%A8%ED%8A%B8-%EA%B3%84%EC%A0%95-%EB%B2%84%EB%A6%AC%EA%B8%B0-%EB%AA%A8%EB%B2%94-%EC%82%AC%EB%A1%80-%EB%94%B0%EB%9D%BC%ED%95%98%EA%B8%B0/</link>
+      <pubDate>Sun, 23 Feb 2020 15:25:42 +0900</pubDate>
+      
+      <guid>https://dangen-effy.github.io/post/%EB%B3%B4%EC%95%88-aws-%EB%A3%A8%ED%8A%B8-%EA%B3%84%EC%A0%95-%EB%B2%84%EB%A6%AC%EA%B8%B0-%EB%AA%A8%EB%B2%94-%EC%82%AC%EB%A1%80-%EB%94%B0%EB%9D%BC%ED%95%98%EA%B8%B0/</guid>
+      <description>대부분 스타트업의 자료는 클라우드에 저장됩니다. 루트 계정을 사용하면서요. 🔑
+AWS로 예를 들겠습니다. 어떤 스타트업이 탄생하고 AWS 계정을 생성합니다. 신용 카드를 등록하고 자원을 생성합니다. 시간이 지나서 구성원이 증가하고 모두가 여전히 루트 계정으로 AWS에 접근합니다. 누군가 현 상태의 문제점을 지적하지만 귀찮다는 이유 + 현재는 서비스가 작으니 보안보다 개발에 집중해야 한다는 핑계로 여전히 루트 계정을 사용합니다.
+기업에서 가장 막대한 피해를 보는 해킹 사례가 뭘 까요? 바로 클라우드 계정 탈취입니다. 지금부터 제가 AWS IAM 운영 모범 사례 기반으로 리모트몬스터를 루트 계정으로부터 자유롭게 만든 경험에 대해 얘기하겠습니다.</description>
+    </item>
+    
+  </channel>
+</rss>

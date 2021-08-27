@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.87.0" />
+  
+    
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="dangen-effy" />
+    <meta property="og:url" content="https://dangen-effy.github.io/post/%EC%97%98%EB%A6%AD%EC%84%9C-%ED%8C%A8%ED%84%B4%EB%A7%A4%EC%B9%AD-%ED%95%A8%EC%88%98-%ED%8C%8C%EB%9D%BC%EB%AF%B8%ED%84%B0%EC%97%90-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0/" />
+    <link rel="canonical" href="https://dangen-effy.github.io/post/%EC%97%98%EB%A6%AD%EC%84%9C-%ED%8C%A8%ED%84%B4%EB%A7%A4%EC%B9%AD-%ED%95%A8%EC%88%98-%ED%8C%8C%EB%9D%BC%EB%AF%B8%ED%84%B0%EC%97%90-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0/" /><link rel="shortcut icon" href="/favicon.ico" type="image/x-png" /><script type="application/ld+json">
+  {
+      "@context" : "http://schema.org",
+      "@type" : "BlogPosting",
+      "mainEntityOfPage": {
+           "@type": "WebPage",
+           "@id": "https:\/\/dangen-effy.github.io\/"
+      },
+      "articleSection" : "post",
+      "name" : "엘릭서 패턴매칭을 함수 매개변수에 적용시켜보자 🧪",
+      "headline" : "엘릭서 패턴매칭을 함수 매개변수에 적용시켜보자 🧪",
+      "description" : "패턴매칭은 프로그래밍 언어 안에서 엘릭서가 가지는 가장 큰 차별점이죠",
+      "inLanguage" : "en-US",
+      "author" : "dangen-effy",
+      "creator" : "dangen-effy",
+      "publisher": "dangen-effy",
+      "accountablePerson" : "dangen-effy",
+      "copyrightHolder" : "dangen-effy",
+      "copyrightYear" : "2020",
+      "datePublished": "2020-10-23 19:51:24 \u002b0900 KST",
+      "dateModified" : "2020-10-23 19:51:24 \u002b0900 KST",
+      "url" : "https:\/\/dangen-effy.github.io\/post\/%EC%97%98%EB%A6%AD%EC%84%9C-%ED%8C%A8%ED%84%B4%EB%A7%A4%EC%B9%AD-%ED%95%A8%EC%88%98-%ED%8C%8C%EB%9D%BC%EB%AF%B8%ED%84%B0%EC%97%90-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0\/",
+      "keywords" : [ "Elixir", ]
+  }
+</script>
+<title>엘릭서 패턴매칭을 함수 매개변수에 적용시켜보자 🧪 - 손당근 블로그</title>
+    <meta property="og:title" content="엘릭서 패턴매칭을 함수 매개변수에 적용시켜보자 🧪 - 손당근 블로그" />
+    <meta property="og:type" content="article" />
+    <meta name="description" content="패턴매칭은 프로그래밍 언어 안에서 엘릭서가 가지는 가장 큰 차별점이죠" />
+  
+    <link rel="stylesheet" href="/css/flexboxgrid-6.3.1.min.css" />
+    <link rel="stylesheet"
+      href="/css/github-markdown.min.css" />
+    <link rel="stylesheet" href="/css/highlight/tomorrow.min.css" />
+    <link rel="stylesheet" href="/css/index.css">
+    <link href="/index.xml" rel="alternate" type="application/rss+xml" title="손당근 블로그">
+    
+    <link href="https://fonts.googleapis.com/css?family=Arvo|Permanent+Marker" rel="stylesheet">
+    
+    
+  
+    <script data-ad-client="ca-pub-8860756584846944" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-158927245-1"></script>
+    
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-158927245-1');
+    </script>
+  </head>
+  
+
+<body>
+  <article class="post " id="article">
+    <div class="row">
+      <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2 col-lg-6 col-lg-offset-3">
+        <div class="site-header">
+          
+<header>
+  <div class="signatures site-title">
+    <a href="/">🥕 성공한 젊은이</a>
+  </div>
+</header>
+<div class="row end-xs">
+  
+  
+</div>
+<div class="header-line"></div>
+
+        </div>
+        <header class="post-header">
+          <h1 class="post-title">엘릭서 패턴매칭을 함수 매개변수에 적용시켜보자 🧪</h1>
+          
+          <div class="row post-desc">
+            <div class="col-xs-6">
+              
+              <time class="post-date" datetime="2020-10-23 19:51:24 KST">
+                23 Oct 2020
+              </time>
+              
+            </div>
+            <div class="col-xs-6">
+              
+              <div class="post-author">
+                <a target="_blank" href="https://dangen-effy.github.io/">@dangen-effy</a>
+              </div>
+              
+            </div>
+          </div>
+          
+        </header>
+
+        <div class="post-content markdown-body">
+          <p><img src="/images/elixir_logo.png" alt="Elixir Logo"></p>
+<p>패턴매칭은 프로그래밍 언어 안에서 엘릭서가 가지는 가장 큰 차별점이죠. 이를 적절히 활용하면 장황한 코드 없이 함수의 동작을 매개 변수 패턴매칭 결과에 따라 다르게 동작하도록 코딩 할 수 있습니다.</p>
+<p>아래는 Programming Elixir &gt;= 1.6 책에서 가져온 예제입니다.</p>
+<h2 id="문제">문제</h2>
+<blockquote>
+<p>Write a function that takes three arguments. If the first two are zero, return “FizzBuzz.” If the first is zero, return “Fizz.” If the second is zero, return “Buzz.” Otherwise return the third argument. Do not use any lan- guage features that we haven’t yet covered in this book.</p>
+</blockquote>
+<p><a href="https://github.com/pcewing/programming-elixir-exercises/tree/master/ch05/Functions-2">https://github.com/pcewing/programming-elixir-exercises/tree/master/ch05/Functions-2</a></p>
+<p>간단히 해석해보면 매개 변수 세 개를 받는 함수를 작성 하는데 조건은 다음과 같습니다.</p>
+<ol>
+<li>첫번째, 두번째 매개 변수가 0 이면 &ldquo;FizzBuzz&rdquo; 를 반환</li>
+<li>첫번째 매개 변수가 0 이면 &ldquo;Fizz&rdquo; 를 반환</li>
+<li>두번째 매개 변수가 0 이면 &ldquo;Buzz&rdquo; 를 반환</li>
+<li>모두 아니라면 세번째 매개 변수를 다시 반환</li>
+</ol>
+<p>엘릭서는 Function Overloading 할 필요 없이 패턴매칭으로 간단히 조건들을 충족 시키는 함수를 구현할 수 있습니다.</p>
+<h2 id="코드">코드</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elixir" data-lang="elixir">fizz_buzz <span style="color:#f92672">=</span> <span style="color:#66d9ef">fn</span>
+    <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, c <span style="color:#f92672">-&gt;</span> <span style="color:#e6db74">&#34;FizzBuzz&#34;</span>   <span style="color:#75715e"># 첫번째 조건</span>
+    <span style="color:#ae81ff">0</span>, b, c <span style="color:#f92672">-&gt;</span> <span style="color:#e6db74">&#34;Fizz&#34;</span>       <span style="color:#75715e"># 두번째 조건</span>
+    a, <span style="color:#ae81ff">0</span>, c <span style="color:#f92672">-&gt;</span> <span style="color:#e6db74">&#34;Buzz&#34;</span>       <span style="color:#75715e"># 세번째 조건</span>
+    a, b, c <span style="color:#f92672">-&gt;</span> c            <span style="color:#75715e"># 마지막 조건</span>
+<span style="color:#66d9ef">end</span>
+</code></pre></div>
+        </div>
+
+        <div class="row middle-xs">
+          <div class="col-xs-12">
+            
+            <div class="post-category">
+              <a href="/categories/elixir/">
+                Elixir
+              </a>
+            </div>
+            
+          </div>
+        </div>
+
+        
+        
+
+<div class="releated-content">
+  <h3>Related Posts</h3>
+  <ul>
+    
+    <li><a href="/post/%EC%97%98%EB%A6%AD%EC%84%9C%EC%99%80-%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%BD%94%EB%93%9C%EB%A5%BC-%EB%B9%A0%EB%A5%B4%EA%B2%8C-%EB%B9%84%EA%B5%90%ED%95%B4%EB%B3%B4%EC%9E%90/">엘릭서와 자바스크립트 코드를 빠르게 비교해보자</a></li>
+    
+  </ul>
+</div>
+
+        
+        
+        <div style="height: 50px;"></div>
+        
+        <div class="post-comments">
+          <div id="disqus_thread"></div>
+<script>
+  window.addEventListener("load", () => {
+    (function() {
+      
+      var d = document,
+        s = d.createElement("script");
+      s.src = "https://sohn-dangen-blog.disqus.com/embed.js";
+      s.setAttribute("data-timestamp", +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  });
+</script>
+<noscript
+  >Please enable JavaScript to view the
+  <a href="https://disqus.com/?ref_noscript"
+    >comments powered by Disqus.</a
+  ></noscript
+>
+
+        </div>
+        
+        
+
+        <div class="site-footer">
+  
+  <div class="site-footer-item">
+    <a href="https://dangen-effy.github.io/about" target="_blank">Me</a>
+  </div>
+  
+  <div class="site-footer-item">
+    <a href="/index.xml" target="_blank">RSS</a>
+  </div>
+  
+  
+</div>
+
+      </div>
+    </div>
+  </article>
+
+  <script src="/js/highlight.pack.js"></script>
+
+
+<script>
+  hljs.initHighlightingOnLoad();
+  
+  
+  
+    
+    
+  
+</script>
+
+  
+
+</body>
+
+</html>

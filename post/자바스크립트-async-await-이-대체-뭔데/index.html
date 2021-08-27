@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.76.3" />
+  
+    
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Sohn Dangen" />
+    <meta property="og:url" content="https://dangen-effy.github.io/post/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-async-await-%EC%9D%B4-%EB%8C%80%EC%B2%B4-%EB%AD%94%EB%8D%B0/" />
+    <link rel="canonical" href="https://dangen-effy.github.io/post/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-async-await-%EC%9D%B4-%EB%8C%80%EC%B2%B4-%EB%AD%94%EB%8D%B0/" /><link rel="shortcut icon" href="/favicon.ico" type="image/x-png" /><script type="application/ld+json">
+  {
+      "@context" : "http://schema.org",
+      "@type" : "BlogPosting",
+      "mainEntityOfPage": {
+           "@type": "WebPage",
+           "@id": "https:\/\/dangen-effy.github.io\/"
+      },
+      "articleSection" : "post",
+      "name" : "자바스크립트 async await 이 대체 뭔데",
+      "headline" : "자바스크립트 async await 이 대체 뭔데",
+      "description" : "비동기 함수와 동기 함수",
+      "inLanguage" : "en-US",
+      "author" : "Sohn Dangen",
+      "creator" : "Sohn Dangen",
+      "publisher": "Sohn Dangen",
+      "accountablePerson" : "Sohn Dangen",
+      "copyrightHolder" : "Sohn Dangen",
+      "copyrightYear" : "2020",
+      "datePublished": "2020-12-01 22:30:00 \u002b0900 KST",
+      "dateModified" : "2020-12-01 22:30:00 \u002b0900 KST",
+      "url" : "https:\/\/dangen-effy.github.io\/post\/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-async-await-%EC%9D%B4-%EB%8C%80%EC%B2%B4-%EB%AD%94%EB%8D%B0\/",
+      "keywords" : [ "JavaScript", ]
+  }
+</script>
+<title>자바스크립트 async await 이 대체 뭔데 - 손당근 개발 블로그</title>
+    <meta property="og:title" content="자바스크립트 async await 이 대체 뭔데 - 손당근 개발 블로그" />
+    <meta property="og:type" content="article" />
+    <meta name="description" content="비동기 함수와 동기 함수" />
+  
+    <link rel="stylesheet" href="/css/flexboxgrid-6.3.1.min.css" />
+    <link rel="stylesheet"
+      href="/css/github-markdown.min.css" />
+    <link rel="stylesheet" href="/css/highlight/tomorrow.min.css" />
+    <link rel="stylesheet" href="/css/index.css">
+    <link href="/index.xml" rel="alternate" type="application/rss+xml" title="손당근 개발 블로그">
+    
+    <link href="https://fonts.googleapis.com/css?family=Arvo|Permanent+Marker" rel="stylesheet">
+    
+    
+  
+    <script data-ad-client="ca-pub-8860756584846944" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-158927245-1"></script>
+    
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-158927245-1');
+    </script>
+  </head>
+  
+
+<body>
+  <article class="post " id="article">
+    <div class="row">
+      <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2 col-lg-6 col-lg-offset-3">
+        <div class="site-header">
+          
+<header>
+  <div class="signatures site-title">
+    <a href="/">🥕성공한 젊은이</a>
+  </div>
+</header>
+<div class="row end-xs">
+  
+  
+</div>
+<div class="header-line"></div>
+
+        </div>
+        <header class="post-header">
+          <h1 class="post-title">자바스크립트 async await 이 대체 뭔데</h1>
+          
+          <div class="row post-desc">
+            <div class="col-xs-6">
+              
+              <time class="post-date" datetime="2020-12-01 22:30:00 KST">
+                01 Dec 2020
+              </time>
+              
+            </div>
+            <div class="col-xs-6">
+              
+              <div class="post-author">
+                <a target="_blank" href="https://dangen-effy.github.io/">@Sohn Dangen</a>
+              </div>
+              
+            </div>
+          </div>
+          
+        </header>
+
+        <div class="post-content markdown-body">
+          <img src="/images/javascript_logo.png" alt="JavaScript" width="100" height="100">
+<br/>
+<p>볼 때마다 헷갈리는 async await 이놈들이 대체 뭘까요? 채용 공고를 살펴보면 허구한 날 JavaScript async 키워드 숙련자 찾는 얘기는 보이니까 배우긴 해야 할거 같고&hellip;</p>
+<p>지금부터 제가 도와드리겠습니다. 😀</p>
+<h2 id="async-는-function-앞에-붙는-키워드일-뿐이다">async 는 function 앞에 붙는 키워드일 뿐이다.</h2>
+<p>아래 두 함수의 차이점이 뭘까요?</p>
+<pre><code>function one() {
+
+}
+</code></pre><pre><code>async function two() {
+    
+}
+</code></pre><p>바로 <code>async</code> 키워드가 있냐 없냐라는 차이점이 있죠. 근데 이건 시각적인 차이고 우리가 <em>기능적</em>으로 기대하는 차이는 뭘까요? 바로 함수가 <strong>동기</strong>냐 <strong>비동기</strong>냐입니다.</p>
+<hr>
+<p>먼저 <code>one</code> 함수는 <strong>동기 함수</strong> 입니다. 자바스크립트의 싱글 스레드 안에서 순차적으로 실행되는 동기 함수죠. 동기 함수, 순차적&hellip; 이게 다 무슨 말이냐구요? 😱 코드로 설명해볼게요.</p>
+<pre><code>function foo() { console.log('foo') }
+function bar() { console.log('bar') }
+</code></pre><p>위 두 함수 <code>foo</code> 그리고 <code>bar</code> 함수는 앞서 설명한 대로 동기 함수입니다. 왜냐면 <code>async</code> 키워드가 앞에 없으니까요. 이떄 두 함수를 순서대로 호출해볼께요.</p>
+<pre><code>foo()
+bar()
+
+// =&gt; Console
+foo
+bar
+</code></pre><p>이때 콘솔에 때려죽여도 무슨 일이 있어도 <code>foo</code> 다음에 <code>bar</code> 가 출력됩니다.</p>
+<p>만약 출력 순서를 바꿀 방법을 알고 계시거나 이를 보여 주실 수 있으시다면 제가 스타벅스 쿠폰 한 장 드리겠습니다. 즉 이런 일은 일어날 수 없습니다. 왜냐면 두 함수 모두 순서를 보장받는 동기 함수며 호출 당하면 끝나기 전까지(리턴하기 전까지) <strong>절대로</strong> 다음 라인을 호출하지 않기 때문입니다.</p>
+<h2 id="그래서-어쩌라고요-">그래서 어쩌라고요? 🤷‍♀️</h2>
+<p>예. 그래서 어쩌자는 걸까요. 코드가 순서대로 실행되는 건 당연한 거니까요. 그런데 순서대로 실행되지 않고 비동기적으로 처리하고 싶은 일이 있으면 어떻게 할까요? 지금부터 상상력을 발휘해봅시다.</p>
+<p>구글링을 해보셔서 아시겠지만 보통 검색창에 단어를 입력하면 <strong>자동 완성</strong> 이라는 친절한 짓을 해줍니다. 이 기능은 어떻게 이뤄질까요? 당연히 구글의 자동 완성 API를 호출한 결과를 렌더링 하는 거겠죠. 즉 키보드를 누를 때마다 자동 완성 API를 호출하고 그 결과를 받아오는 짓을 하고 있는 겁니다.</p>
+<img src="/images/google_autocomplete.png" alt="Google" width="800">
+<br/>
+<blockquote>
+<p>키보드를 누를 때마다 열심히 자동 완성 API를 호출하고 있는 모습</p>
+</blockquote>
+<p>자 바로 이 상황입니다. 앞에서 설명한 비동기적으로 처리하고 싶은 일이 등장했습니다. 만약 자동 완성 API를 호출하고 결과를 받아오는 함수가 <strong>동기 함수</strong>였다면 어떨지 상상해봅시다.</p>
+<p><code>핸드폰</code>을 검색하고자 할 때&hellip;</p>
+<pre><code>`ㅎ`을 타이핑하면 자동 완성 API 호출 후 결과 받아올 때까지 키보드 입력 불가능, 자동 완성 결과 받아오고 렌더링 끝날 때까지 기다림
+
+`해`을 타이핑하면 자동 완성 API 호출 후 결과 받아올 때까지 키보드 입력 불가능, 자동 완성 결과 받아오고 렌더링 끝날 때까지 기다림
+
+`핸`을 타이핑하면 자동 완성 API 호출 후 결과 받아올 때까지 키보드 입력 불가능, 자동 완성 결과 받아오고 렌더링 끝날 때까지 기다림
+
+`핸ㄷ`을 타이핑하면 자동 완성 API 호출 후 결과 받아올 때까지 키보드 입력 불가능, 자동 완성 결과 받아오고 렌더링 끝날 때까지 기다림
+
+...(중략)
+
+`핸드폰`을 타이핑하면 자동 완성 API 호출 후 결과 받아올 때까지 키보드 입력 불가능, 자동 완성 결과 받아오고 렌더링 끝날 때까지 기다림
+</code></pre><p>이러면 사용자 입장에서 정말 불편하겠죠. 원하는 검색 키워드를 빠르게 입력하지 못하니까요. 만약 이걸 비동기 함수로 처리한다면 어떻게 될까요?</p>
+<pre><code>`핸드폰`을 타이핑하는 중간에 자동 완성 API를 비동기로 호출하고 결과를 받아오면 그때 재빨리 자동 완성 보여주기
+</code></pre><p>이렇게 훨씬 매끄러운 로직을 설계할 수 있겠죠?</p>
+<p>작성 중입니다&hellip;</p>
+
+        </div>
+
+        <div class="row middle-xs">
+          <div class="col-xs-12">
+            
+            <div class="post-category">
+              <a href="/categories/javascript/">
+                JavaScript
+              </a>
+            </div>
+            
+          </div>
+        </div>
+
+        
+        
+
+<div class="releated-content">
+  <h3>Related Posts</h3>
+  <ul>
+    
+    <li><a href="/post/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EB%B0%B0%EC%97%B4%EC%97%90%EC%84%9C-%ED%8A%B9%EC%A0%95-%EC%9B%90%EC%86%8C-%EC%B0%BE%EA%B8%B0/">자바스크립트 배열에서 특정 원소 찾는 방법에 대해 알아보자</a></li>
+    
+    <li><a href="/post/%EC%97%98%EB%A6%AD%EC%84%9C%EC%99%80-%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%BD%94%EB%93%9C%EB%A5%BC-%EB%B9%A0%EB%A5%B4%EA%B2%8C-%EB%B9%84%EA%B5%90%ED%95%B4%EB%B3%B4%EC%9E%90/">엘릭서와 자바스크립트 코드를 빠르게 비교해보자</a></li>
+    
+    <li><a href="/post/%EB%A7%A5%EB%B6%81-%ED%8F%AC%EB%A7%B7-%ED%9B%84-%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EA%B0%9C%EB%B0%9C-%ED%99%98%EA%B2%BD-%EC%84%B8%ED%8C%85%ED%95%98%EA%B8%B0/">맥북 포맷 후 자바스크립트 개발 환경 세팅하기</a></li>
+    
+  </ul>
+</div>
+
+        
+        
+        <div style="height: 50px;"></div>
+        
+        <div class="post-comments">
+          <div id="disqus_thread"></div>
+<script>
+  window.addEventListener("load", () => {
+    (function() {
+      
+      var d = document,
+        s = d.createElement("script");
+      s.src = "https://sohn-dangen-blog.disqus.com/embed.js";
+      s.setAttribute("data-timestamp", +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  });
+</script>
+<noscript
+  >Please enable JavaScript to view the
+  <a href="https://disqus.com/?ref_noscript"
+    >comments powered by Disqus.</a
+  ></noscript
+>
+
+        </div>
+        
+        
+
+        <div class="site-footer">
+  
+  <div class="site-footer-item">
+    <a href="https://dangen-effy.github.io/about" target="_blank">Me</a>
+  </div>
+  
+  <div class="site-footer-item">
+    <a href="/index.xml" target="_blank">RSS</a>
+  </div>
+  
+  
+</div>
+
+      </div>
+    </div>
+  </article>
+
+  <script src="/js/highlight.pack.js"></script>
+
+
+<script>
+  hljs.initHighlightingOnLoad();
+  
+  
+  
+    
+    
+  
+</script>
+
+  
+
+</body>
+
+</html>

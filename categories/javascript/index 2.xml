@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>JavaScript on 손당근 개발 블로그</title>
+    <link>https://dangen-effy.github.io/categories/javascript/</link>
+    <description>Recent content in JavaScript on 손당근 개발 블로그</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-kr</language>
+    <lastBuildDate>Sun, 09 Aug 2020 15:25:42 +0900</lastBuildDate>
+    
+	<atom:link href="https://dangen-effy.github.io/categories/javascript/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>엘릭서와 자바스크립트 코드를 빠르게 비교해보자</title>
+      <link>https://dangen-effy.github.io/post/%EC%97%98%EB%A6%AD%EC%84%9C%EC%99%80-%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%BD%94%EB%93%9C%EB%A5%BC-%EB%B9%A0%EB%A5%B4%EA%B2%8C-%EB%B9%84%EA%B5%90%ED%95%B4%EB%B3%B4%EC%9E%90/</link>
+      <pubDate>Sun, 09 Aug 2020 15:25:42 +0900</pubDate>
+      
+      <guid>https://dangen-effy.github.io/post/%EC%97%98%EB%A6%AD%EC%84%9C%EC%99%80-%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%BD%94%EB%93%9C%EB%A5%BC-%EB%B9%A0%EB%A5%B4%EA%B2%8C-%EB%B9%84%EA%B5%90%ED%95%B4%EB%B3%B4%EC%9E%90/</guid>
+      <description>누구든 새로운 언어를 배우기 전에 내게 가장 익숙한 언어와 얼마나 다를지 비교해보고 싶을 텐데요.
+이 욕구를 해소하고자 간단히 자바스크립트와 엘릭서 코드를 비교해 볼 수 있는 레포를 만들어봤습니다.
+ 엘릭서(Elixir)는 얼랭(Erlang) 가상 머신(BEAM) 위에서 동작하는 함수형, 동시성 프로그래밍 언어이다. 엘릭서는 얼랭이 보유하고 있는 분산 처리, 장애 내구성, 실시간, 무정지 애플리케이션 등의 특징을 공유한다
+ 출처: 위키백과
+Map [1, 2, 3].map(x =&amp;gt; x * 2) // -&amp;gt; [ 2, 4, 6 ] Enum.</description>
+    </item>
+    
+    <item>
+      <title>맥북 포맷 후 자바스크립트 개발 환경 세팅하기</title>
+      <link>https://dangen-effy.github.io/post/%EB%A7%A5%EB%B6%81-%ED%8F%AC%EB%A7%B7-%ED%9B%84-%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EA%B0%9C%EB%B0%9C-%ED%99%98%EA%B2%BD-%EC%84%B8%ED%8C%85%ED%95%98%EA%B8%B0/</link>
+      <pubDate>Sun, 23 Feb 2020 15:18:53 +0900</pubDate>
+      
+      <guid>https://dangen-effy.github.io/post/%EB%A7%A5%EB%B6%81-%ED%8F%AC%EB%A7%B7-%ED%9B%84-%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EA%B0%9C%EB%B0%9C-%ED%99%98%EA%B2%BD-%EC%84%B8%ED%8C%85%ED%95%98%EA%B8%B0/</guid>
+      <description>노트북 포맷을 할때마다 기존에 개발하던 환경과 동일하게 설정해줘야 마음이 편하다.
+시작하기   포맷 후 첫 부팅
+  Dock 기본 앱 모두 제거
+  Dock 크기 최소화
+  Dock — ‘최근에 사용한 응용 프로그램 보기’ 체크 해제
+  트랙패드 클릭 강도 ‘세게’로 바꾸기
+  트랙패드 ‘스크롤 방향: 자연스럽게’ 체크 해제
+  ‘메뉴 막대에서 Bluetooth 표시’ 체크
+  Chrome 설치 및 구글 계정 Sync</description>
+    </item>
+    
+  </channel>
+</rss>

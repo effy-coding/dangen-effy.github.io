@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.68.3" />
+  
+    
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Sohn Dangen" />
+    <meta property="og:url" content="https://dangen-effy.github.io/post/%EC%9C%A0%EB%8B%88%ED%8B%B0-for%EB%AC%B8-%EC%97%86%EC%9D%B4-%EA%B0%80%EC%9E%A5-%EA%B0%80%EA%B9%8C%EC%9A%B4-%EC%98%A4%EB%B8%8C%EC%A0%9D%ED%8A%B8-%EA%B5%AC%ED%95%98%EA%B8%B0/" />
+    <link rel="canonical" href="https://dangen-effy.github.io/post/%EC%9C%A0%EB%8B%88%ED%8B%B0-for%EB%AC%B8-%EC%97%86%EC%9D%B4-%EA%B0%80%EC%9E%A5-%EA%B0%80%EA%B9%8C%EC%9A%B4-%EC%98%A4%EB%B8%8C%EC%A0%9D%ED%8A%B8-%EA%B5%AC%ED%95%98%EA%B8%B0/" /><link rel="shortcut icon" href="/favicon.ico" type="image/x-png" /><script type="application/ld+json">
+  {
+      "@context" : "http://schema.org",
+      "@type" : "BlogPosting",
+      "mainEntityOfPage": {
+           "@type": "WebPage",
+           "@id": "https:\/\/dangen-effy.github.io\/"
+      },
+      "articleSection" : "post",
+      "name" : "유니티 for문 없이 가장 가까운 오브젝트 구하기",
+      "headline" : "유니티 for문 없이 가장 가까운 오브젝트 구하기",
+      "description" : "LINQ를 활용한 오브젝트 거리 정렬하기",
+      "inLanguage" : "en-US",
+      "author" : "Sohn Dangen",
+      "creator" : "Sohn Dangen",
+      "publisher": "Sohn Dangen",
+      "accountablePerson" : "Sohn Dangen",
+      "copyrightHolder" : "Sohn Dangen",
+      "copyrightYear" : "2020",
+      "datePublished": "2020-10-18 17:13:52 \x2b0900 KST",
+      "dateModified" : "2020-10-18 17:13:52 \x2b0900 KST",
+      "url" : "https:\/\/dangen-effy.github.io\/post\/%EC%9C%A0%EB%8B%88%ED%8B%B0-for%EB%AC%B8-%EC%97%86%EC%9D%B4-%EA%B0%80%EC%9E%A5-%EA%B0%80%EA%B9%8C%EC%9A%B4-%EC%98%A4%EB%B8%8C%EC%A0%9D%ED%8A%B8-%EA%B5%AC%ED%95%98%EA%B8%B0\/",
+      "keywords" : [ "유니티","LINQ", ]
+  }
+</script>
+<title>유니티 for문 없이 가장 가까운 오브젝트 구하기 - 손당근 개발 블로그</title>
+    <meta property="og:title" content="유니티 for문 없이 가장 가까운 오브젝트 구하기 - 손당근 개발 블로그" />
+    <meta property="og:type" content="article" />
+    <meta name="description" content="LINQ를 활용한 오브젝트 거리 정렬하기" />
+  
+    <link rel="stylesheet" href="/css/flexboxgrid-6.3.1.min.css" />
+    <link rel="stylesheet"
+      href="/css/github-markdown.min.css" />
+    <link rel="stylesheet" href="/css/highlight/tomorrow.min.css" />
+    <link rel="stylesheet" href="/css/index.css">
+    <link href="/index.xml" rel="alternate" type="application/rss+xml" title="손당근 개발 블로그">
+    
+    <link href="https://fonts.googleapis.com/css?family=Arvo|Permanent+Marker" rel="stylesheet">
+    
+    
+  
+    <script data-ad-client="ca-pub-8860756584846944" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-158927245-1"></script>
+    
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-158927245-1');
+    </script>
+  </head>
+  
+
+<body>
+  <article class="post " id="article">
+    <div class="row">
+      <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2 col-lg-6 col-lg-offset-3">
+        <div class="site-header">
+          
+<header>
+  <div class="signatures site-title">
+    <a href="/">🥕성공한 젊은이</a>
+  </div>
+</header>
+<div class="row end-xs">
+  
+  
+</div>
+<div class="header-line"></div>
+
+        </div>
+        <header class="post-header">
+          <h1 class="post-title">유니티 for문 없이 가장 가까운 오브젝트 구하기</h1>
+          
+          <div class="row post-desc">
+            <div class="col-xs-6">
+              
+              <time class="post-date" datetime="2020-10-18 17:13:52 KST">
+                18 Oct 2020
+              </time>
+              
+            </div>
+            <div class="col-xs-6">
+              
+              <div class="post-author">
+                <a target="_blank" href="https://dangen-effy.github.io/">@Sohn Dangen</a>
+              </div>
+              
+            </div>
+          </div>
+          
+        </header>
+
+        <div class="post-content markdown-body">
+          <p><img src="/images/forvslinq.PNG" alt="foreach vs linq"></p>
+<p>유니티에서 가장 가까운 오브젝트를 구하는 일은 비일비재합니다. &ldquo;unity find nearest gameobject&rdquo; 라는 키워드로 구글링 해보면 정말 많은 예시 코드들이 있는데요, 대부분 for loop 를 이용한 장황한 코드들입니다. 🤦‍♂️</p>
+<h2 id="linq">LINQ</h2>
+<p>하지만 C# 은 <a href="https://docs.microsoft.com/en-us/dotnet/csharp/tutorials/working-with-linq">LINQ</a> 로 강력하고 풍부한 열거형 메소드를 지원합니다. 이 LINQ 의 편리한 메소드들을 조합하면 for loop 을 이용한 장황한 코드 없이 간결하게 문제를 해결할 수 있습니다. 😊</p>
+<h2 id="가장-가까운-오브젝트-찾기">가장 가까운 오브젝트 찾기</h2>
+<pre><code>private GameObject FindNearestObjectByTag(string tag)
+{
+    // 탐색할 오브젝트 목록을 List 로 저장합니다.
+    var enemies = GameObject.FindGameObjectsWithTag(tag).ToList();
+
+    // LINQ 메소드를 이용해 가장 가까운 적을 찾습니다.
+    var neareastEnemy = enemies
+        .OrderBy(enemy =&gt;
+        {
+            return Vector3.Distance(transform.position, enemy.transform.position);
+        })
+        .FirstOrDefault(); 
+
+    return neareastEnemy;
+}
+</code></pre><ul>
+<li>
+<p>OrderBy 메소드는 넘겨받은 람다식으로 List를 정렬합니다. 정렬 기준은 Vector3.Distance 메소드로 내 위치와 적 위치의 거리를 계산한 결과입니다. 덕분에 가장 가까운 적이 첫 번째 요소로 정렬됩니다.</p>
+</li>
+<li>
+<p>FirstOrDefault 메소드는 List 의 첫 번째 요소를 반환합니다. 만약 List 가 비어있다면 null 을 반환합니다.</p>
+</li>
+<li>
+<p>최종적으로 neareastEnemy 변수에 가장 가까운 오브젝트가 저장됩니다.</p>
+</li>
+</ul>
+<h2 id="더-알아보기">더 알아보기</h2>
+<ul>
+<li><a href="https://unity3d.college/2017/07/01/linq-unity-developers/">https://unity3d.college/2017/07/01/linq-unity-developers/</a></li>
+<li><a href="https://learn.unity.com/project/c-survival-guide-linq">https://learn.unity.com/project/c-survival-guide-linq</a></li>
+</ul>
+
+        </div>
+
+        <div class="row middle-xs">
+          <div class="col-xs-12">
+            
+            <div class="post-category">
+              <a href="/categories/%ec%9c%a0%eb%8b%88%ed%8b%b0/">
+                유니티
+              </a>
+            </div>
+            
+            <div class="post-category">
+              <a href="/categories/linq/">
+                LINQ
+              </a>
+            </div>
+            
+          </div>
+        </div>
+
+        
+        
+
+        
+        
+        <div style="height: 50px;"></div>
+        
+        <div class="post-comments">
+          <div id="disqus_thread"></div>
+<script>
+  window.addEventListener("load", () => {
+    (function() {
+      
+      var d = document,
+        s = d.createElement("script");
+      s.src = "https://sohn-dangen-blog.disqus.com/embed.js";
+      s.setAttribute("data-timestamp", +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  });
+</script>
+<noscript
+  >Please enable JavaScript to view the
+  <a href="https://disqus.com/?ref_noscript"
+    >comments powered by Disqus.</a
+  ></noscript
+>
+
+        </div>
+        
+        
+
+        <div class="site-footer">
+  
+  <div class="site-footer-item">
+    <a href="https://dangen-effy.github.io/about" target="_blank">Me</a>
+  </div>
+  
+  <div class="site-footer-item">
+    <a href="/index.xml" target="_blank">RSS</a>
+  </div>
+  
+  
+</div>
+
+      </div>
+    </div>
+  </article>
+
+  <script src="/js/highlight.pack.js"></script>
+
+
+<script>
+  hljs.initHighlightingOnLoad();
+  
+  
+  
+    
+    
+  
+</script>
+
+  
+
+</body>
+
+</html>

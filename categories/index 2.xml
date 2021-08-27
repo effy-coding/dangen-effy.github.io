@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on 손당근 개발 블로그</title>
+    <link>https://dangen-effy.github.io/categories/</link>
+    <description>Recent content in Categories on 손당근 개발 블로그</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-kr</language>
+    <lastBuildDate>Sun, 18 Oct 2020 17:13:52 +0900</lastBuildDate>
+    
+	<atom:link href="https://dangen-effy.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>LINQ</title>
+      <link>https://dangen-effy.github.io/categories/linq/</link>
+      <pubDate>Sun, 18 Oct 2020 17:13:52 +0900</pubDate>
+      
+      <guid>https://dangen-effy.github.io/categories/linq/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>유니티</title>
+      <link>https://dangen-effy.github.io/categories/%EC%9C%A0%EB%8B%88%ED%8B%B0/</link>
+      <pubDate>Sun, 18 Oct 2020 17:13:52 +0900</pubDate>
+      
+      <guid>https://dangen-effy.github.io/categories/%EC%9C%A0%EB%8B%88%ED%8B%B0/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Cloud Native</title>
+      <link>https://dangen-effy.github.io/categories/cloud-native/</link>
+      <pubDate>Sat, 05 Sep 2020 17:34:18 +0900</pubDate>
+      
+      <guid>https://dangen-effy.github.io/categories/cloud-native/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Kubernetes</title>
+      <link>https://dangen-effy.github.io/categories/kubernetes/</link>
+      <pubDate>Sat, 05 Sep 2020 17:34:18 +0900</pubDate>
+      
+      <guid>https://dangen-effy.github.io/categories/kubernetes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Elixir</title>
+      <link>https://dangen-effy.github.io/categories/elixir/</link>
+      <pubDate>Sun, 09 Aug 2020 15:25:42 +0900</pubDate>
+      
+      <guid>https://dangen-effy.github.io/categories/elixir/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>JavaScript</title>
+      <link>https://dangen-effy.github.io/categories/javascript/</link>
+      <pubDate>Sun, 09 Aug 2020 15:25:42 +0900</pubDate>
+      
+      <guid>https://dangen-effy.github.io/categories/javascript/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>원격 근무</title>
+      <link>https://dangen-effy.github.io/categories/%EC%9B%90%EA%B2%A9-%EA%B7%BC%EB%AC%B4/</link>
+      <pubDate>Sat, 07 Mar 2020 17:01:18 +0900</pubDate>
+      
+      <guid>https://dangen-effy.github.io/categories/%EC%9B%90%EA%B2%A9-%EA%B7%BC%EB%AC%B4/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>코로나</title>
+      <link>https://dangen-effy.github.io/categories/%EC%BD%94%EB%A1%9C%EB%82%98/</link>
+      <pubDate>Sat, 07 Mar 2020 17:01:18 +0900</pubDate>
+      
+      <guid>https://dangen-effy.github.io/categories/%EC%BD%94%EB%A1%9C%EB%82%98/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>회사</title>
+      <link>https://dangen-effy.github.io/categories/%ED%9A%8C%EC%82%AC/</link>
+      <pubDate>Sat, 07 Mar 2020 17:01:18 +0900</pubDate>
+      
+      <guid>https://dangen-effy.github.io/categories/%ED%9A%8C%EC%82%AC/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>면접</title>
+      <link>https://dangen-effy.github.io/categories/%EB%A9%B4%EC%A0%91/</link>
+      <pubDate>Sat, 07 Mar 2020 14:47:17 +0900</pubDate>
+      
+      <guid>https://dangen-effy.github.io/categories/%EB%A9%B4%EC%A0%91/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>취업</title>
+      <link>https://dangen-effy.github.io/categories/%EC%B7%A8%EC%97%85/</link>
+      <pubDate>Sat, 07 Mar 2020 14:47:17 +0900</pubDate>
+      
+      <guid>https://dangen-effy.github.io/categories/%EC%B7%A8%EC%97%85/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Auto Scaling</title>
+      <link>https://dangen-effy.github.io/categories/auto-scaling/</link>
+      <pubDate>Sun, 23 Feb 2020 15:26:27 +0900</pubDate>
+      
+      <guid>https://dangen-effy.github.io/categories/auto-scaling/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>AWS</title>
+      <link>https://dangen-effy.github.io/categories/aws/</link>
+      <pubDate>Sun, 23 Feb 2020 15:26:27 +0900</pubDate>
+      
+      <guid>https://dangen-effy.github.io/categories/aws/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>AWS Cost Optimization</title>
+      <link>https://dangen-effy.github.io/categories/aws-cost-optimization/</link>
+      <pubDate>Sun, 23 Feb 2020 15:26:27 +0900</pubDate>
+      
+      <guid>https://dangen-effy.github.io/categories/aws-cost-optimization/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>DevOps</title>
+      <link>https://dangen-effy.github.io/categories/devops/</link>
+      <pubDate>Sun, 23 Feb 2020 15:26:27 +0900</pubDate>
+      
+      <guid>https://dangen-effy.github.io/categories/devops/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Lightsail</title>
+      <link>https://dangen-effy.github.io/categories/lightsail/</link>
+      <pubDate>Sun, 23 Feb 2020 15:26:27 +0900</pubDate>
+      
+      <guid>https://dangen-effy.github.io/categories/lightsail/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>AWS IAM</title>
+      <link>https://dangen-effy.github.io/categories/aws-iam/</link>
+      <pubDate>Sun, 23 Feb 2020 15:25:42 +0900</pubDate>
+      
+      <guid>https://dangen-effy.github.io/categories/aws-iam/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Best Practices</title>
+      <link>https://dangen-effy.github.io/categories/best-practices/</link>
+      <pubDate>Sun, 23 Feb 2020 15:25:42 +0900</pubDate>
+      
+      <guid>https://dangen-effy.github.io/categories/best-practices/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>MFA</title>
+      <link>https://dangen-effy.github.io/categories/mfa/</link>
+      <pubDate>Sun, 23 Feb 2020 15:25:42 +0900</pubDate>
+      
+      <guid>https://dangen-effy.github.io/categories/mfa/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>OTP</title>
+      <link>https://dangen-effy.github.io/categories/otp/</link>
+      <pubDate>Sun, 23 Feb 2020 15:25:42 +0900</pubDate>
+      
+      <guid>https://dangen-effy.github.io/categories/otp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Security</title>
+      <link>https://dangen-effy.github.io/categories/security/</link>
+      <pubDate>Sun, 23 Feb 2020 15:25:42 +0900</pubDate>
+      
+      <guid>https://dangen-effy.github.io/categories/security/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Redis</title>
+      <link>https://dangen-effy.github.io/categories/redis/</link>
+      <pubDate>Sun, 23 Feb 2020 15:25:14 +0900</pubDate>
+      
+      <guid>https://dangen-effy.github.io/categories/redis/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Socket.io</title>
+      <link>https://dangen-effy.github.io/categories/socket.io/</link>
+      <pubDate>Sun, 23 Feb 2020 15:25:14 +0900</pubDate>
+      
+      <guid>https://dangen-effy.github.io/categories/socket.io/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Stateless</title>
+      <link>https://dangen-effy.github.io/categories/stateless/</link>
+      <pubDate>Sun, 23 Feb 2020 15:25:14 +0900</pubDate>
+      
+      <guid>https://dangen-effy.github.io/categories/stateless/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>WebSocket</title>
+      <link>https://dangen-effy.github.io/categories/websocket/</link>
+      <pubDate>Sun, 23 Feb 2020 15:25:14 +0900</pubDate>
+      
+      <guid>https://dangen-effy.github.io/categories/websocket/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Docker</title>
+      <link>https://dangen-effy.github.io/categories/docker/</link>
+      <pubDate>Sun, 23 Feb 2020 15:22:11 +0900</pubDate>
+      
+      <guid>https://dangen-effy.github.io/categories/docker/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>WebRTC</title>
+      <link>https://dangen-effy.github.io/categories/webrtc/</link>
+      <pubDate>Sun, 23 Feb 2020 15:22:11 +0900</pubDate>
+      
+      <guid>https://dangen-effy.github.io/categories/webrtc/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>IDE</title>
+      <link>https://dangen-effy.github.io/categories/ide/</link>
+      <pubDate>Sun, 23 Feb 2020 15:18:53 +0900</pubDate>
+      
+      <guid>https://dangen-effy.github.io/categories/ide/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
